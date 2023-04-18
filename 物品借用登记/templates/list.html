@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物品借用汇总表</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+        <tr>
+            <th>借用人</th>
+            <th>借用设备</th>
+            <th>借用日期</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in data %}
+        <tr>
+            <td>{{ item.borrower }}</td>
+            <td>{{ item.device_name }}</td>
+            <td>{{ item.date }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
