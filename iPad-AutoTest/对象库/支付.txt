@@ -1,0 +1,53 @@
+*** Settings ***
+Library           AppiumLibrary
+Resource          ./公共.txt
+
+*** Keywords ***
+连续包月-开通
+    tap    277    283
+    sleep    1
+    comment    659    369
+
+3个月VIP-开通
+    sleep    6
+    Click Element    name=确认支付
+    sleep    10
+
+单片购买
+    sleep    6
+    Click Element    name=确认支付
+    sleep    10
+
+支付-确认支付
+    #click element    nsp= name == "确认支付:￥" and type =="XCUIElementTypeStaticText"
+    click a point    682    988
+
+支付-取消
+    click element    name=Cancel
+    sleep    1
+
+开通会员-关闭
+    click a point    712    50
+    comment    xpath=//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIALink[1]
+    sleep    1
+
+开通会员－场景关闭
+    tap    712    50
+    comment    xpath=//UIAApplication[1]/UIAWindow[1]/UIAScrollView[2]/UIAWebView[1]/UIALink[1]
+    sleep    1
+
+单片购买－开通会员关闭
+    tap    712    50
+    comment    xpath=//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAWebView[1]/UIALink[1]
+    sleep    1
+
+开通会员-直播vip
+    公共－点击页面文本    立即开通
+
+开通会员-登录
+    #公共－xpath    //XCUIElementTypeStaticText[@name="登录"]/parent::XCUIElementTypeOther
+    click a point    481    96
+
+使用观影券
+    click element    name=使用观影券
+    sleep    1

@@ -1,0 +1,157 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+Resource          ../../对象库/功能.txt
+
+*** Variables ***
+${share}          {'act':'share','value':0}
+${shareresult}    {'act':'shareresult','value':1}
+${pfc}            {'act':'pfc'}
+${table_click}    mpp_jiaohu_ipad_imy
+
+*** Test Cases ***
+#登陆初始化
+#    首页－我的
+#    判断是否登录-未登陆执行登陆
+#    首页－频道
+
+小屏－点击分享按钮
+    首页－搜索视频
+    搜索－输入搜索词    罗昊给周扬青拍照，每一张都是原图直出
+    搜索－键盘搜索
+    click element  xpath=(//XCUIElementTypeStaticText[@name="罗昊给周扬青拍照，每一张都是原图直出"])[2]
+    sleep  10
+    点播播放页－小屏分享
+    公共－校验结果    {'act':'share'}    share    ${table_click}    1
+
+点分享pfc
+    公共－校验结果    ${pfc}    pfc_06    ${table_click}    1
+
+小屏－分享到朋友圈
+    sleep    3
+    click a point    387    509
+    #click element    nsp=name=="moresetting share timeline" and type=="XCUIElementTypeButton"
+    sleep    3
+    公共－校验结果    ${share}    share_07    mpp_jiaohu_ipad    1
+
+小屏－分享到朋友圈结果
+    click a point  100  100
+    sleep  1
+    #公共－校验结果    ${shareresult}    share_07_result    mpp_jiaohu_ipad    1
+
+小屏－分享到微信
+    点播播放页－小屏分享
+    公共－清除数据
+    click a point  623  509
+    #click element    nsp=name=="moresetting share wechat" and type=="XCUIElementTypeButton"
+    sleep    2
+    公共－校验结果    ${share}    share_03    mpp_jiaohu_ipad    1
+
+小屏－分享到微信结果
+    click a point  100  100
+    sleep  1
+    #公共－校验结果    ${shareresult}    share_08    mpp_jiaohu_result_ipad    1
+
+小屏－分享到微博
+    点播播放页－小屏分享
+    公共－清除数据
+    #click element    nsp=name=="moresetting share weibo" and type=="XCUIElementTypeButton"
+    click a point  564  509
+    sleep    2
+    公共－校验结果    ${share}    share_09    mpp_jiaohu_ipad    1
+
+小屏－分享到微博结果
+    click a point  100  100
+    sleep  1
+    #公共－校验结果    ${shareresult}    share_09    mpp_jiaohu_result_ipad    1
+
+小屏－分享到QQ
+    点播播放页－小屏分享
+    公共－清除数据
+    #click element    nsp=name=="moresetting share qq" and type=="XCUIElementTypeButton"
+    click a point  446  509
+    sleep    2
+    #公共－校验结果    ${share}    share_10    mpp_jiaohu_ipad    1
+
+小屏－分享到QQ结果
+    click a point  100  100
+    sleep  1
+    #公共－校验结果    ${shareresult}    share_10    mpp_jiaohu_result_ipad    1
+
+小屏－分享到QQ空间
+    点播播放页－小屏分享
+    公共－清除数据
+    #click element    nsp=name=="moresetting share qzone" and type=="XCUIElementTypeButton"
+    click a point  505  509
+    sleep    2
+    #公共－校验结果    ${share}    share_051    mpp_jiaohu_ipad    1
+
+小屏－分享到QQ空间结果
+    click a point  100  100
+    sleep  1
+    #公共－校验结果    ${shareresult}    share_101    mpp_jiaohu_result_ipad    1
+
+全屏－点击分享按钮
+    tap    xpath=//XCUIElementTypeButton[@name="player back icon"]    200    200    count=2
+    click a point    300    300
+    sleep    3
+    点播播放页－全屏
+    公共－清除数据
+    sleep    2
+    全屏播放页－设置
+
+全屏－分享到朋友圈
+    公共－清除数据
+    sleep    3
+    click element    name=朋友圈
+    sleep    2
+    公共－校验结果    ${share}    share_07    mpp_jiaohu_ipad    1
+
+全屏－分享到朋友圈结果
+    click a point  100  100
+    sleep  1
+    #公共－校验结果    ${shareresult}    share_07    mpp_jiaohu_result_ipad    1
+
+全屏－分享到微信
+    全屏播放页－设置
+    公共－清除数据
+    click element    name=微信好友
+    sleep    2
+    公共－校验结果    ${share}    share_08    mpp_jiaohu_ipad    1
+
+全屏－分享到微信结果
+    click a point  100  100
+    #公共－校验结果    ${shareresult}    share_08    mpp_jiaohu_result_ipad    1
+
+全屏－分享到微博
+    全屏播放页－设置
+    公共－清除数据
+    click element    name=新浪微博
+    sleep    2
+    公共－校验结果    ${share}    share_09    mpp_jiaohu_ipad    1
+
+全屏－分享到微博结果
+    click a point  100  100
+    #公共－校验结果    ${shareresult}    share_09    mpp_jiaohu_result_ipad    1
+
+全屏－分享到QQ
+    全屏播放页－设置
+    公共－清除数据
+    click element    name=QQ
+    sleep    2
+    公共－校验结果    ${share}    share_10    mpp_jiaohu_ipad    1
+
+全屏－分享到QQ结果
+    click a point  100  100
+    #公共－校验结果    ${shareresult}    share_10    mpp_jiaohu_result_ipad    1
+
+退出点播
+    点播播放页－返回

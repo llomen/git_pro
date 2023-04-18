@@ -1,0 +1,85 @@
+*** Settings ***
+Library           AppiumLibrary
+Resource          ./公共.txt
+
+*** Keywords ***
+首页－搜索视频
+    首页－搜索入口
+    sleep   3
+
+首页－搜索入口
+    #公共－xpath    //XCUIElementTypeTextField[@name=“search_textField”]/preceding-sibling::XCUIElementTypeButton[1]
+    click element    xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther
+
+首页－频道管理
+    公共－点击页面文本    home all channel
+
+首页－每日放送
+    公共－点击页面文本    home play bill
+
+首页－频道
+    公共－xpath    //XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[1]
+    sleep  5
+
+首页－大芒
+    公共－xpath    //XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[2]
+    sleep  3
+
+首页－会员
+    公共－xpath    //XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[3]
+    sleep  3
+
+首页－一起看
+    公共－xpath    //XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[4]
+    sleep  3
+
+首页－我的
+    sleep  5
+    公共－xpath    //XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[5]
+    sleep  3
+
+首页－精选频道
+    公共－点击页面文本    精选
+    sleep  3
+
+首页－综艺频道
+    公共－点击页面文本    综艺
+    sleep  3
+
+首页－电视剧频道
+    公共－点击页面文本    电视剧
+    sleep  3
+
+首页－电影频道
+    点击文本    电影
+    sleep  3
+
+首页－电影频道1
+    公共－xpath    	//XCUIElementTypeStaticText[@name="电影"]
+
+首页－动漫频道
+    公共－点击页面文本    动漫
+    sleep  3
+
+首页－少儿频道
+    公共－点击页面文本    少儿
+    sleep  3
+
+首页－直播频道
+    公共－点击页面文本    直播
+    sleep  3
+
+首页－音乐频道
+    公共－点击页面文本    音乐
+    sleep  3
+
+首页－屏幕左滑
+    Comment    swipe    1000    500    0    -500
+    Comment    sleep    1
+    swipe    750    55    350    55
+    sleep    1
+
+
+首页-片库
+    公共－点击页面文本      片库
+    sleep  3

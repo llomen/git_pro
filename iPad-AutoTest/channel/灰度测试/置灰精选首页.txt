@@ -1,0 +1,48 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+精选首页
+    图片对比
+
+负一屏
+    首页－频道
+    swipe    100    600    100   200
+    图片对比
+
+负二屏
+    swipe    100    600    100   200
+    图片对比
+
+负三屏
+    swipe    100    600    100   200
+    图片对比
+
+负四屏
+    swipe    100    600    100   200
+    图片对比
+
+负五屏
+    swipe    100    600    100   200
+    图片对比
+
+负六屏
+    swipe    100    600    100   200
+    图片对比
+
+负七屏
+    swipe    100    600    100   200
+    图片对比

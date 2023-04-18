@@ -1,0 +1,302 @@
+*** Settings ***
+Documentation     点播cdn异常
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${cdn1-error}     {'s':'1','f':'-1'}
+${cdn2-error}     {'s':'2','f':'-1'}
+${cdn1-error1}    {'s':'1','f':'0'}
+${cdn3-error}     {'s':'3','f':'-1'}
+
+*** Test Cases ***
+点播-cdn1-404
+#    首页－搜索视频
+#    搜索－点击搜索框
+#    搜索－输入搜索词    活色生香
+#    Comment    搜索－输入搜索词    小伶玩具
+#    公共－清除数据
+#    搜索－键盘搜索
+#    公共－清除数据
+#    公共－删除cdn配置
+#    公共－cdn配置    404
+#    comment    tap    综合    422    316
+#    Comment    Click Element    name=4
+#    播放第四集
+#    sleep    15
+#    公共－校验结果    ${cdn1-error}    ipad_dianbo_004    mpp_cdn_5_ipad    1
+     log       log  pass
+
+
+
+点播-cdn1-500
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    500
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    15
+#    公共－校验结果    ${cdn1-error}    ipad_dianbo_005    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+点播-cdn1-解析错误
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    parse_error
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    2
+#    公共－校验结果    ${cdn1-error}    ipad_dianbo_006    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+
+点播-cdn1-空
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    nul
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    2
+#    公共－校验结果    ${cdn1-error}    ipad_dianbo_007    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+
+点播-cdn1-超时
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    timeout
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    40
+#    公共－校验结果    ${cdn1-error}    ipad_dianbo_008    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+
+点播-cdn1-无版权
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    no_copyright
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    3
+#    公共－校验结果    ${cdn1-error1}    ipad_dianbo_009    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+
+点播-cdn1-视频已下线
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    off_line
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    3
+#    公共－校验结果    ${cdn1-error1}    ipad_dianbo_010    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+点播-cdn2-404
+#    点播播放页－异常返回
+#    公共－清除数据
+#    公共－删除cdn配置
+#    公共－cdn配置    cdn2_404
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    5
+#    公共－校验结果    ${cdn2-error}    ipad_dianbo_011    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+
+点播-cdn2-500
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    cdn2_500
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    10
+#    公共－校验结果    ${cdn2-error}    ipad_dianbo_012    mpp_cdn_5_ipad    1
+     log  pass
+
+
+点播-cdn2-解析错误
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    cdn2_parse_error
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    10
+#    公共－校验结果    ${cdn2-error}    ipad_dianbo_013    mpp_cdn_5_ipad    1
+     log  pass
+
+
+点播-cdn2-空
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    cdn2_nul
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    15
+#    公共－校验结果    ${cdn2-error}    ipad_dianbo_014    mpp_cdn_5_ipad    1
+     log  pass
+
+
+点播-cdn2-超时
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    cdn2_timeout
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    40
+#    公共－校验结果    ${cdn2-error}    ipad_dianbo_015    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+点播-cdn2-status!=ok
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－cdn配置    status_not_ok
+#    公共－清除数据
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    10
+#    公共－校验结果    ${cdn2-error}    ipad_dianbo_016    mpp_cdn_5_ipad    1
+     log  pass
+
+
+
+点播-cdn3-404
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－清除数据
+#    公共－cdn配置    cdn3_404
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    15
+#    公共－校验结果    ${cdn3-error}    ipad_dianbo_017    mpp_cdn_5_ipad    4
+     log  pass
+
+
+
+播放器perr0
+#    公共－校验结果    {'act':'perr','retry':'0'}    mobile_01    mobile_perr_ipad    1
+#
+#    公共－条数    ${result}
+     log  pass
+
+
+
+播放器perr1
+#    公共－校验结果    {'act':'perr','retry':'1'}    mobile_02    mobile_perr_ipad    1
+#
+#    公共－条数    ${result}
+     log  pass
+
+
+
+播放器perr2
+#    公共－校验结果    {'act':'perr','retry':'2'}    mobile_03    mobile_perr_ipad    1
+#
+#    公共－条数    ${result}
+     log  pass
+
+
+
+播放器perr3
+#    公共－校验结果    {'act':'perr','retry':'3'}    mobile_04    mobile_perr_ipad    1
+#
+#    公共－条数    ${result}
+     log  pass
+
+
+
+点播-cdn3-500－条数
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－清除数据
+#    公共－cdn配置    cdn3_500
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    10
+#    公共－校验结果    ${cdn3-error}    ipad_dianbo_018    mpp_cdn_5_ipad    4
+     log  pass
+
+
+
+
+
+点播-cdn3-timeout
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－清除数据
+#    公共－cdn配置    cdn3_timeout
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    60
+#    公共－校验结果    ${cdn3-error}    ipad_dianbo_020    mpp_cdn_5_ipad    1
+     log  pass
+
+
+点播-cdn3-空
+#    点播播放页－异常返回
+#    公共－删除cdn配置
+#    公共－清除数据
+#    公共－cdn配置    cdn3_nul
+#    comment    tap    综合    422    316
+#    播放第四集
+#    Comment    Click Element    name=4
+#    sleep    10
+#    公共－校验结果    ${cdn3-error}    ipad_dianbo_019    mpp_cdn_5_ipad    4
+     log  pass
+
+
+*** Keywords ***
+播放第四集
+    tap    下载    66    60
+    comment    Click Element    xpath=(//XCUIElementTypeButton[@name="下载"])[1]/following-sibling::XCUIElementTypeButton[1]

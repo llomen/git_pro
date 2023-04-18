@@ -1,0 +1,93 @@
+# -*- coding:utf8 -*-
+*** Settings ***
+Documentation     频道曝光
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Test Cases ***
+
+会员页面show
+    公共－清除数据
+    首页－会员
+    sleep  2
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep   3
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep  2
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep   2
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep   2
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep   2
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep   2
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep  2
+    公共－校验结果    {'act':'show','flag':'9860'}    vip_index    mpp_show_ipad    1
+
+会员闪图show
+    公共－校验结果    {'act':'show','flag':'9861'}    vip_shantu    mpp_show_ipad    1
+
+会员热榜show
+    公共－校验结果    {'act':'show','flag':'7521'}    vip_hot    mpp_show_ipad    2
+
+精选电影show
+    公共－校验结果    {'act':'show','flag':'10597'}    vip_film    mpp_show_ipad    2
+
+特供综艺衍生趴内容show
+    公共－校验结果    {'act':'show','flag':'22009'}    vip_tegong    mpp_show_ipad    1
+
+#衍生模块show
+#    公共－校验结果    {'act':'show','flag':'13315'}    vip_yanshen    mpp_show_ipad    2
+#
+#会员网大show
+#    公共－校验结果    {'act':'show','flag':'14628'}    vip_wangda    mpp_show_ipad    1
+#
+#影院复映片单show
+#    公共－校验结果    {'act':'show','flag':'12085'}    vip_replay    mpp_show_ipad    2
+#
+#会员剧show
+#    公共－校验结果    {'act':'show','flag':'7549'}    vip_vipfilm    mpp_show_ipad    2
+#
+#治愈*4竖图
+#    公共－校验结果    {'act':'show','flag':'7992'}    vip_zhiyu    mpp_show_ipad    1
+#
+#喜剧*8竖图
+#    公共－校验结果    {'act':'show','flag':'7558'}    vip_xiju    mpp_show_ipad    1
+

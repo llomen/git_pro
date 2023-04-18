@@ -1,0 +1,180 @@
+*** Settings ***
+Documentation     明星搜索结果18
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','tst':'0'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${recommend_field}    {'act':'recommended'}
+${recommend_rel_field}    {'act':'recommend_rel'}
+${pv_start}       {'act':'pv','type':'start'}
+${pv_first}       {'act':'pv','type':'first'}
+${pv_success}     {'act':'pv','type':'success'}
+${ad_start}       {'act':'pv','type':'start'}
+${ad_needplay}    {'act':'ad','type':'need-play'}
+${ad_complete}    {'act':'ad','type':'complete'}
+${cdn_start}      {'act':'cdn','type':'start'}
+${cdn_success}    {'act':'cdn','type':'success'}
+${router_start}    {'act':'router','type':'start'}
+${router_success}    {'act':'router','type':'success'}
+${action_field}    {'act':'action'}
+
+*** Test Cases ***
+明星搜索结果页pvs
+    首页－搜索视频
+    搜索－点击搜索框
+    搜索－输入搜索词    赵丽颖
+    sleep    2
+    公共－清除数据
+    搜索－键盘搜索
+    sleep    3
+    公共－校验结果    ${pvs_field}    search_016    mpp_pvs_ipad    1
+
+
+
+明星搜索search
+    公共－校验结果    ${search_field}    ipad_search_011    mpp_search_data_ipad    1
+
+
+
+
+
+明星搜索view
+    公共－校验结果    ${view_field}    ipad_view_011    mpp_view_data_ipad    1
+
+
+
+
+热门作品click
+    公共－清除数据
+    Click Element    name=偶像来了
+    sleep    2
+    公共－校验结果    ${click_field}    ipad_click_009    mpp_click_data_ipad    1
+
+
+
+
+
+热门作品action
+    公共－校验结果    ${action_field}    mingyi_zuopin_zhongjianye    mpp_action_ipad    1
+
+
+
+
+
+热门作品pvs
+    公共－校验结果    ${pvs_field}    search_019    mpp_pvs_ipad    1
+
+
+
+
+
+热门作品返回pvs
+    sleep    5
+    点播播放页－返回
+    公共－校验结果    ${pvs_field}    search_019    mpp_pvs_ipad    1
+
+
+
+
+全部作品click
+    公共－清除数据
+    sleep    3
+    公共－xpath    //XCUIElementTypeButton[@name="更多作品 "]
+    sleep    2
+    公共－校验结果    ${click_field}    ipad_click_009    mpp_click_data_ipad    1
+
+
+
+
+
+全部作品action
+    公共－校验结果    ${action_field}    mingyi_zuopin_zhongjianye    mpp_action_ipad    1
+
+
+
+
+
+进入全部作品pvs
+    公共－校验结果    ${pvs_field}    search_019    mpp_pvs_ipad    1
+
+
+
+
+
+全部作品-切换标签action
+    公共－清除数据
+    公共－xpath    (//XCUIElementTypeStaticText[@name="综艺"])[1]
+    公共－校验结果    ${action_field}    mingyi_zuopin_zhongjianye    mpp_action_ipad    1
+
+
+
+
+
+明星全部作品action
+    公共－清除数据
+    公共－点击页面文本    偶像来了
+    sleep    5
+    公共－校验结果    ${action_field}    mingyi_zuopin_zhongjianye    mpp_action_ipad    1
+
+
+
+
+
+全部作品跳转点播页pvs
+    公共－校验结果    ${pvs_field}    search_019    mpp_pvs_ipad    1
+
+
+
+
+
+返回明星全部作品pvs
+    公共－清除数据
+    点播播放页－返回
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_020    mpp_pvs_ipad    1
+
+
+
+
+
+返回搜索结果页pvs
+    公共－清除数据
+    公共－点击页面文本    关闭
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_020    mpp_pvs_ipad    1
+
+
+
+
+
+相关明星搜索search
+    公共－清除数据
+    公共－点击页面文本    唐嫣
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_search_009    mpp_search_data_ipad    1
+
+
+
+
+
+相关明星搜索view
+    公共－校验结果    ${view_field}    ipad_view_009    mpp_view_data_ipad    1
+
+
+
+

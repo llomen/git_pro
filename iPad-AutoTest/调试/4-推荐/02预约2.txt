@@ -1,0 +1,150 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+Resource          ../../对象库/功能.txt
+
+
+*** Variables ***
+${xc}             {'act':'xc'}
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${hb_15_sdk}      {'act':'hb','ht':'3','mf':'Apple manufacturer'}
+${hb_45_sdk}      {'act':'hb','ht':'4','mf':'Apple manufacturer'}
+${hb_60_sdk}      {'act':'hb','ht':'5','mf':'Apple manufacturer'}
+${hb_120_sdk}     {'act':'hb','ht':'6','mf':'Apple manufacturer'}
+${hb_out_sdk}     {'act':'hb','ht':'2','mf':'Apple manufacturer'}
+${table_sdk}      mpp_hb_5_ipad_sdk
+${table}          mpp_hb_5_ipad
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${btclick}        {'act':'btclick'}
+${table_click}    {'act':'btclick'}
+${table_pvs}      mpp_pvs_ipad
+${cv}             {'logtype':'cv'}
+${table_cv}       mpp_cv_iphone
+${aplay}          {'act':'aplay'}
+${table_vv}       mpp_vv_5_ipad
+
+*** Test Cases ***
+点我的预约跳登录pvs
+    初始退出登录
+    滑动到预览页面
+    公共－清除数据
+    点我的预约
+    公共－校验结果    ${pvs_field}    yuyue_06    ${table_pvs}    1
+
+登录页返回pvs
+    公共－清除数据
+    登录－关闭
+    公共－校验结果    ${pvs_field}    yuyue_07    ${table_pvs}    1
+
+点预约按钮跳登录pvs
+    公共－清除数据
+    点预约按钮
+    公共－校验结果    ${pvs_field}    yuyue_06    ${table_pvs}    1
+
+点预约按钮btclick
+    公共－校验结果    ${btclick}    btclick_03    mpp_jiaohu_ipad_qita    1
+
+登录后再次预约btclick
+    直接登录    ${mail_account}    ${mail_password}    ${mail_name}
+    公共－清除数据
+    点预约按钮
+    公共－校验结果    ${btclick}    btclick_03    mpp_jiaohu_ipad_qita    1
+
+取消预约btclick
+    公共－清除数据
+    点取消预约按钮
+    公共－校验结果    ${btclick}    btclick_04    mpp_jiaohu_ipad_qita    1
+
+预览页点预约btclick
+    进入预览页
+    公共－清除数据
+    预览页点预约
+    公共－校验结果    ${btclick}    btclick_05    mpp_jiaohu_ipad_qita    1
+
+预览页点取消预约btclick
+    公共－清除数据
+    click a point   379      779
+    公共－校验结果    ${btclick}    btclick_06    mpp_jiaohu_ipad_qita    1
+
+预览页返回加一个预约
+    预览页点预约
+    关闭预览页
+
+点我的预约跳已上线cv
+    公共－清除数据
+    点我的预约
+    公共－校验结果    ${cv}    yuyue_01    ${table_cv}    1
+
+切换到待上线cv
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeButton[contains(@name, "待上线")]
+    公共－校验结果    ${cv}    yuyue_02    ${table_cv}    1
+
+
+点视频跳点播页pvs
+    公共－清除数据
+    click a point    383   149
+    sleep    3
+    公共－校验结果    ${pvs_field}    yuyue_08    ${table_pvs}    1
+
+
+
+
+预览页播放vv
+    sleep    15
+    公共－校验结果    ${aplay}    ipad_yuyue_03    ${table_vv}    1
+
+
+
+
+点播页返回pvs
+    公共－清除数据
+    点播播放页－返回
+    公共－校验结果    ${pvs_field}    chwatch_002    ${table_pvs}    1
+
+
+退出登录
+    初始退出登录
+
+*** Keywords ***
+点我的预约
+    公共－xpath    //XCUIElementTypeStaticText[@name="我的预约"]/following-sibling::XCUIElementTypeButton[1]
+
+点预约按钮
+    公共－xpath    	(//XCUIElementTypeButton[@name="预约"])[3]
+    sleep  2
+
+点取消预约按钮
+    公共－点击页面文本    已预约
+    sleep  2
+
+预览页点预约
+    公共－xpath       (//XCUIElementTypeButton[@name="预约"])[2]
+    click a point   379      779
+    sleep  2
+
+进入预览页
+    公共－点击页面文本    精灵旅社4
+    sleep    5
+
+关闭预览页
+    公共－点击页面文本    ×
+
+滑动到预览页面
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+    sleep    5

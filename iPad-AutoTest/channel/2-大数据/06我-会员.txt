@@ -1,0 +1,199 @@
+*** Settings ***
+Documentation     我-会员
+
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+
+Resource          ../../对象库/公共.txt
+#Resource          ../../对象库/首页.txt
+#Resource          ../../对象库/我.txt
+
+
+*** Variables ***
+${pvs_field}      {'act':'pvs'}
+${support}        {'act':'support'}
+${DoLogin}        {'act':'DoLogin','mf':'Apple'}
+${Logout}         {'act':'Logout','mf':'Apple'}
+${VerifyImgGet}    {'act':'VerifyImgGet','mf':'Apple'}
+${Logout}         {'act':'Logout','mf':'Apple'}
+${phone_account}    testitv@163.com
+${phone_password}    111111
+${imy}            {'act':'imy'}
+${table_imy}      mpp_jiaohu_ipad_imy
+
+*** Test Cases ***
+
+
+
+vip邮箱登录成功跳手机验证pvs
+    首页－我的
+    我的－判断是否登录
+    我的－点击登录
+    登录-是否有历史页面
+    登录-点邮箱icon
+    公共－清除数据
+    公共-邮箱登录    ${phone_account}    ${phone_password}
+    capture page screenshot
+    sleep   5
+    公共－校验结果    {'act':'pvs'}   login_002    mpp_pvs_ipad    1
+
+vip邮箱登录成功DoLogin
+    公共－校验结果    ${DoLogin}    shouji_003    mpp_interactive_ipad    1
+
+播放记录列表-点播页pv
+    公共－清除数据
+    click a point    147    410
+    sleep    8
+    公共－校验结果    ${pvs_field}    playhistory_list_player1    mpp_pvs_ipad    1
+    click element    name=player back icon
+
+播放记录列表-点播页vv
+    get window height
+    公共－校验结果    {'act':'aplay'}    playhistory_list_player    mpp_vv_5_ipad    1
+
+播放记录列表show
+    get window height
+    #公共－校验结果    {'logtype':'show'}    playhistory_list    mpp_show_5_iphone_sdk    1    #后端show不能解析lob报500
+
+播放记录列表页-点击某一个视频
+    公共－校验结果    {'act':'imy'}    playhistory_list_player    mpp_click_ipad    1
+
+播放记录列表页-点>进入播放模块页面
+    公共－清除数据
+    click a point    1322    303
+    sleep    3
+    公共－校验结果    {'act':'imy'}    playhistory_list_button    mpp_click_ipad    1
+
+播放记录模块-点播pv
+    公共－清除数据
+    click a point    732    262
+    sleep    3
+    公共－校验结果    ${pvs_field}    playhistory_list_player2    mpp_pvs_ipad    1
+    click element    name=player back icon
+
+播放记录模块-点击视频播放
+    公共－校验结果    {'act':'imy'}    playhistory_module_player    mpp_click_ipad    1
+
+播放记录模块-点播vv
+    #get window height
+    公共－校验结果    {'act':'aplay'}    playhistory_module_player    mpp_aplay_5_ipad    1
+
+播放记录模块show
+    Capture Page Screenshot
+    #公共－校验结果    {'logtype':'show'}    playhistory_list2    mpp_show_ipad    1    #后端bug 500
+
+vip手机登录成功pvs
+    首页－我的
+    我的－判断是否登录
+    我的－点击登录
+    登录-是否有历史页面
+    click element    xpath=//XCUIElementTypeButton[@name="账号登录"]
+    input text    xpath=//XCUIElementTypeTextField[@value="请输入手机号"]    15344443364
+    input password    xpath=//XCUIElementTypeSecureTextField[@value="请输入密码"]    070337
+    我的－勾选隐私协议
+    公共－清除数据
+    click a point    678    349
+    sleep    3
+    公共－校验结果    ${pvs_field}    login_012    mpp_pvs_ipad    1
+
+手机登录成功DoLogin
+    公共－校验结果    ${DoLogin}    shouji_001    mpp_interactive_ipad    1
+
+会员点VIP会员pvs
+    公共－清除数据
+    公共－点击页面文本    VIP会员
+    sleep    3
+    公共－校验结果    ${pvs_field}    vip_003    mpp_pvs_ipad    1
+
+会员点VIP会员imy
+    公共－校验结果    ${imy}    imy_06    ${table_imy}    1
+
+我的观影卷pvs
+    公共－清除数据
+    tap    xpath=//XCUIElementTypeLink[@name=" 观影券"]    0    0
+    sleep    2
+    公共－校验结果    ${pvs_field}    guanyingjuan_001    mpp_pvs_ipad    1
+
+获取观影卷pvs
+    公共－清除数据
+    按坐标点击元素    name=续费
+    sleep    2
+    公共－校验结果    ${pvs_field}    guanyingjuan_003    mpp_pvs_ipad    1
+
+获取观影卷返回pvs
+    公共－清除数据
+    公共－支付页关闭
+    sleep    1
+    公共－校验结果    ${pvs_field}    guanyingjuan_004    mpp_pvs_ipad    1
+
+我的观影卷返回pvs
+    sleep    2
+    公共－清除数据
+    公共－点击页面文本    back icon
+    公共－校验结果    ${pvs_field}    guanyingjuan_002    mpp_pvs_ipad    1
+
+交易记录pvs
+    公共－清除数据
+    tap    xpath=//XCUIElementTypeLink[@name=" 交易记录"]    0    0
+    sleep    2
+    公共－校验结果    ${pvs_field}    dingdan_001    mpp_pvs_ipad    1
+
+交易记录返回pvs
+    公共－清除数据
+    公共－点击页面文本    back icon
+    sleep    2
+    公共－校验结果    ${pvs_field}    dingdan_002    mpp_pvs_ipad    1
+
+VIP会员关闭pvs
+    公共－清除数据
+    sleep    5
+    我的-关闭右侧窗口
+    公共－校验结果    ${pvs_field}    vip_006    mpp_pvs_ipad    1
+
+意见反馈
+    公共-屏幕上滑
+    设置－意见反馈
+    公共－清除数据
+    按坐标点击元素    name=其他问题
+    按坐标点击元素    name=确定
+
+意见反馈返回pvs
+    公共－清除数据
+    我的-关闭右侧窗口
+    sleep    2
+    公共－校验结果    ${pvs_field}    support02    mpp_pvs_ipad    1
+
+修改密码pvs
+    我的－设置
+    公共－清除数据
+    Click Element    name=修改密码
+    sleep    3
+    公共－校验结果    ${pvs_field}    changepasswd_001    mpp_pvs_ipad    1
+
+修改密码返回pvs
+    公共－清除数据
+    我的-二级页面返回
+    公共－校验结果    ${pvs_field}    changepasswd_002    mpp_pvs_ipad    1
+
+绑定号码pvs
+    公共－清除数据
+    Click Element    name=绑定号码
+    sleep    3
+    公共－校验结果    ${pvs_field}    changepasswd_001    mpp_pvs_ipad    1
+
+绑定号码返回pvs
+    公共－清除数据
+    我的-二级页面返回
+    公共－校验结果    ${pvs_field}    changepasswd_002    mpp_pvs_ipad    1
+
+退出登录Logout
+    首页－我的
+    我的－设置
+    我的-设置菜单上滑
+    公共－清除数据
+    Click Element    name=退出登录
+    sleep    3
+    公共－校验结果    ${Logout}    shouji_002    mpp_interactive_ipad    1
+
+退出登录返回我的pvs
+    公共－校验结果    ${pvs_field}    login_011    mpp_pvs_ipad    1

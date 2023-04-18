@@ -1,0 +1,68 @@
+*** Settings ***
+Documentation     搜索入口
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Variables ***
+${src_path}     /Users/atx/Desktop/iPad-AutoTest/img/my.PNG  #../../img/music.PNG
+${dst_path}     /Users/atx/Desktop/iPad-AutoTest/img/dst_imgage.PNG  #../../img/dst_image.PNG
+
+*** Test Cases ***
+
+搜索入口
+    sleep  3
+    功能-xpath存在则点击  //XCUIElementTypeButton[@name="我知道了"]
+    #click element    xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther
+    搜索-功能模块 点击搜索框
+    验证-页面存在元素值    热门内容
+    sleep    2
+
+搜索历史
+    #搜索－点击搜索框
+    搜索－输入搜索词    aa
+    搜索－键盘搜索
+    搜索－取消
+    # 搜索结果－点击关闭按钮
+    搜索-功能模块 点击搜索框
+    验证-页面存在元素值    aa
+
+搜索历史删除
+    Click element    name=Trash
+    Click element    name=删除
+    验证-页面不存在元素值    aa
+
+热门搜索
+    #搜索－点击搜索框
+    公共－点击页面文本    9
+    sleep    2
+    搜索结果－点击关闭按钮
+
+热门推荐
+    #首页－搜索视频
+    Comment    验证-页面存在元素值    热门推荐
+    公共－点击页面文本    动漫
+    公共－点击页面文本    综艺
+
+热门推荐跳转点播
+    click a point   591      295  #点击搜索推荐第一个视频
+    点播播放页－返回
+    搜索结果－点击关闭按钮
+
+
+搜索过程中唤起键盘
+    搜索－输入搜索词    w
+    搜索－取消
+
+默认搜索词
+    click element  xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther
+    click element    name=searchTextField
+    搜索－键盘搜索
+    #验证-页面存在元素值    筛选

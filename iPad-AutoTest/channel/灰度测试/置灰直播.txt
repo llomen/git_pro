@@ -1,0 +1,39 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+直播
+    首页－频道
+    swipe  600   33   100   33
+    sleep  3
+    click element  nsp=label=="直播" and type=="XCUIElementTypeStaticText"
+    sleep  3
+    click element  nsp=label=="快乐购" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+直播送礼
+    click a point  980   726
+    图片对比
+    click a point  980   500
+    sleep  3
+
+直播调起热聊输入框
+    click element  nsp=label=="和大家聊聊吧" and type=="XCUIElementTypeTextField"
+    图片对比
+
+直播喊话按钮
+    点击文本  喊话
+    图片对比

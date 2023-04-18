@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.9.4 on darwin)" generated="20230216 15:50:44.661" rpa="false">
+<suite id="s1" name="1搜索入口" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/7-功能/1搜索入口.txt">
+<kw name="公共－初始化环境" library="公共" type="setup">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20230216 15:50:48.942" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230216 15:50:45.941" endtime="20230216 15:50:48.942"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20230216 15:50:48.942" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20230216 15:50:48.942" endtime="20230216 15:50:48.960"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20230216 15:50:53.961" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230216 15:50:48.960" endtime="20230216 15:50:53.961"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:50:45.941" endtime="20230216 15:50:53.961"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=iPad</arg>
+<arg>platformVersion=14.4.1</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>udid=f4168aea0d6a99829d75f3ea681f430ad71df1ea</arg>
+<arg>bundleId=com.imgo.tv.hd</arg>
+<arg>AutomationName=XCUITest</arg>
+</arguments>
+<status status="PASS" starttime="20230216 15:50:53.961" endtime="20230216 15:51:02.396"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20230216 15:51:12.397" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:02.397" endtime="20230216 15:51:12.397"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:50:45.941" endtime="20230216 15:51:12.398"></status>
+</kw>
+<test id="s1-t1" name="搜索入口">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20230216 15:51:15.399" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:12.398" endtime="20230216 15:51:15.399"></status>
+</kw>
+<kw name="功能-xpath存在则点击" library="功能">
+<arguments>
+<arg>//XCUIElementTypeButton[@name="我知道了"]</arg>
+</arguments>
+<kw name="元素是否存在" library="功能">
+<arguments>
+<arg>xpath=${xpath}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" starttime="20230216 15:51:15.401" endtime="20230216 15:51:16.873"></status>
+</kw>
+<msg timestamp="20230216 15:51:16.873" level="INFO">${res} = True</msg>
+<status status="PASS" starttime="20230216 15:51:15.400" endtime="20230216 15:51:16.873"></status>
+</kw>
+<msg timestamp="20230216 15:51:16.873" level="INFO">${res} = True</msg>
+<status status="PASS" starttime="20230216 15:51:15.400" endtime="20230216 15:51:16.873"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${res}"=="${true}"</arg>
+<arg>click element</arg>
+<arg>xpath=${xpath}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${xpath}</arg>
+</arguments>
+<msg timestamp="20230216 15:51:16.875" level="INFO">Clicking element 'xpath=//XCUIElementTypeButton[@name="我知道了"]'.</msg>
+<status status="PASS" starttime="20230216 15:51:16.874" endtime="20230216 15:51:18.526"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:16.873" endtime="20230216 15:51:18.526"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:51:20.527" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:18.527" endtime="20230216 15:51:20.528"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:15.399" endtime="20230216 15:51:20.528"></status>
+</kw>
+<kw name="搜索-功能模块 点击搜索框" library="搜索">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:51:22.529" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:20.528" endtime="20230216 15:51:22.529"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther</arg>
+</arguments>
+<msg timestamp="20230216 15:51:22.531" level="INFO">Clicking element 'xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther'.</msg>
+<status status="PASS" starttime="20230216 15:51:22.529" endtime="20230216 15:51:23.853"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:20.528" endtime="20230216 15:51:23.853"></status>
+</kw>
+<kw name="验证-页面存在元素值" library="功能">
+<arguments>
+<arg>热门内容</arg>
+</arguments>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:51:29.481" level="INFO">Current page contains text '热门内容'.</msg>
+<status status="PASS" starttime="20230216 15:51:23.854" endtime="20230216 15:51:29.481"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:23.853" endtime="20230216 15:51:29.481"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:51:31.481" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:29.481" endtime="20230216 15:51:31.482"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:12.398" endtime="20230216 15:51:31.482" critical="yes"></status>
+</test>
+<test id="s1-t2" name="搜索历史">
+<kw name="搜索－输入搜索词" library="搜索">
+<arguments>
+<arg>aa</arg>
+</arguments>
+<kw name="Input Value" library="AppiumLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<arguments>
+<arg>name=searchTextField</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20230216 15:51:31.485" level="INFO">Setting text 'aa' into text field 'name=searchTextField'</msg>
+<status status="PASS" starttime="20230216 15:51:31.484" endtime="20230216 15:51:33.588"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:51:35.590" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:33.588" endtime="20230216 15:51:35.590"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:31.483" endtime="20230216 15:51:35.590"></status>
+</kw>
+<kw name="搜索－键盘搜索" library="搜索">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:51:36.591" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:51:35.591" endtime="20230216 15:51:36.591"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=Search</arg>
+</arguments>
+<msg timestamp="20230216 15:51:36.593" level="INFO">Clicking element 'name=Search'.</msg>
+<status status="PASS" starttime="20230216 15:51:36.592" endtime="20230216 15:51:38.427"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20230216 15:51:41.428" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:38.427" endtime="20230216 15:51:41.428"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:35.591" endtime="20230216 15:51:41.428"></status>
+</kw>
+<kw name="搜索－取消" library="搜索">
+<kw name="公共－点击页面文本" library="公共">
+<arguments>
+<arg>取消</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:51:42.430" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:51:41.429" endtime="20230216 15:51:42.430"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:51:42.431" level="INFO">Clicking element 'name=取消'.</msg>
+<status status="PASS" starttime="20230216 15:51:42.430" endtime="20230216 15:51:45.847"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:51:47.847" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:45.847" endtime="20230216 15:51:47.847"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:41.429" endtime="20230216 15:51:47.848"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:41.429" endtime="20230216 15:51:47.848"></status>
+</kw>
+<kw name="搜索-功能模块 点击搜索框" library="搜索">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:51:49.849" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:51:47.849" endtime="20230216 15:51:49.850"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther</arg>
+</arguments>
+<msg timestamp="20230216 15:51:49.851" level="INFO">Clicking element 'xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther'.</msg>
+<status status="PASS" starttime="20230216 15:51:49.850" endtime="20230216 15:51:51.190"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:47.848" endtime="20230216 15:51:51.190"></status>
+</kw>
+<kw name="验证-页面存在元素值" library="功能">
+<arguments>
+<arg>aa</arg>
+</arguments>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:51:56.872" level="INFO">Current page contains text 'aa'.</msg>
+<status status="PASS" starttime="20230216 15:51:51.191" endtime="20230216 15:51:56.872"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:51.190" endtime="20230216 15:51:56.873"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:31.482" endtime="20230216 15:51:56.873" critical="yes"></status>
+</test>
+<test id="s1-t3" name="搜索历史删除">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=Trash</arg>
+</arguments>
+<msg timestamp="20230216 15:51:56.875" level="INFO">Clicking element 'name=Trash'.</msg>
+<status status="PASS" starttime="20230216 15:51:56.874" endtime="20230216 15:51:58.229"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=删除</arg>
+</arguments>
+<msg timestamp="20230216 15:51:58.230" level="INFO">Clicking element 'name=删除'.</msg>
+<status status="PASS" starttime="20230216 15:51:58.229" endtime="20230216 15:52:00.165"></status>
+</kw>
+<kw name="验证-页面不存在元素值" library="功能">
+<arguments>
+<arg>aa</arg>
+</arguments>
+<kw name="Page Should Not Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page not contains `text`.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:52:04.460" level="INFO">Current page does not contains text 'aa'.</msg>
+<status status="PASS" starttime="20230216 15:52:00.166" endtime="20230216 15:52:04.460"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:52:05.461" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:52:04.461" endtime="20230216 15:52:05.461"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:00.165" endtime="20230216 15:52:05.461"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:51:56.873" endtime="20230216 15:52:05.461" critical="yes"></status>
+</test>
+<test id="s1-t4" name="热门搜索">
+<kw name="公共－点击页面文本" library="公共">
+<arguments>
+<arg>9</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:52:06.464" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:52:05.463" endtime="20230216 15:52:06.464"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:52:06.465" level="INFO">Clicking element 'name=9'.</msg>
+<status status="PASS" starttime="20230216 15:52:06.464" endtime="20230216 15:52:08.942"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:52:10.942" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:08.942" endtime="20230216 15:52:10.943"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:05.462" endtime="20230216 15:52:10.943"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:52:12.943" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:10.943" endtime="20230216 15:52:12.943"></status>
+</kw>
+<kw name="搜索结果－点击关闭按钮" library="搜索">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>1259</arg>
+<arg>71</arg>
+</arguments>
+<msg timestamp="20230216 15:52:12.945" level="INFO">Clicking on a point (1259,71).</msg>
+<status status="PASS" starttime="20230216 15:52:12.944" endtime="20230216 15:52:13.409"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:12.943" endtime="20230216 15:52:13.409"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:05.462" endtime="20230216 15:52:13.410" critical="yes"></status>
+</test>
+<test id="s1-t5" name="热门推荐">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>验证-页面存在元素值</arg>
+<arg>热门推荐</arg>
+</arguments>
+<status status="PASS" starttime="20230216 15:52:13.410" endtime="20230216 15:52:13.411"></status>
+</kw>
+<kw name="公共－点击页面文本" library="公共">
+<arguments>
+<arg>动漫</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:52:14.412" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:52:13.412" endtime="20230216 15:52:14.412"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:52:14.414" level="INFO">Clicking element 'name=动漫'.</msg>
+<status status="PASS" starttime="20230216 15:52:14.413" endtime="20230216 15:52:17.736"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:52:19.737" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:17.736" endtime="20230216 15:52:19.737"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:13.412" endtime="20230216 15:52:19.737"></status>
+</kw>
+<kw name="公共－点击页面文本" library="公共">
+<arguments>
+<arg>综艺</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:52:20.738" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:52:19.738" endtime="20230216 15:52:20.738"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:52:20.739" level="INFO">Clicking element 'name=综艺'.</msg>
+<status status="PASS" starttime="20230216 15:52:20.738" endtime="20230216 15:52:22.213"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:52:24.214" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:22.214" endtime="20230216 15:52:24.214"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:19.737" endtime="20230216 15:52:24.214"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:13.410" endtime="20230216 15:52:24.214" critical="yes"></status>
+</test>
+<test id="s1-t6" name="热门推荐跳转点播">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>591</arg>
+<arg>295</arg>
+</arguments>
+<msg timestamp="20230216 15:52:24.217" level="INFO">Clicking on a point (591,295).</msg>
+<status status="PASS" starttime="20230216 15:52:24.216" endtime="20230216 15:52:24.679"></status>
+</kw>
+<kw name="点播播放页－返回" library="点播">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20230216 15:52:29.680" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:24.680" endtime="20230216 15:52:29.680"></status>
+</kw>
+<kw name="Tap" library="AppiumLibrary">
+<doc>Tap element identified by ``locator``.</doc>
+<arguments>
+<arg>name=player back icon</arg>
+<arg>5</arg>
+<arg>5</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230216 15:52:30.257" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230216 15:52:30.030" endtime="20230216 15:52:30.257"></status>
+</kw>
+<msg timestamp="20230216 15:52:30.263" level="FAIL">ValueError: Element locator 'name=player back icon' did not match any elements.</msg>
+<status status="FAIL" starttime="20230216 15:52:29.680" endtime="20230216 15:52:30.263"></status>
+</kw>
+<status status="FAIL" starttime="20230216 15:52:24.679" endtime="20230216 15:52:30.263"></status>
+</kw>
+<status status="FAIL" starttime="20230216 15:52:24.215" endtime="20230216 15:52:30.263" critical="yes">ValueError: Element locator 'name=player back icon' did not match any elements.</status>
+</test>
+<test id="s1-t7" name="搜索过程中唤起键盘">
+<kw name="搜索－输入搜索词" library="搜索">
+<arguments>
+<arg>w</arg>
+</arguments>
+<kw name="Input Value" library="AppiumLibrary">
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<arguments>
+<arg>name=searchTextField</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20230216 15:52:30.266" level="INFO">Setting text 'w' into text field 'name=searchTextField'</msg>
+<status status="PASS" starttime="20230216 15:52:30.265" endtime="20230216 15:52:32.235"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:52:34.237" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:32.235" endtime="20230216 15:52:34.237"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:30.265" endtime="20230216 15:52:34.237"></status>
+</kw>
+<kw name="搜索－取消" library="搜索">
+<kw name="公共－点击页面文本" library="公共">
+<arguments>
+<arg>取消</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:52:35.238" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:52:34.238" endtime="20230216 15:52:35.239"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=${text}</arg>
+</arguments>
+<msg timestamp="20230216 15:52:35.240" level="INFO">Clicking element 'name=取消'.</msg>
+<status status="PASS" starttime="20230216 15:52:35.239" endtime="20230216 15:52:37.307"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230216 15:52:39.307" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:37.307" endtime="20230216 15:52:39.307"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:34.238" endtime="20230216 15:52:39.307"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:34.237" endtime="20230216 15:52:39.307"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:30.264" endtime="20230216 15:52:39.308" critical="yes"></status>
+</test>
+<test id="s1-t8" name="默认搜索词">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther</arg>
+</arguments>
+<msg timestamp="20230216 15:52:39.310" level="INFO">Clicking element 'xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther'.</msg>
+<status status="PASS" starttime="20230216 15:52:39.309" endtime="20230216 15:52:41.110"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=searchTextField</arg>
+</arguments>
+<msg timestamp="20230216 15:52:41.112" level="INFO">Clicking element 'name=searchTextField'.</msg>
+<status status="PASS" starttime="20230216 15:52:41.111" endtime="20230216 15:52:42.541"></status>
+</kw>
+<kw name="搜索－键盘搜索" library="搜索">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20230216 15:52:43.542" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230216 15:52:42.542" endtime="20230216 15:52:43.542"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=Search</arg>
+</arguments>
+<msg timestamp="20230216 15:52:43.544" level="INFO">Clicking element 'name=Search'.</msg>
+<status status="PASS" starttime="20230216 15:52:43.542" endtime="20230216 15:52:45.218"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20230216 15:52:48.218" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230216 15:52:45.218" endtime="20230216 15:52:48.218"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:42.541" endtime="20230216 15:52:48.219"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:39.308" endtime="20230216 15:52:48.219" critical="yes"></status>
+</test>
+<kw name="公共－关闭环境" library="公共" type="teardown">
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20230216 15:52:48.220" endtime="20230216 15:52:49.319"></status>
+</kw>
+<status status="PASS" starttime="20230216 15:52:48.220" endtime="20230216 15:52:49.319"></status>
+</kw>
+<doc>搜索入口</doc>
+<status status="FAIL" starttime="20230216 15:50:44.662" endtime="20230216 15:52:49.319"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1">Critical Tests</stat>
+<stat pass="7" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="1" id="s1" name="1搜索入口">1搜索入口</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230216 15:50:44.656" level="WARN">Automatically parsing other than '*.robot' files is deprecated. Convert '/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/7-功能/1搜索入口.txt' to '*.robot' format or use '--extension' to explicitly configure which files to parse.</msg>
+</errors>
+</robot>

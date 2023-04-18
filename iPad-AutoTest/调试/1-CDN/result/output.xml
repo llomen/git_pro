@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.9.4 on darwin)" generated="20220513 15:41:02.090" rpa="false">
+<suite id="s1" name="点播" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/1-CDN/点播.txt">
+<kw name="公共－初始化环境" library="公共" type="setup">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20220513 15:41:06.137" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220513 15:41:03.136" endtime="20220513 15:41:06.137"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20220513 15:41:06.138" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20220513 15:41:06.138" endtime="20220513 15:41:06.171"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20220513 15:41:11.173" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220513 15:41:06.172" endtime="20220513 15:41:11.173"></status>
+</kw>
+<status status="PASS" starttime="20220513 15:41:03.136" endtime="20220513 15:41:11.173"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=iPad</arg>
+<arg>platformVersion=12.4.8</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>udid=77b67553903be3fe74a1b4a361a075260f545dca</arg>
+<arg>bundleId=com.imgo.tv.hd</arg>
+<arg>AutomationName=XCUITest</arg>
+</arguments>
+<status status="PASS" starttime="20220513 15:41:11.173" endtime="20220513 15:41:44.600"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20220513 15:41:54.601" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220513 15:41:44.601" endtime="20220513 15:41:54.602"></status>
+</kw>
+<status status="PASS" starttime="20220513 15:41:03.136" endtime="20220513 15:41:54.602"></status>
+</kw>
+<test id="s1-t1" name="点播-cdn1-404">
+<status status="FAIL" starttime="20220513 15:41:54.602" endtime="20220513 15:41:54.603" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t2" name="点播-cdn1-500">
+<status status="FAIL" starttime="20220513 15:41:54.603" endtime="20220513 15:41:54.603" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t3" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.604" endtime="20220513 15:41:54.604" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t4" name="点播-cdn1-解析错误">
+<status status="FAIL" starttime="20220513 15:41:54.604" endtime="20220513 15:41:54.605" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t5" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.605" endtime="20220513 15:41:54.605" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t6" name="点播-cdn1-空">
+<status status="FAIL" starttime="20220513 15:41:54.605" endtime="20220513 15:41:54.606" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t7" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.606" endtime="20220513 15:41:54.606" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t8" name="点播-cdn1-超时">
+<status status="FAIL" starttime="20220513 15:41:54.606" endtime="20220513 15:41:54.607" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t9" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.607" endtime="20220513 15:41:54.607" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t10" name="点播-cdn1-无版权">
+<status status="FAIL" starttime="20220513 15:41:54.607" endtime="20220513 15:41:54.608" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t11" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.608" endtime="20220513 15:41:54.608" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t12" name="点播-cdn1-视频已下线">
+<status status="FAIL" starttime="20220513 15:41:54.608" endtime="20220513 15:41:54.609" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t13" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.610" endtime="20220513 15:41:54.610" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t14" name="点播-cdn2-404">
+<status status="FAIL" starttime="20220513 15:41:54.610" endtime="20220513 15:41:54.611" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t15" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.611" endtime="20220513 15:41:54.611" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t16" name="点播-cdn2-500">
+<status status="FAIL" starttime="20220513 15:41:54.611" endtime="20220513 15:41:54.611" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t17" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.612" endtime="20220513 15:41:54.612" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t18" name="点播-cdn2-解析错误">
+<status status="FAIL" starttime="20220513 15:41:54.612" endtime="20220513 15:41:54.613" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t19" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.613" endtime="20220513 15:41:54.613" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t20" name="点播-cdn2-空">
+<status status="FAIL" starttime="20220513 15:41:54.613" endtime="20220513 15:41:54.614" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t21" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.614" endtime="20220513 15:41:54.614" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t22" name="点播-cdn2-超时">
+<status status="FAIL" starttime="20220513 15:41:54.614" endtime="20220513 15:41:54.615" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t23" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.615" endtime="20220513 15:41:54.615" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t24" name="点播-cdn2-status!=ok">
+<status status="FAIL" starttime="20220513 15:41:54.615" endtime="20220513 15:41:54.615" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t25" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.616" endtime="20220513 15:41:54.616" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t26" name="点播-cdn3-404">
+<status status="FAIL" starttime="20220513 15:41:54.616" endtime="20220513 15:41:54.616" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t27" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.616" endtime="20220513 15:41:54.617" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t28" name="播放器perr0">
+<status status="FAIL" starttime="20220513 15:41:54.617" endtime="20220513 15:41:54.618" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t29" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.618" endtime="20220513 15:41:54.618" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t30" name="播放器perr1">
+<status status="FAIL" starttime="20220513 15:41:54.618" endtime="20220513 15:41:54.619" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t31" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.619" endtime="20220513 15:41:54.619" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t32" name="播放器perr2">
+<status status="FAIL" starttime="20220513 15:41:54.619" endtime="20220513 15:41:54.620" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t33" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.620" endtime="20220513 15:41:54.620" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t34" name="播放器perr3">
+<status status="FAIL" starttime="20220513 15:41:54.620" endtime="20220513 15:41:54.621" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t35" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.621" endtime="20220513 15:41:54.621" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t36" name="点播-cdn3-500－条数">
+<status status="FAIL" starttime="20220513 15:41:54.621" endtime="20220513 15:41:54.622" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t37" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.622" endtime="20220513 15:41:54.622" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t38" name="点播-cdn3-timeout">
+<status status="FAIL" starttime="20220513 15:41:54.622" endtime="20220513 15:41:54.623" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t39" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.623" endtime="20220513 15:41:54.623" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t40" name="点播-cdn3-空">
+<status status="FAIL" starttime="20220513 15:41:54.623" endtime="20220513 15:41:54.623" critical="yes">Test case contains no keywords.</status>
+</test>
+<test id="s1-t41" name="pass">
+<status status="FAIL" starttime="20220513 15:41:54.624" endtime="20220513 15:41:54.624" critical="yes">Test case contains no keywords.</status>
+</test>
+<kw name="公共－关闭环境" library="公共" type="teardown">
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20220513 15:41:54.625" endtime="20220513 15:41:55.741"></status>
+</kw>
+<status status="PASS" starttime="20220513 15:41:54.625" endtime="20220513 15:41:55.741"></status>
+</kw>
+<doc>点播cdn异常</doc>
+<status status="FAIL" starttime="20220513 15:41:02.092" endtime="20220513 15:41:55.741"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="41">Critical Tests</stat>
+<stat pass="0" fail="41">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="41" id="s1" name="点播">点播</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220513 15:41:02.083" level="WARN">Automatically parsing other than '*.robot' files is deprecated. Convert '/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/1-CDN/点播.txt' to '*.robot' format or use '--extension' to explicitly configure which files to parse.</msg>
+<msg timestamp="20220513 15:41:54.605" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.606" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.607" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.608" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.610" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.611" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.612" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.613" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.614" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.615" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.616" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.616" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.618" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.619" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.620" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.621" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.622" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.623" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+<msg timestamp="20220513 15:41:54.624" level="WARN">Multiple test cases with name 'pass' executed in test suite '点播'.</msg>
+</errors>
+</robot>

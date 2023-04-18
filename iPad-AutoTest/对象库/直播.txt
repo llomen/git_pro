@@ -1,0 +1,136 @@
+*** Settings ***
+Library           AppiumLibrary
+Resource          ./公共.txt
+
+*** Keywords ***
+场景直播-关闭
+    click a point    200    200
+    sleep    1
+    click element    name=player close
+    sleep    1
+
+场景直播-切换机位
+    click element    name=live camera
+    sleep    1
+
+场景直播-切换码率
+    click element    name=超清
+    sleep    1
+
+动态详情－关闭
+    Comment    Click Element    name=back
+    tap    back    2    0
+    sleep    1
+
+新版直播-关闭
+    sleep    1
+    click element    name=player back Shadow
+    sleep    1
+
+电视台返回
+    sleep    1
+    click element    name=back icon
+    sleep    1
+
+直播-进入直播间
+    首页－频道
+    swipe  600   33   300   33
+    swipe  600   33   300   33
+    sleep  5
+    click a point   600    40     #nsp=label=="直播" and type=="XCUIElementTypeStaticText"
+    sleep  3
+    click element  nsp=label=="快乐购" and type=="XCUIElementTypeStaticText"
+
+新版直播-最大化
+    公共－点击页面文本    Live icon big screen
+
+新版直播-全屏点分享
+    click a point    500    500
+    click a point    1070    40
+    capture page screenshot
+    #omment    click element    name=Live share icon
+    sleep  2
+#    click a point    1326    47
+
+新版直播-点屏幕
+    click a point    500    500
+
+新版直播-点清晰度
+    click a point    873    58
+    click element    xpath=//XCUIElementTypeButton[@name="高清"]
+    click a point    1125    47
+
+新版直播-选择超清
+    #公共－点击页面文本    超清
+    click a point    1164    557
+
+新版直播-分享到微博
+    #Click Text    微博
+    #Click Element    nsp=name=='微博' AND type=='XCUIElementTypeStaticText'
+    #公共－xpath    //XCUIElementTypeApplication[@name="芒果TV HD"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeButton
+    #公共－xpath    //XCUIElementTypeStaticText[@name=“微博”]/preceding-sibling::XCUIElementTypeButton[1]
+    公共－xpath    //XCUIElementTypeStaticText[@name="微博"]/parent::XCUIElementTypeOther
+
+新版直播-分享到微信
+    公共－xpath    //XCUIElementTypeStaticText[@name="微信"]/parent::XCUIElementTypeOther
+
+新版直播-分享到朋友圈
+    公共－xpath    //XCUIElementTypeStaticText[@name="朋友圈"]/parent::XCUIElementTypeOther
+
+新版直播-分享到QQ
+    公共－xpath    //XCUIElementTypeStaticText[@name="QQ"]/parent::XCUIElementTypeOther
+
+新版直播-全屏分享到QQ
+    click a point    893    95
+
+新版直播-全屏分享到朋友圈
+    click a point    825    95
+
+新版直播-全屏分享到QQ空间
+    click a point    939    95
+
+新版直播-全屏分享到微信
+    click a point    1067    95
+
+新版直播-全屏分享到微博
+    click a point    996    95
+
+新版直播-点发评论
+    公共－xpath    (//XCUIElementTypeButton[@name="Player ShieldGift Default iCON"]/preceding-sibling::*[1]
+
+新版直播-点礼物
+    公共－点击页面文本    //XCUIElementTypeImage[@name="LiveRoom_Gift_iCON"]/preceding-sibling::XCUIElementTypeButton[1]
+
+新版直播-点礼物2
+    公共－点击页面文本    //XCUIElementTypeImage[@name="LiveRoom_Gift_iCON"]/preceding-sibling::XCUIElementTypeButton[1]
+
+新版直播-收起评论
+    公共－点击页面文本    NavigantionBar window Small
+
+新版直播-发送评论
+    公共－点击页面文本    Comment Send iCON
+
+新版直播-输入评论
+    [Arguments]    ${text}
+    input text    (//XCUIElementTypeStaticText[@name="和大家聊聊吧"])[1]    ${text}
+
+新版直播-切换主持人tab
+    公共－点击页面文本    主持人
+
+新版直播-切换机位tab
+    公共－点击页面文本    机位
+
+新版直播-主持人tab点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="2"])[1]
+
+新版直播-主持人tab点评论
+    公共－xpath    //XCUIElementTypeButton[@name="4"]
+
+新版直播-主持人tab点更多评论
+    公共－xpath    (//XCUIElementTypeStaticText[@name="加载更多4条评论"])[1]
+
+新版直播-切换vip机位
+    公共－xpath    //XCUIElementTypeImage[@name="live_icon_VIPTag"]/..
+
+新版直播-切换普通机位
+    公共－点击页面文本    1017 test 免费

@@ -1,0 +1,41 @@
+*** Settings ***
+Documentation     搜索纠错
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Test Cases ***
+搜索词纠错
+    首页－搜索视频
+    搜索－输入搜索词    快乐
+    搜索－键盘搜索
+    验证-页面存在元素    nsp=name=="快乐大本营" and type=="XCUIElementTypeStaticText"
+    click element   nsp=name=="close" and type=="XCUIElementTypeButton"
+
+简称纠错搜索
+    搜索结果－点击关闭按钮
+    搜索－输入搜索词    快本
+    搜索－键盘搜索
+    验证-页面存在元素    nsp=name=="快乐大本营" and type=="XCUIElementTypeStaticText"
+    click element   nsp=name=="close" and type=="XCUIElementTypeButton"
+
+错别字纠错搜索
+    搜索结果－点击关闭按钮
+    搜索－输入搜索词    快了大本营
+    搜索－键盘搜索
+    验证-页面存在元素    nsp=name=="快乐大本营" and type=="XCUIElementTypeStaticText"
+    click element   nsp=name=="close" and type=="XCUIElementTypeButton"
+
+拼音纠错搜索
+    搜索结果－点击关闭按钮
+    搜索－输入搜索词    tiantianxiangshang
+    搜索－键盘搜索
+    验证-页面存在元素    nsp=name=="天天向上" and type=="XCUIElementTypeStaticText"
+    click element   nsp=name=="close" and type=="XCUIElementTypeButton"

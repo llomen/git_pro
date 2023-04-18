@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.9.4 on darwin)" generated="20210701 17:42:05.301" rpa="false">
+<suite id="s1" name="5我的" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/channel/7-功能/5我的.txt">
+<kw name="公共－初始化环境" library="公共" type="setup">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=iPad</arg>
+<arg>platformVersion=12.4.8</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>udid=77b67553903be3fe74a1b4a361a075260f545dca</arg>
+<arg>bundleId=com.imgo.tv.hd</arg>
+<arg>AutomationName=XCUITest</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:42:06.472" endtime="20210701 17:42:23.996"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20210701 17:42:33.998" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210701 17:42:23.996" endtime="20210701 17:42:33.998"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:06.471" endtime="20210701 17:42:33.998"></status>
+</kw>
+<test id="s1-t1" name="我的-邮箱登录">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:42:35.001" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:42:33.999" endtime="20210701 17:42:35.001"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:42:35.002" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:42:35.001" endtime="20210701 17:42:41.743"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:42:43.746" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:42:41.744" endtime="20210701 17:42:43.746"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:33.999" endtime="20210701 17:42:43.747"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:33.999" endtime="20210701 17:42:43.747"></status>
+</kw>
+<kw name="我的－判断是否登录" library="我">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>如果登录则退出已登录的账户</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:42:43.747" endtime="20210701 17:42:43.747"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Text</arg>
+<arg>登录/注册</arg>
+</arguments>
+<assign>
+<var>${res_login}</var>
+</assign>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>登录/注册</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:42:52.924" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:42:51.527" endtime="20210701 17:42:52.924"></status>
+</kw>
+<msg timestamp="20210701 17:42:52.924" level="FAIL">Page should have contained text '登录/注册' but did not</msg>
+<status status="FAIL" starttime="20210701 17:42:43.748" endtime="20210701 17:42:52.924"></status>
+</kw>
+<msg timestamp="20210701 17:42:52.925" level="INFO">${res_login} = False</msg>
+<status status="PASS" starttime="20210701 17:42:43.747" endtime="20210701 17:42:52.925"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${res_login}==True</arg>
+<arg>log</arg>
+<arg>user not login</arg>
+<arg>ELSE</arg>
+<arg>我的-退出登录</arg>
+</arguments>
+<kw name="我的-退出登录" library="我">
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:42:55.927" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:42:52.926" endtime="20210701 17:42:55.927"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:42:55.927" endtime="20210701 17:42:58.262"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:55.927" endtime="20210701 17:42:58.262"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:42:58.263" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:42:58.262" endtime="20210701 17:43:00.062"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:43:01.064" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:43:00.063" endtime="20210701 17:43:01.064"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:52.925" endtime="20210701 17:43:01.064"></status>
+</kw>
+<kw name="我的-设置菜单上滑" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:43:02.066" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:43:01.065" endtime="20210701 17:43:02.066"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>90</arg>
+<arg>80</arg>
+<arg>90</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:43:02.066" endtime="20210701 17:43:05.125"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:01.064" endtime="20210701 17:43:05.125"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=退出登录</arg>
+</arguments>
+<msg timestamp="20210701 17:43:05.126" level="INFO">Clicking element 'name=退出登录'.</msg>
+<status status="PASS" starttime="20210701 17:43:05.125" endtime="20210701 17:43:06.933"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:43:08.936" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:43:06.933" endtime="20210701 17:43:08.936"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:52.925" endtime="20210701 17:43:08.936"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:52.925" endtime="20210701 17:43:08.936"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:42:43.747" endtime="20210701 17:43:08.936"></status>
+</kw>
+<kw name="我的－点击登录" library="我">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>name=未登录</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:43:08.937" endtime="20210701 17:43:08.937"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="登录/注册"]/preceding-sibling::XCUIElementTypeButton[1]</arg>
+</arguments>
+<msg timestamp="20210701 17:43:08.938" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="登录/注册"]/preceding-sibling::XCUIElementTypeButton[1]'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:43:14.320" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:43:13.338" endtime="20210701 17:43:14.320"></status>
+</kw>
+<msg timestamp="20210701 17:43:14.320" level="FAIL">ValueError: Element locator 'xpath=//XCUIElementTypeStaticText[@name="登录/注册"]/preceding-sibling::XCUIElementTypeButton[1]' did not match any elements.</msg>
+<status status="FAIL" starttime="20210701 17:43:08.937" endtime="20210701 17:43:14.320"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:43:08.936" endtime="20210701 17:43:14.320"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:42:33.998" endtime="20210701 17:43:14.320" critical="yes">ValueError: Element locator 'xpath=//XCUIElementTypeStaticText[@name="登录/注册"]/preceding-sibling::XCUIElementTypeButton[1]' did not match any elements.</status>
+</test>
+<test id="s1-t2" name="我的-判断是否开启青少年模式">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:43:15.325" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:43:14.323" endtime="20210701 17:43:15.325"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:43:15.326" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:43:15.325" endtime="20210701 17:43:18.082"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:43:20.083" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:43:18.083" endtime="20210701 17:43:20.083"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:14.322" endtime="20210701 17:43:20.083"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:14.322" endtime="20210701 17:43:20.083"></status>
+</kw>
+<kw name="我的-进入青少年界面" library="我">
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:43:23.086" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:43:20.084" endtime="20210701 17:43:23.086"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:43:23.086" endtime="20210701 17:43:25.761"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:23.086" endtime="20210701 17:43:25.761"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:43:25.762" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:43:25.761" endtime="20210701 17:43:27.664"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:43:28.665" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:43:27.665" endtime="20210701 17:43:28.666"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:20.084" endtime="20210701 17:43:28.666"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=青少年模式</arg>
+</arguments>
+<msg timestamp="20210701 17:43:28.667" level="INFO">Clicking element 'name=青少年模式'.</msg>
+<status status="PASS" starttime="20210701 17:43:28.666" endtime="20210701 17:43:31.156"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:20.084" endtime="20210701 17:43:31.156"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Text</arg>
+<arg>关闭青少年模式</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>关闭青少年模式</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:43:57.419" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:43:56.485" endtime="20210701 17:43:57.419"></status>
+</kw>
+<msg timestamp="20210701 17:43:57.419" level="FAIL">Page should have contained text '关闭青少年模式' but did not</msg>
+<status status="FAIL" starttime="20210701 17:43:31.156" endtime="20210701 17:43:57.419"></status>
+</kw>
+<msg timestamp="20210701 17:43:57.419" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20210701 17:43:31.156" endtime="20210701 17:43:57.419"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}==True</arg>
+<arg>log</arg>
+<arg>已开启青少年模式</arg>
+<arg>ELSE</arg>
+<arg>log</arg>
+<arg>未开启青少年模式</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>未开启青少年模式</arg>
+</arguments>
+<msg timestamp="20210701 17:43:57.420" level="INFO">未开启青少年模式</msg>
+<status status="PASS" starttime="20210701 17:43:57.420" endtime="20210701 17:43:57.420"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:57.419" endtime="20210701 17:43:57.420"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:14.321" endtime="20210701 17:43:57.420" critical="yes"></status>
+</test>
+<test id="s1-t3" name="我的-开启青少年">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Text</arg>
+<arg>关闭青少年模式</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>关闭青少年模式</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:44:13.746" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:44:12.839" endtime="20210701 17:44:13.746"></status>
+</kw>
+<msg timestamp="20210701 17:44:13.747" level="FAIL">Page should have contained text '关闭青少年模式' but did not</msg>
+<status status="FAIL" starttime="20210701 17:43:57.421" endtime="20210701 17:44:13.747"></status>
+</kw>
+<msg timestamp="20210701 17:44:13.747" level="INFO">${result} = False</msg>
+<status status="PASS" starttime="20210701 17:43:57.421" endtime="20210701 17:44:13.747"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}==True</arg>
+<arg>log</arg>
+<arg>已开启青少年模式</arg>
+<arg>ELSE</arg>
+<arg>我的-设置青少年模式密码</arg>
+</arguments>
+<kw name="我的-设置青少年模式密码" library="我">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=开启青少年模式</arg>
+</arguments>
+<msg timestamp="20210701 17:44:13.748" level="INFO">Clicking element 'name=开启青少年模式'.</msg>
+<status status="PASS" starttime="20210701 17:44:13.748" endtime="20210701 17:44:16.026"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[1]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:44:16.027" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[1]'</msg>
+<status status="PASS" starttime="20210701 17:44:16.026" endtime="20210701 17:44:23.585"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[2]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:44:23.586" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[2]'</msg>
+<status status="PASS" starttime="20210701 17:44:23.585" endtime="20210701 17:44:31.183"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[3]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:44:31.184" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[3]'</msg>
+<status status="PASS" starttime="20210701 17:44:31.183" endtime="20210701 17:44:38.680"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[4]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:44:38.681" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[4]'</msg>
+<status status="PASS" starttime="20210701 17:44:38.680" endtime="20210701 17:44:46.535"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:44:13.747" endtime="20210701 17:44:46.535"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:44:13.747" endtime="20210701 17:44:46.535"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:44:48.536" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:44:46.536" endtime="20210701 17:44:48.536"></status>
+</kw>
+<kw name="验证-页面存在元素值" library="功能">
+<arguments>
+<arg>关闭青少年模式</arg>
+</arguments>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:45:14.469" level="INFO">Current page contains text '关闭青少年模式'.</msg>
+<status status="PASS" starttime="20210701 17:44:48.537" endtime="20210701 17:45:14.469"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:44:48.536" endtime="20210701 17:45:14.469"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:43:57.420" endtime="20210701 17:45:14.469" critical="yes"></status>
+</test>
+<test id="s1-t4" name="我的-关闭青少年">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Text</arg>
+<arg>关闭青少年模式</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>关闭青少年模式</arg>
+</arguments>
+<msg timestamp="20210701 17:45:40.442" level="INFO">Current page contains text '关闭青少年模式'.</msg>
+<status status="PASS" starttime="20210701 17:45:14.471" endtime="20210701 17:45:40.442"></status>
+</kw>
+<msg timestamp="20210701 17:45:40.442" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20210701 17:45:14.471" endtime="20210701 17:45:40.442"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}==True</arg>
+<arg>我的-关闭青少年模式</arg>
+<arg>ELSE</arg>
+<arg>log</arg>
+<arg>青少年模式已经关闭</arg>
+</arguments>
+<kw name="我的-关闭青少年模式" library="我">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=关闭青少年模式</arg>
+</arguments>
+<msg timestamp="20210701 17:45:40.444" level="INFO">Clicking element 'name=关闭青少年模式'.</msg>
+<status status="PASS" starttime="20210701 17:45:40.443" endtime="20210701 17:45:42.571"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[1]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:45:42.573" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[1]'</msg>
+<status status="PASS" starttime="20210701 17:45:42.571" endtime="20210701 17:45:50.168"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[2]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:45:50.171" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[2]'</msg>
+<status status="PASS" starttime="20210701 17:45:50.168" endtime="20210701 17:45:57.567"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[3]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:45:57.568" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[3]'</msg>
+<status status="PASS" starttime="20210701 17:45:57.567" endtime="20210701 17:46:04.938"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[4]</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:46:04.940" level="INFO">Typing text '1' into text field 'xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[4]'</msg>
+<status status="PASS" starttime="20210701 17:46:04.939" endtime="20210701 17:46:12.498"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:46:15.499" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:46:12.498" endtime="20210701 17:46:15.499"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>46</arg>
+<arg>55</arg>
+</arguments>
+<msg timestamp="20210701 17:46:15.500" level="INFO">Clicking on a point (46,55).</msg>
+<status status="PASS" starttime="20210701 17:46:15.499" endtime="20210701 17:46:16.572"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:45:40.442" endtime="20210701 17:46:16.572"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:45:40.442" endtime="20210701 17:46:16.572"></status>
+</kw>
+<kw name="验证-页面不存在元素值" library="功能">
+<arguments>
+<arg>关闭青少年模式</arg>
+</arguments>
+<kw name="Page Should Not Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page not contains `text`.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:46:53.681" level="INFO">Current page does not contains text '关闭青少年模式'.</msg>
+<status status="PASS" starttime="20210701 17:46:16.573" endtime="20210701 17:46:53.682"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:46:54.682" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:46:53.682" endtime="20210701 17:46:54.682"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:46:16.572" endtime="20210701 17:46:54.682"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:45:14.470" endtime="20210701 17:46:54.682" critical="yes"></status>
+</test>
+<test id="s1-t5" name="我的-账户注销协议">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:46:55.684" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:46:54.684" endtime="20210701 17:46:55.684"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:46:55.686" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:46:55.685" endtime="20210701 17:47:00.209"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:47:02.210" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:00.209" endtime="20210701 17:47:02.210"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:46:54.684" endtime="20210701 17:47:02.210"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:46:54.684" endtime="20210701 17:47:02.210"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:47:05.211" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:02.211" endtime="20210701 17:47:05.211"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:47:05.212" endtime="20210701 17:47:08.419"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:05.211" endtime="20210701 17:47:08.419"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:47:08.420" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:47:08.419" endtime="20210701 17:47:09.869"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:47:10.872" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:47:09.869" endtime="20210701 17:47:10.872"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:02.210" endtime="20210701 17:47:10.872"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="账号注销" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:47:10.873" level="INFO">Clicking element 'nsp=name=="账号注销" and type=="XCUIElementTypeStaticText"'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:47:12.546" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:47:11.308" endtime="20210701 17:47:12.546"></status>
+</kw>
+<msg timestamp="20210701 17:47:12.547" level="FAIL">ValueError: Element locator 'nsp=name=="账号注销" and type=="XCUIElementTypeStaticText"' did not match any elements.</msg>
+<status status="FAIL" starttime="20210701 17:47:10.872" endtime="20210701 17:47:12.547"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:46:54.683" endtime="20210701 17:47:12.547" critical="yes">ValueError: Element locator 'nsp=name=="账号注销" and type=="XCUIElementTypeStaticText"' did not match any elements.</status>
+</test>
+<test id="s1-t6" name="我的-非wifi网络下播放提醒">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:47:13.550" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:47:12.549" endtime="20210701 17:47:13.550"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:47:13.552" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:47:13.550" endtime="20210701 17:47:16.458"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:47:18.463" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:16.458" endtime="20210701 17:47:18.464"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:12.548" endtime="20210701 17:47:18.464"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:12.548" endtime="20210701 17:47:18.464"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:47:21.465" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:18.464" endtime="20210701 17:47:21.465"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:47:21.465" endtime="20210701 17:47:24.216"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:21.465" endtime="20210701 17:47:24.217"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:47:24.218" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:47:24.217" endtime="20210701 17:47:26.190"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:47:27.192" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:47:26.190" endtime="20210701 17:47:27.192"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:18.464" endtime="20210701 17:47:27.192"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="非wifi网络下播放提醒" and type=="XCUIElementTypeSwitch"</arg>
+</arguments>
+<msg timestamp="20210701 17:47:27.193" level="INFO">Clicking element 'nsp=name=="非wifi网络下播放提醒" and type=="XCUIElementTypeSwitch"'.</msg>
+<status status="PASS" starttime="20210701 17:47:27.192" endtime="20210701 17:47:29.389"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:12.547" endtime="20210701 17:47:29.389" critical="yes"></status>
+</test>
+<test id="s1-t7" name="我的-非wifi网络下离线缓存">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="非wifi网络下离线缓存" and type=="XCUIElementTypeSwitch"</arg>
+</arguments>
+<msg timestamp="20210701 17:47:29.391" level="INFO">Clicking element 'nsp=name=="非wifi网络下离线缓存" and type=="XCUIElementTypeSwitch"'.</msg>
+<status status="PASS" starttime="20210701 17:47:29.390" endtime="20210701 17:47:31.908"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:29.389" endtime="20210701 17:47:31.908" critical="yes"></status>
+</test>
+<test id="s1-t8" name="我的-自动跳过片头片尾">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="自动跳过片头片尾" and type=="XCUIElementTypeSwitch"</arg>
+</arguments>
+<msg timestamp="20210701 17:47:31.910" level="INFO">Clicking element 'nsp=name=="自动跳过片头片尾" and type=="XCUIElementTypeSwitch"'.</msg>
+<status status="PASS" starttime="20210701 17:47:31.909" endtime="20210701 17:47:33.969"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:31.908" endtime="20210701 17:47:33.969" critical="yes"></status>
+</test>
+<test id="s1-t9" name="我的-同步芒果TV电视端播放记录">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="同步芒果TV电视端播放记录" and type=="XCUIElementTypeSwitch"</arg>
+</arguments>
+<msg timestamp="20210701 17:47:33.972" level="INFO">Clicking element 'nsp=name=="同步芒果TV电视端播放记录" and type=="XCUIElementTypeSwitch"'.</msg>
+<status status="PASS" starttime="20210701 17:47:33.971" endtime="20210701 17:47:36.009"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:33.969" endtime="20210701 17:47:36.009" critical="yes"></status>
+</test>
+<test id="s1-t10" name="我的-隐私政策">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:47:37.014" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:47:36.011" endtime="20210701 17:47:37.014"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:47:37.015" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:47:37.014" endtime="20210701 17:47:41.599"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:47:43.604" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:41.600" endtime="20210701 17:47:43.604"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:36.011" endtime="20210701 17:47:43.604"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:36.011" endtime="20210701 17:47:43.604"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:47:46.607" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:43.605" endtime="20210701 17:47:46.607"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:47:46.608" endtime="20210701 17:47:49.714"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:46.607" endtime="20210701 17:47:49.715"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:47:49.716" level="INFO">Clicking element 'name=设置'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:47:51.731" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:47:50.719" endtime="20210701 17:47:51.731"></status>
+</kw>
+<msg timestamp="20210701 17:47:51.731" level="FAIL">ValueError: Element locator 'name=设置' did not match any elements.</msg>
+<status status="FAIL" starttime="20210701 17:47:49.715" endtime="20210701 17:47:51.731"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:47:43.605" endtime="20210701 17:47:51.731"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:47:36.010" endtime="20210701 17:47:51.731" critical="yes">ValueError: Element locator 'name=设置' did not match any elements.</status>
+</test>
+<test id="s1-t11" name="我的-隐私设置">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:47:52.733" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:47:51.733" endtime="20210701 17:47:52.733"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:47:52.734" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:47:52.733" endtime="20210701 17:47:55.690"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:47:57.694" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:55.690" endtime="20210701 17:47:57.694"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:51.733" endtime="20210701 17:47:57.694"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:51.732" endtime="20210701 17:47:57.695"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:48:00.697" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:47:57.695" endtime="20210701 17:48:00.698"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:48:00.698" endtime="20210701 17:48:03.465"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:00.698" endtime="20210701 17:48:03.465"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:48:03.466" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:48:03.465" endtime="20210701 17:48:05.622"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:48:06.627" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:48:05.622" endtime="20210701 17:48:06.628"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:57.695" endtime="20210701 17:48:06.628"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="隐私设置" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:48:06.629" level="INFO">Clicking element 'nsp=name=="隐私设置" and type=="XCUIElementTypeStaticText"'.</msg>
+<status status="PASS" starttime="20210701 17:48:06.628" endtime="20210701 17:48:09.705"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:48:11.710" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:48:09.706" endtime="20210701 17:48:11.710"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>828</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20210701 17:48:11.711" level="INFO">Clicking on a point (828,38).</msg>
+<status status="PASS" starttime="20210701 17:48:11.710" endtime="20210701 17:48:12.481"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:47:51.732" endtime="20210701 17:48:12.481" critical="yes"></status>
+</test>
+<test id="s1-t12" name="我的-保护措施">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:48:13.483" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:48:12.483" endtime="20210701 17:48:13.483"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:48:13.485" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:48:13.484" endtime="20210701 17:48:17.496"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:48:19.497" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:48:17.496" endtime="20210701 17:48:19.497"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:12.482" endtime="20210701 17:48:19.497"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:12.482" endtime="20210701 17:48:19.497"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:48:22.503" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:48:19.498" endtime="20210701 17:48:22.503"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:48:22.504" endtime="20210701 17:48:25.515"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:22.503" endtime="20210701 17:48:25.516"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:48:25.517" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:48:25.516" endtime="20210701 17:48:27.060"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:48:28.062" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:48:27.060" endtime="20210701 17:48:28.062"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:19.498" endtime="20210701 17:48:28.062"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="保护措施" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:48:28.063" level="INFO">Clicking element 'nsp=name=="保护措施" and type=="XCUIElementTypeStaticText"'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:48:29.550" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:48:28.492" endtime="20210701 17:48:29.551"></status>
+</kw>
+<msg timestamp="20210701 17:48:29.551" level="FAIL">ValueError: Element locator 'nsp=name=="保护措施" and type=="XCUIElementTypeStaticText"' did not match any elements.</msg>
+<status status="FAIL" starttime="20210701 17:48:28.062" endtime="20210701 17:48:29.551"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:48:12.481" endtime="20210701 17:48:29.551" critical="yes">ValueError: Element locator 'nsp=name=="保护措施" and type=="XCUIElementTypeStaticText"' did not match any elements.</status>
+</test>
+<test id="s1-t13" name="我的-保护指南">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:48:30.553" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:48:29.553" endtime="20210701 17:48:30.553"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:48:30.555" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:48:30.553" endtime="20210701 17:48:33.604"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:48:35.606" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:48:33.605" endtime="20210701 17:48:35.606"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:29.552" endtime="20210701 17:48:35.606"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:29.552" endtime="20210701 17:48:35.606"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:48:38.608" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:48:35.606" endtime="20210701 17:48:38.608"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:48:38.609" endtime="20210701 17:48:41.355"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:38.608" endtime="20210701 17:48:41.355"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:48:41.356" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:48:41.355" endtime="20210701 17:48:43.332"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:48:44.334" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:48:43.332" endtime="20210701 17:48:44.335"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:35.606" endtime="20210701 17:48:44.335"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="保护指南" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:48:44.336" level="INFO">Clicking element 'nsp=name=="保护指南" and type=="XCUIElementTypeStaticText"'.</msg>
+<status status="PASS" starttime="20210701 17:48:44.335" endtime="20210701 17:48:47.100"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>828</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20210701 17:48:47.101" level="INFO">Clicking on a point (828,38).</msg>
+<status status="PASS" starttime="20210701 17:48:47.100" endtime="20210701 17:48:47.936"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:29.551" endtime="20210701 17:48:47.936" critical="yes"></status>
+</test>
+<test id="s1-t14" name="我的-常见问题">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:48:48.940" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:48:47.938" endtime="20210701 17:48:48.940"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:48:48.941" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:48:48.940" endtime="20210701 17:48:53.266"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:48:55.268" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:48:53.266" endtime="20210701 17:48:55.269"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:47.937" endtime="20210701 17:48:55.269"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:47.937" endtime="20210701 17:48:55.269"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:48:58.274" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:48:55.269" endtime="20210701 17:48:58.274"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:48:58.275" endtime="20210701 17:49:01.110"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:58.274" endtime="20210701 17:49:01.110"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:49:01.111" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:49:01.110" endtime="20210701 17:49:02.616"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:49:03.617" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:49:02.616" endtime="20210701 17:49:03.617"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:48:55.269" endtime="20210701 17:49:03.617"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="常见问题" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:49:03.619" level="INFO">Clicking element 'nsp=name=="常见问题" and type=="XCUIElementTypeStaticText"'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:49:05.037" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:49:04.019" endtime="20210701 17:49:05.037"></status>
+</kw>
+<msg timestamp="20210701 17:49:05.038" level="FAIL">ValueError: Element locator 'nsp=name=="常见问题" and type=="XCUIElementTypeStaticText"' did not match any elements.</msg>
+<status status="FAIL" starttime="20210701 17:49:03.618" endtime="20210701 17:49:05.038"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:48:47.936" endtime="20210701 17:49:05.038" critical="yes">ValueError: Element locator 'nsp=name=="常见问题" and type=="XCUIElementTypeStaticText"' did not match any elements.</status>
+</test>
+<test id="s1-t15" name="我的-清除缓存">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:49:06.040" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:49:05.039" endtime="20210701 17:49:06.041"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:49:06.042" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:49:06.041" endtime="20210701 17:49:09.045"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:49:11.045" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:49:09.045" endtime="20210701 17:49:11.046"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:05.039" endtime="20210701 17:49:11.046"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:05.039" endtime="20210701 17:49:11.046"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:49:14.047" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:49:11.046" endtime="20210701 17:49:14.047"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:49:14.047" endtime="20210701 17:49:16.798"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:14.047" endtime="20210701 17:49:16.798"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:49:16.799" level="INFO">Clicking element 'name=设置'.</msg>
+<status status="PASS" starttime="20210701 17:49:16.798" endtime="20210701 17:49:18.784"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:49:19.784" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:49:18.784" endtime="20210701 17:49:19.785"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:11.046" endtime="20210701 17:49:19.785"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="清除缓存"]</arg>
+</arguments>
+<msg timestamp="20210701 17:49:19.786" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="清除缓存"]'.</msg>
+<status status="PASS" starttime="20210701 17:49:19.785" endtime="20210701 17:49:28.753"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=确定</arg>
+</arguments>
+<msg timestamp="20210701 17:49:28.754" level="INFO">Clicking element 'name=确定'.</msg>
+<status status="PASS" starttime="20210701 17:49:28.753" endtime="20210701 17:49:31.230"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:05.038" endtime="20210701 17:49:31.230" critical="yes"></status>
+</test>
+<test id="s1-t16" name="我的-关于我们">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:49:32.234" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:49:31.232" endtime="20210701 17:49:32.234"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:49:32.236" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:49:32.234" endtime="20210701 17:49:36.494"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:49:38.496" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:49:36.494" endtime="20210701 17:49:38.496"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:31.232" endtime="20210701 17:49:38.496"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:31.231" endtime="20210701 17:49:38.496"></status>
+</kw>
+<kw name="我的－设置" library="我">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:49:41.502" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:49:38.497" endtime="20210701 17:49:41.502"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>50</arg>
+<arg>80</arg>
+<arg>50</arg>
+<arg>30</arg>
+</arguments>
+<status status="PASS" starttime="20210701 17:49:41.503" endtime="20210701 17:49:44.644"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:41.502" endtime="20210701 17:49:44.644"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=设置</arg>
+</arguments>
+<msg timestamp="20210701 17:49:44.645" level="INFO">Clicking element 'name=设置'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210701 17:49:46.868" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210701 17:49:45.821" endtime="20210701 17:49:46.868"></status>
+</kw>
+<msg timestamp="20210701 17:49:46.868" level="FAIL">ValueError: Element locator 'name=设置' did not match any elements.</msg>
+<status status="FAIL" starttime="20210701 17:49:44.644" endtime="20210701 17:49:46.868"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:49:38.497" endtime="20210701 17:49:46.869"></status>
+</kw>
+<status status="FAIL" starttime="20210701 17:49:31.231" endtime="20210701 17:49:46.869" critical="yes">ValueError: Element locator 'name=设置' did not match any elements.</status>
+</test>
+<test id="s1-t17" name="我的-离线中心">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:49:47.871" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:49:46.870" endtime="20210701 17:49:47.871"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:49:47.872" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:49:47.871" endtime="20210701 17:49:50.764"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:49:52.768" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:49:50.765" endtime="20210701 17:49:52.768"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:46.870" endtime="20210701 17:49:52.768"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:46.870" endtime="20210701 17:49:52.768"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//XCUIElementTypeStaticText[@name="离线中心"]/parent::XCUIElementTypeCell</arg>
+</arguments>
+<msg timestamp="20210701 17:49:52.769" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="离线中心"]/parent::XCUIElementTypeCell'.</msg>
+<status status="PASS" starttime="20210701 17:49:52.768" endtime="20210701 17:49:58.291"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:50:00.292" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:49:58.291" endtime="20210701 17:50:00.292"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20210701 17:50:00.294" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20210701 17:50:00.292" endtime="20210701 17:50:00.861"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:49:46.869" endtime="20210701 17:50:00.862" critical="yes"></status>
+</test>
+<test id="s1-t18" name="我的-我的看单">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:50:01.868" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:50:00.864" endtime="20210701 17:50:01.868"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:50:01.870" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:50:01.869" endtime="20210701 17:50:04.779"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:50:06.782" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:50:04.779" endtime="20210701 17:50:06.782"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:00.863" endtime="20210701 17:50:06.783"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:00.863" endtime="20210701 17:50:06.783"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="我的看单" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:50:06.784" level="INFO">Clicking element 'nsp=name=="我的看单" and type=="XCUIElementTypeStaticText"'.</msg>
+<status status="PASS" starttime="20210701 17:50:06.783" endtime="20210701 17:50:08.715"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20210701 17:50:08.716" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20210701 17:50:08.715" endtime="20210701 17:50:09.232"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:00.862" endtime="20210701 17:50:09.232" critical="yes"></status>
+</test>
+<test id="s1-t19" name="我的-消息中心">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:50:10.239" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:50:09.234" endtime="20210701 17:50:10.239"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:50:10.240" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:50:10.239" endtime="20210701 17:50:13.233"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:50:15.235" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:50:13.233" endtime="20210701 17:50:15.235"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:09.234" endtime="20210701 17:50:15.236"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:09.234" endtime="20210701 17:50:15.236"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="消息中心" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:50:15.237" level="INFO">Clicking element 'nsp=name=="消息中心" and type=="XCUIElementTypeStaticText"'.</msg>
+<status status="PASS" starttime="20210701 17:50:15.236" endtime="20210701 17:50:17.339"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:50:20.339" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:50:17.339" endtime="20210701 17:50:20.340"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20210701 17:50:20.341" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20210701 17:50:20.340" endtime="20210701 17:50:21.448"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:09.232" endtime="20210701 17:50:21.448" critical="yes"></status>
+</test>
+<test id="s1-t20" name="我的-我的积分">
+<kw name="首页－我的" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210701 17:50:22.451" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210701 17:50:21.449" endtime="20210701 17:50:22.451"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20210701 17:50:22.452" level="INFO">Clicking element 'xpath=//XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20210701 17:50:22.451" endtime="20210701 17:50:25.412"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210701 17:50:27.414" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210701 17:50:25.412" endtime="20210701 17:50:27.414"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:21.449" endtime="20210701 17:50:27.414"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:21.449" endtime="20210701 17:50:27.414"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>nsp=name=="我的积分" and type=="XCUIElementTypeStaticText"</arg>
+</arguments>
+<msg timestamp="20210701 17:50:27.415" level="INFO">Clicking element 'nsp=name=="我的积分" and type=="XCUIElementTypeStaticText"'.</msg>
+<status status="PASS" starttime="20210701 17:50:27.414" endtime="20210701 17:50:29.322"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20210701 17:50:32.324" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210701 17:50:29.322" endtime="20210701 17:50:32.324"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20210701 17:50:32.326" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20210701 17:50:32.324" endtime="20210701 17:50:34.654"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:21.448" endtime="20210701 17:50:34.654" critical="yes"></status>
+</test>
+<kw name="公共－关闭环境" library="公共" type="teardown">
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210701 17:50:34.657" endtime="20210701 17:50:35.695"></status>
+</kw>
+<status status="PASS" starttime="20210701 17:50:34.656" endtime="20210701 17:50:35.695"></status>
+</kw>
+<doc>我的</doc>
+<status status="FAIL" starttime="20210701 17:42:05.303" endtime="20210701 17:50:35.695"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="14" fail="6">Critical Tests</stat>
+<stat pass="14" fail="6">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="14" fail="6" id="s1" name="5我的">5我的</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210701 17:42:05.297" level="WARN">Automatically parsing other than '*.robot' files is deprecated. Convert '/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/channel/7-功能/5我的.txt' to '*.robot' format or use '--extension' to explicitly configure which files to parse.</msg>
+</errors>
+</robot>

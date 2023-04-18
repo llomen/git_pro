@@ -1,0 +1,76 @@
+*** Settings ***
+Documentation     站外视频搜索结果页6
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${hot_field}      {'act':'recommended_hot'}
+${hotpv_field}    {'act':'hotpv'}
+
+*** Test Cases ***
+站外搜索结果页pvs
+    首页－搜索视频
+    搜索－点击搜索框
+    搜索－输入搜索词    奔跑吧
+    sleep    2
+    公共－清除数据
+    搜索－键盘搜索
+    公共－校验结果    ${pvs_field}    search_016    mpp_pvs_ipad    1
+
+
+
+
+站外搜索search
+    公共－校验结果    ${search_field}    ipad_search_011    mpp_search_data_ipad    1
+
+
+
+
+
+站外搜索view
+    公共－校验结果    ${view_field}    ipad_view_011    mpp_view_data_ipad    1
+
+
+
+
+
+站外剧集点击click
+    公共－清除数据
+    搜索－点播放
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_click_012    mpp_click_data_ipad    1
+
+
+
+
+站外页pvs
+    公共－校验结果    ${pvs_field}    search_024    mpp_pvs_ipad    1
+
+
+
+
+
+站外页返回pvs
+    公共－清除数据
+    Click Element    name=My Title BlackBack
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_025    mpp_pvs_ipad    1
+
+
+
+

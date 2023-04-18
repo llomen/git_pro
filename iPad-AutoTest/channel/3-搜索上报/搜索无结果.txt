@@ -1,0 +1,72 @@
+*** Settings ***
+Documentation     搜索无结果点击search按钮搜索6
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${hot_field}      {'act':'recommended_hot'}
+${hotpv_field}    {'act':'hotpv'}
+
+*** Test Cases ***
+无结果搜索search
+    首页－搜索视频
+    搜索－点击搜索框
+    搜索－输入搜索词    123123123
+    公共－清除数据
+    搜索－键盘搜索
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_search_002    mpp_search_data_ipad    1
+
+
+
+
+无结果pvs
+    公共－校验结果    ${pvs_field}    search_027    mpp_pvs_ipad    1
+
+
+
+
+
+无结果view
+    公共－校验结果    ${view_field}    ipad_view_002    mpp_view_data_ipad    1
+
+
+
+
+
+猜你喜欢hotpv
+    公共－校验结果    ${hotpv_field}    ipad_search_001    mpp_recommendpv_hotpv_ipad    1
+
+
+
+
+猜你喜欢click
+    公共－清除数据
+    click a point    137    500
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_click_005    mpp_click_data_ipad    1
+
+
+
+
+
+猜你喜欢recommended_hot
+    公共－校验结果    ${hot_field}    ipad_search_001    mpp_recommend_hot_ipad    1
+
+
+
+

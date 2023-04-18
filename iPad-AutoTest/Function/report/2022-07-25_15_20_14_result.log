@@ -1,0 +1,161 @@
+Mon, 25 Jul 2022 15:20:14 test.py[line:60] INFO <unittest.suite.TestSuite tests=[<unittest.suite.TestSuite tests=[<jingxuan.jingxuan_test testMethod=test_001>, <jingxuan.jingxuan_test testMethod=test_002>, <jingxuan.jingxuan_test testMethod=test_003>, <jingxuan.jingxuan_test testMethod=test_004>, <jingxuan.jingxuan_test testMethod=test_005>, <jingxuan.jingxuan_test testMethod=test_006>, <jingxuan.jingxuan_test testMethod=test_007>, <jingxuan.jingxuan_test testMethod=test_008>, <jingxuan.jingxuan_test testMethod=test_009>, <jingxuan.jingxuan_test testMethod=test_010>, <jingxuan.jingxuan_test testMethod=test_011>, <jingxuan.jingxuan_test testMethod=test_012>, <jingxuan.jingxuan_test testMethod=test_013>, <jingxuan.jingxuan_test testMethod=test_014>, <jingxuan.jingxuan_test testMethod=test_015>, <jingxuan.jingxuan_test testMethod=test_016>, <jingxuan.jingxuan_test testMethod=test_017>, <jingxuan.jingxuan_test testMethod=test_018>, <jingxuan.jingxuan_test testMethod=test_019>, <jingxuan.jingxuan_test testMethod=test_020>, <jingxuan.jingxuan_test testMethod=test_021>, <jingxuan.jingxuan_test testMethod=test_022>, <jingxuan.jingxuan_test testMethod=test_023>, <jingxuan.jingxuan_test testMethod=test_024>]>]>
+Mon, 25 Jul 2022 15:20:14 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "iOS", "appium:deviceName": "\u53ef\u59ae\u5154", "appium:platformVersion": "12.5.5", "appium:udid": "f4168aea0d6a99829d75f3ea681f430ad71df1ea", "appium:bundleId": "com.imgo.tv.hd", "appium:noReset": "true", "appium:AutomationName": "XCUITest", "appium:xcodeOrgId": "WKQZHDVG49", "appium:xcodeSigningId": "iPad Developer"}]}, "desiredCapabilities": {"platformName": "iOS", "deviceName": "\u53ef\u59ae\u5154", "platformVersion": "12.5.5", "udid": "f4168aea0d6a99829d75f3ea681f430ad71df1ea", "bundleId": "com.imgo.tv.hd", "noReset": "true", "AutomationName": "XCUITest", "xcodeOrgId": "WKQZHDVG49", "xcodeSigningId": "iPad Developer"}}
+Mon, 25 Jul 2022 15:20:14 connectionpool.py[line:227] DEBUG Starting new HTTP connection (1): 127.0.0.1:4723
+Mon, 25 Jul 2022 15:20:23 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 529
+Mon, 25 Jul 2022 15:20:23 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:33 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeButton[`label == \"ChannelLogoIcon\"`]"}
+Mon, 25 Jul 2022 15:20:34 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:34 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:34 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/22000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "22000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:34 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/22000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 27
+Mon, 25 Jul 2022 15:20:34 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:34 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u731c\u4f60\u5728\u8ffd\"`]"}
+Mon, 25 Jul 2022 15:20:35 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/86000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "86000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:35 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/86000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 24
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u66f4\u591a\"`]"}
+Mon, 25 Jul 2022 15:20:35 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/76000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "76000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:35 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/76000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:35 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u7247\u5e93\"`]"}
+Mon, 25 Jul 2022 15:20:36 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:36 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:36 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/57000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "57000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:36 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/57000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:20:36 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:36 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u7efc\u827a\"`]"}
+Mon, 25 Jul 2022 15:20:36 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:36 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:36 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/49000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "49000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:37 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/49000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:20:37 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:37 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u7535\u89c6\u5267\"`]"}
+Mon, 25 Jul 2022 15:20:37 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:37 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:37 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/43000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "43000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:37 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/43000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 21
+Mon, 25 Jul 2022 15:20:37 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:37 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u7535\u5f71\"`]"}
+Mon, 25 Jul 2022 15:20:38 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:38 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:38 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/3D000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "3D000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:38 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/3D000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:20:38 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:38 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u5c11\u513f\"`]"}
+Mon, 25 Jul 2022 15:20:38 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 404 521
+Mon, 25 Jul 2022 15:20:38 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:38 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u52a8\u6f2b\"`]"}
+Mon, 25 Jul 2022 15:20:39 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:39 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:39 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/3D000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "3D000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:39 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/3D000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:20:39 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:39 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u5927\u8292\"`]"}
+Mon, 25 Jul 2022 15:20:40 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/47000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "47000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:40 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/47000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u65b0\u95fb\"`]"}
+Mon, 25 Jul 2022 15:20:40 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/41000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "41000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:40 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/41000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:40 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u97f3\u4e50\"`]"}
+Mon, 25 Jul 2022 15:20:41 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 404 521
+Mon, 25 Jul 2022 15:20:41 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:41 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u5f53\u5b63\u70ed\u64ad\"`]"}
+Mon, 25 Jul 2022 15:20:41 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:41 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:41 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/C3000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "C3000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:41 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/C3000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 24
+Mon, 25 Jul 2022 15:20:41 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:41 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "xpath", "value": "//XCUIElementTypeTabBar[@name=\"\u6807\u7b7e\u680f\"]/XCUIElementTypeButton[1]"}
+Mon, 25 Jul 2022 15:20:43 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:43 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:43 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/11000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "11000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:43 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/11000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:20:43 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:43 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "xpath", "value": "//XCUIElementTypeTabBar[@name=\"\u6807\u7b7e\u680f\"]/XCUIElementTypeButton[2]"}
+Mon, 25 Jul 2022 15:20:45 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:45 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:45 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/12000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "12000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:45 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/12000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:20:45 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:45 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "xpath", "value": "//XCUIElementTypeTabBar[@name=\"\u6807\u7b7e\u680f\"]/XCUIElementTypeButton[3]"}
+Mon, 25 Jul 2022 15:20:47 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:47 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:47 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/13000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "13000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:47 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/13000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:20:47 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:47 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "xpath", "value": "//XCUIElementTypeTabBar[@name=\"\u6807\u7b7e\u680f\"]/XCUIElementTypeButton[4]"}
+Mon, 25 Jul 2022 15:20:50 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:50 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:50 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/14000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "14000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:50 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/14000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:20:50 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:50 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "xpath", "value": "//XCUIElementTypeTabBar[@name=\"\u6807\u7b7e\u680f\"]/XCUIElementTypeButton[6]"}
+Mon, 25 Jul 2022 15:20:52 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:20:52 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:52 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/16000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "16000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:20:52 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/16000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:20:52 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:52 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform {"actions": [{"action": "press", "options": {"x": 20, "y": 700}}, {"action": "wait", "options": {"ms": 1000}}, {"action": "moveTo", "options": {"x": 20, "y": 400}}, {"action": "release", "options": {}}]}
+Mon, 25 Jul 2022 15:20:55 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:20:55 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:55 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform {"actions": [{"action": "press", "options": {"x": 20, "y": 700}}, {"action": "wait", "options": {"ms": 1000}}, {"action": "moveTo", "options": {"x": 20, "y": 400}}, {"action": "release", "options": {}}]}
+Mon, 25 Jul 2022 15:20:58 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:20:58 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:20:58 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/screenshot {}
+Mon, 25 Jul 2022 15:20:59 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/screenshot HTTP/1.1" 200 7677520
+Mon, 25 Jul 2022 15:20:59 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:04 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u5927\u8292\u77ed\u89c6\u9891\"`]"}
+Mon, 25 Jul 2022 15:21:05 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:21:05 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:05 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/89000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "89000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:21:05 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/89000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 27
+Mon, 25 Jul 2022 15:21:05 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:05 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform {"actions": [{"action": "press", "options": {"x": 20, "y": 700}}, {"action": "wait", "options": {"ms": 1000}}, {"action": "moveTo", "options": {"x": 20, "y": 400}}, {"action": "release", "options": {}}]}
+Mon, 25 Jul 2022 15:21:08 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:21:08 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:13 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u5373\u5c06\u4e0a\u7ebf\"`]"}
+Mon, 25 Jul 2022 15:21:13 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:21:13 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:13 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/4A010000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "4A010000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:21:14 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/4A010000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 24
+Mon, 25 Jul 2022 15:21:14 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:14 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeButton[`label == \"\u9884\u7ea6\"`][1]"}
+Mon, 25 Jul 2022 15:21:14 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:21:14 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:14 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/D7010000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "D7010000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:21:14 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/D7010000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 18
+Mon, 25 Jul 2022 15:21:14 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:14 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u6211\u7684\u9884\u7ea6\"`]"}
+Mon, 25 Jul 2022 15:21:15 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:21:15 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:15 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/49010000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "49010000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:21:15 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/49010000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 24
+Mon, 25 Jul 2022 15:21:15 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:15 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u5373\u5c06\u4e0a\u7ebf\"`][1]"}
+Mon, 25 Jul 2022 15:21:15 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:21:15 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:15 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/4A010000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "4A010000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:21:16 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/4A010000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 24
+Mon, 25 Jul 2022 15:21:16 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:16 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform {"actions": [{"action": "press", "options": {"x": 20, "y": 700}}, {"action": "wait", "options": {"ms": 1000}}, {"action": "moveTo", "options": {"x": 20, "y": 400}}, {"action": "release", "options": {}}]}
+Mon, 25 Jul 2022 15:21:18 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/touch/perform HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:21:18 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:23 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element {"using": "-ios class chain", "value": "**/XCUIElementTypeStaticText[`label == \"\u731c\u4f60\u559c\u6b22\"`]"}
+Mon, 25 Jul 2022 15:21:24 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element HTTP/1.1" 200 137
+Mon, 25 Jul 2022 15:21:24 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:24 remote_connection.py[line:388] DEBUG GET http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/AB000000-0000-0000-1917-000000000000/attribute/label {"name": "label", "id": "AB000000-0000-0000-1917-000000000000"}
+Mon, 25 Jul 2022 15:21:24 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "GET /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/element/AB000000-0000-0000-1917-000000000000/attribute/label HTTP/1.1" 200 24
+Mon, 25 Jul 2022 15:21:24 remote_connection.py[line:440] DEBUG Finished Request
+Mon, 25 Jul 2022 15:21:24 remote_connection.py[line:388] DEBUG POST http://127.0.0.1:4723/wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/appium/app/close {}
+Mon, 25 Jul 2022 15:21:25 connectionpool.py[line:452] DEBUG http://127.0.0.1:4723 "POST /wd/hub/session/e9e4301b-d372-48e8-864a-456f1e75b74b/appium/app/close HTTP/1.1" 200 14
+Mon, 25 Jul 2022 15:21:25 remote_connection.py[line:440] DEBUG Finished Request

@@ -1,0 +1,95 @@
+*** Settings ***
+Documentation     片库上报56
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${tag-select}     {'act':'tag-select'}
+${list}           {'act':'list'}
+${data-click}     {'act':'data-click'}
+${pvs}            {'act':'pvs'}
+
+*** Test Cases ***
+
+进入电影片库pvs
+    click a point    356     33  #首页－电影频道
+    sleep    2
+    公共－清除数据
+    公共－xpath     	//XCUIElementTypeStaticText[@name="筛选"]
+    公共－校验结果    ${pvs}    pianku_001    mpp_pvs_ipad    1
+
+电影频道筛选list
+    公共－清除数据
+    sleep    2
+    公共－点击页面文本    院线大片
+    公共－校验结果    ${list}    dianying_shaixuan001    mpp_list_ipad_dianying    1
+
+
+电影片库筛选list
+    公共－清除数据
+    公共－xpath    	(//XCUIElementTypeStaticText[@name="全部"])[3]
+    sleep    2
+    公共－校验结果    ${list}    dianying_shaixuan002    mpp_list_ipad_dianying    1
+
+
+
+
+电影片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    公共－校验结果    ${data-click}    dianying_001    mpp_dataclick_ipad_film    1
+
+
+
+
+
+电影片库进点播页pvs
+    sleep    2
+    公共－校验结果    ${pvs}    pianku_002    mpp_pvs_ipad    1
+
+
+
+
+点播页返回片库pvs
+    公共－清除数据
+    点播播放页－返回
+    sleep    2
+    公共－校验结果    ${pvs}    pianku_003    mpp_pvs_ipad    1
+
+
+#片库点热搜pvs
+#    公共－清除数据
+#    tap    热搜    100    0
+#    sleep    2
+#    公共－校验结果    ${pvs}    pianku_004    mpp_pvs_ipad    1
+#
+#
+#
+#
+#
+#搜索返回pvs
+#    公共－清除数据
+#    搜索－取消
+#    sleep    2
+#    公共－校验结果    ${pvs}    pianku_005    mpp_pvs_ipad    1
+
+
+
+
+片库返回频道pvs
+    公共－清除数据
+    公共－点击页面文本    返回
+    sleep    2
+    公共－校验结果    ${pvs}    pianku_006    mpp_pvs_ipad    1
+
+
+
+

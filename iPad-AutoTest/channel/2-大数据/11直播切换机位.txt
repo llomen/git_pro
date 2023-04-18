@@ -1,0 +1,152 @@
+*** Settings ***
+Documentation     个人直播7
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${cdn1}           {'s':'1'}
+${cdn2}           {'s':'2'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${pvs}            {'act':'pvs','tst':'0'}
+${pvs_zhibo}      {'act':'pvs','mf':'Apple manufacturer'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${share}          {'act':'share'}
+${shareresult}    {'act':'shareresult'}
+${heartbeat_start}    {'act':'heartbeat','idx':0}
+${heartbeat_end}    {'act':'heartbeat','ht':'2'}
+${table_adcdn}    mpp_adcdn_iphone
+
+*** Test Cases ***
+新版直播-进入直播间
+    公共－清除数据
+    新版直播-进入直播间
+    sleep    8
+    Comment    公共－清除数据
+    Comment    新版直播-点发评论
+    # 公共－校验结果    ${pvs}    geren_003    mpp_pvs_ipad    1 #点击评论框已经无上报
+
+关闭登录框pvs
+    Capture Page Screenshot
+    Comment    公共－清除数据
+    Comment    登录－关闭
+    #公共－校验结果    ${pvs}    geren_003    mpp_pvs_ipad    1    #目前默认直接登录账户
+
+切换普通机位pvs
+    新版直播-切换机位tab
+    公共－清除数据
+    新版直播-切换普通机位
+    Capture Page Screenshot
+    sleep    15
+    公共－校验结果    ${pvs}    geren_006    mpp_pvs_ipad    1
+
+完成卡顿
+    公共－校验结果    ${r3}    ipad_geren_zhibo3    mpp_cdnq_5_ipad    1
+
+定时卡顿
+    公共－校验结果    ${r1}    ipad_geren_zhibo1    mpp_cdnq_5_ipad    1
+
+aplay
+    Capture Page Screenshot
+    #公共－校验结果    ${aplay}    ipad_geren_001    mpp_aplay_5_ipad    1    #待数据库更新
+
+cdn1
+    公共－校验结果    ${cdn1}    ipad_dianshitai_001    mpp_cdn_5_ipad_zhibo    1
+
+cdn2
+    公共－校验结果    ${cdn2}    ipad_dianshitai_002    mpp_cdn_5_ipad_zhibo    1
+
+cdn3
+    公共－校验结果    ${cdn3}    ipad_dianshitai_003    mpp_cdn_5_ipad_zhibo    1
+
+结束心跳
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat_end}    ipad_changjing_001    mpp_heartbeat_5_ipad    1    #待数据库更新
+
+重新报心跳
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat_start}    ipad_changjing_001    mpp_heartbeat_5_ipad    1    ##待数据库更新
+
+切换vip机位pvs
+    公共－清除数据
+    新版直播-切换vip机位
+    sleep    2
+    公共－校验结果    ${pvs}    geren_007    mpp_pvs_ipad    1
+
+结束心跳2
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat_end}    ipad_changjing_001    mpp_heartbeat_5_ipad    1    #需要更新表结构
+
+完成卡顿2
+    公共－校验结果    ${r3}    ipad_geren_zhibo3    mpp_cdnq_5_ipad    1
+
+vip_cdn1
+    公共－校验结果    ${cdn1}    ipad_dianshitai_001    mpp_cdn_5_ipad_zhibo    1
+
+vip_cdn2
+    公共－校验结果    ${cdn2}    ipad_dianshitai_002    mpp_cdn_5_ipad_zhibo    1
+
+开通会员pvs
+    新版直播-关闭
+    首页－我的
+    我的－判断是否登录
+    首页－频道
+    新版直播-进入直播间
+    公共－清除数据
+    开通会员-直播vip
+    sleep    2
+    公共－校验结果    ${pvs}    geren_008    mpp_pvs_ipad    1
+
+跳转登录pvs
+    公共－清除数据
+    sleep    3
+    开通会员-登录
+    sleep    2
+    公共－校验结果    ${pvs}    geren_005    mpp_pvs_ipad    1
+
+历史登录
+    公共－清除数据
+    sleep    2
+    我的－勾选隐私协议
+    我的－点击弹窗登录按钮
+    #直接登录    siqian50@qq.com    nishizhu    sjidjididhh
+    #公共－校验结果    ${pvs}    geren_003    mpp_pvs_ipad    1
+
+关闭支付页
+    sleep    2
+    公共－支付页关闭
+    sleep    6
+
+vip_cdn3
+    公共－校验结果    ${cdn2}    ipad_dianshitai_002    mpp_cdn_5_ipad_zhibo    1
+
+定时卡顿2
+    公共－校验结果    ${r1}    ipad_geren_zhibo1    mpp_cdnq_5_ipad    1
+
+aplay2
+    Capture Page Screenshot
+    #公共－校验结果    ${aplay}    ipad_geren_001    mpp_aplay_5_ipad    1    #待更新数据库
+
+vip报心跳
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat_start}    ipad_changjing_001    mpp_heartbeat_5_ipad    1    #待更新数据库
+
+退出个人点播pvs
+    公共－清除数据
+    新版直播-关闭
+    sleep    2
+    公共－校验结果    ${pvs}    geren_004    mpp_pvs_ipad    1
+
+结束心跳3
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat_end}    ipad_changjing_001    mpp_heartbeat_5_ipad    1    #待更新数据库

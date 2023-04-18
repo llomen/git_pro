@@ -1,0 +1,44 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+会员首页
+    首页－会员
+    图片对比
+
+会员当季热播
+    swipe    100    600    100   200
+    图片对比
+
+会员大芒短视频
+    swipe    100    600    100   300
+    图片对比
+
+会员即将上线
+    swipe    100    600    100   300
+    图片对比
+
+会员猜你喜欢
+    swipe    100    600    100   300
+    图片对比
+
+会员电影
+    click element    //XCUIElementTypeStaticText[@name="电影"]
+    图片对比
+
+会员电视剧
+    click element    //XCUIElementTypeStaticText[@name="电视剧"]
+    图片对比

@@ -1,0 +1,424 @@
+*** Settings ***
+Documentation     高级筛选53
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${hot_field}      {'act':'recommended_hot'}
+${hotpv_field}    {'act':'hotpv'}
+
+*** Test Cases ***
+0-10分钟search
+    首页－搜索视频
+    搜索－输入搜索词    快乐大本营
+    搜索－键盘搜索
+    sleep    2
+    公共－xpath    //XCUIElementTypeButton[@name="高级筛选 "]
+    sleep    1
+    公共－清除数据
+    Click Element    name=0-10分钟
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_001    mpp_search_data_ipad    1
+
+
+
+
+0-10分钟view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+10-30分钟search
+    公共－清除数据
+    Click Element    name=10-30分钟
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_002    mpp_search_data_ipad    1
+
+
+
+
+
+10-30分钟view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+30-60分钟search
+    公共－清除数据
+    Click Element    name=30-60分钟
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_003    mpp_search_data_ipad    1
+
+
+
+
+
+30-60分钟view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+60分钟以上search
+    公共－清除数据
+    Click Element    name=60分钟以上
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_004    mpp_search_data_ipad    1
+
+
+
+
+
+60分钟以上view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+一天search
+    公共－清除数据
+    Click Element    name=一天
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_005    mpp_search_data_ipad    1
+
+
+
+
+
+一天view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+一周search
+    公共－清除数据
+    Click Element    name=一周
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_006    mpp_search_data_ipad    1
+
+
+
+
+
+一周view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+一个月search
+    公共－清除数据
+    Click Element    name=一月
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_007    mpp_search_data_ipad    1
+
+
+
+
+
+一个月view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+最热search
+    公共－清除数据
+    Click Element    name=最热
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_008    mpp_search_data_ipad    1
+
+
+
+
+
+最热view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+最新search
+    公共－清除数据
+    Click Element    name=最新
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_009    mpp_search_data_ipad    1
+
+
+
+
+
+最新view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+筛选结果click
+    公共－清除数据
+    tap    相关    0    100
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_shaixuan_001    mpp_click_data_ipad    1
+
+
+
+
+
+相关筛选search
+    公共－清除数据
+    点播播放页－返回
+    Click Element    name=相关
+    sleep    5
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_007    mpp_search_data_ipad    1
+
+
+
+
+
+相关筛选view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+时间全部search
+    公共－清除数据
+    Click Element    xpath=(//XCUIElementTypeButton[@name="全部"])[1]
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_025    mpp_search_data_ipad    1
+
+
+
+
+
+时间全部view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+综艺search
+    公共－清除数据
+    Click Element    name=综艺
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_011    mpp_search_data_ipad    1
+
+
+
+
+
+综艺view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+电视剧search
+    公共－清除数据
+    Click Element    name=电视剧
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_012    mpp_search_data_ipad    1
+
+
+
+
+
+电视剧view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+电影search
+    公共－清除数据
+    Click Element    name=电影
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_013    mpp_search_data_ipad    1
+
+
+
+
+
+电影view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+动漫search
+    公共－清除数据
+    Click Element    name=动漫
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_014    mpp_search_data_ipad    1
+
+
+
+
+
+动漫view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+音乐search
+    公共－清除数据
+    Click Element    name=音乐
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_015    mpp_search_data_ipad    1
+
+
+
+
+
+音乐view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+纪录片search
+    公共－清除数据
+    Click Element    name=纪录片
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_016    mpp_search_data_ipad    1
+
+
+
+
+纪录片view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+新闻search
+    公共－清除数据
+    Click Element    name=新闻
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_017    mpp_search_data_ipad    1
+
+
+
+
+
+新闻view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+综合search
+    公共－清除数据
+    Click Element    name=综合
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_022    mpp_search_data_ipad    1
+
+
+
+
+
+综合view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+原创search
+    公共－清除数据
+    comment    搜索－屏幕左滑
+    Comment    scroll    name=综合 1    name=纪录片 1
+    Click Element    name=原创
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_018    mpp_search_data_ipad    1
+
+
+
+
+
+原创view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+生活search
+    公共－清除数据
+    Click Element    name=生活
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_019    mpp_search_data_ipad    1
+
+
+
+
+
+生活view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+教育search
+    公共－清除数据
+    搜索－屏幕左滑
+    Click Element    name=教育
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_020    mpp_search_data_ipad    1
+
+
+
+
+
+教育view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+
+
+
+体育search
+    公共－清除数据
+    搜索－屏幕左滑
+    Click Element    name=体育
+    sleep    3
+    公共－校验结果    ${search_field}    ipad_so_shaixuan_021    mpp_search_data_ipad    1
+
+
+
+
+体育view
+    公共－校验结果    ${view_field}    ipad_shaixuan_001    mpp_view_data_ipad    1
+
+
+

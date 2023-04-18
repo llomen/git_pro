@@ -1,0 +1,45 @@
+*** Settings ***
+Documentation     搜索结果筛选
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Test Cases ***
+
+搜索结果频道-电影
+    首页－搜索视频
+    搜索－输入搜索词    初恋
+    搜索－键盘搜索
+    sleep    3
+    click a point    243    128
+    验证-页面存在元素    nsp=name=="初恋未满" and type=="XCUIElementTypeStaticText"
+
+搜索结果-相关搜索
+    验证-页面存在元素    nsp=name=="相关搜索" and type=="XCUIElementTypeStaticText"
+
+搜索结果-热门搜索
+    验证-页面存在元素    nsp=name=="热门搜索" and type=="XCUIElementTypeStaticText"
+
+搜索结果高级筛选
+    sleep  3
+    公共－点击页面文本    10-30分钟
+    公共－点击页面文本    一周
+    公共－点击页面文本    最热
+
+筛选无结果 -- 仅在推荐接口挂掉情况下出现
+
+#    首页－搜索视频
+#    搜索结果－点击关闭按钮
+#    click element  xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther
+    click a point    686    975
+#    搜索－键盘搜索
+    sleep  2
+    #验证-页面存在元素    nsp=name=="Sorry~没找到“ ”相关视频！" and type=="XCUIElementTypeStaticText"
+

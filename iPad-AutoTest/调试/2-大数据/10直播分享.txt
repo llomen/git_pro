@@ -1,0 +1,184 @@
+*** Settings ***
+Documentation     场景直播9
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${heartbeat_start}    {'act':'heartbeat','idx':'0'}
+${heartbeat_end}    {'act':'heartbeat','ht':'2'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${pvs_1}            {'act':'pvs','tst':'0','fpid':'707'}
+${pvs_2}            {'act':'pvs','tst':'0'}
+${pvs_zhibo}      {'act':'pvs','mf':'Apple manufacturer'}
+${cdn2}           {'s':'2'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${share}          {'act':'share','value':'4'}
+${shareresult}    {'act':'shareresult'}
+${table_adcdn}    mpp_adcdn_ipad
+${type1}          {'type':'0'}
+
+*** Test Cases ***
+# 需不断跳到外站 暂不对该用例集做处理
+场景直播pvs
+    公共－清除数据
+    直播-进入直播间
+    sleep    10
+    公共－校验结果    ${pvs_1}    changjing_001    mpp_pvs_ipad    1
+
+定时卡顿
+    sleep    2
+    公共－校验结果    ${r1}    ipad_changjing_1    mpp_cdnq_5_ipad    1
+
+aplay
+    Capture Page Screenshot
+    #公共－校验结果    ${aplay}    ipad_changjing_001    mpp_aplay_5_ipad    1    #表字段待更新
+
+cdn1
+    公共－校验结果    ${cdn1}    ipad_dianshitai_001    mpp_cdn_5_ipad_zhibo    1
+
+cdn2
+    公共－校验结果    ${cdn2}    ipad_dianshitai_002    mpp_cdn_5_ipad_zhibo    1
+
+cdn3
+    公共－校验结果    ${cdn3}    ipad_dianshitai_003    mpp_cdn_5_ipad_zhibo    1
+
+场景直播－分享到朋友圈
+    公共－清除数据
+    新版直播-分享到朋友圈
+    sleep    2
+    公共－校验结果    ${share}    share_27    mpp_jiaohu_ipad    1
+
+场景直播－分享到朋友圈结果
+    公共－校验结果    ${shareresult}    share_27    mpp_jiaohu_result_ipad    1
+
+场景直播－分享到微信
+    公共－清除数据
+    新版直播-分享到微信
+    sleep    2
+    sleep    2
+    公共－校验结果    ${share}    share_28    mpp_jiaohu_ipad    1
+
+场景直播－分享到微信结果
+    公共－校验结果    ${shareresult}    share_28    mpp_jiaohu_result_ipad    1
+
+场景直播－分享到微博
+    comment    直播播放页－分享
+    公共－清除数据
+    新版直播-分享到微博
+    sleep    2
+    公共-返回
+    sleep    2
+    公共－校验结果    ${share}    share_29    mpp_jiaohu_ipad    1
+
+场景直播－分享到微博结果
+    公共－校验结果    ${shareresult}    share_29    mpp_jiaohu_result_ipad    1
+
+场景直播－分享到QQ
+    公共－清除数据
+    新版直播-分享到QQ
+    sleep    2
+    公共－校验结果    ${share}    share_30    mpp_jiaohu_ipad    1
+
+场景直播－分享到QQ结果
+    公共－校验结果    ${shareresult}    share_30    mpp_jiaohu_result_ipad    1
+
+heartbeat
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat}    ipad_changjing_001    mpp_aplay_5_ipad    1    #待表结构更新
+
+退出场景点播pvs
+    公共－清除数据
+    新版直播-关闭
+    sleep    2
+    公共－校验结果    ${pvs_2}    changjing_002    mpp_pvs_ipad    1
+
+完成卡顿
+    公共－校验结果    ${r3}    ipad_changjing_3    mpp_cdnq_5_ipad    1
+
+停止heartbeat
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat}    ipad_changjing_001    mpp_aplay_5_ipad    1    #待表结构更新
+
+全屏分享-微信
+    click element  nsp=label=="快乐购" and type=="XCUIElementTypeStaticText"
+    sleep    15
+    新版直播-最大化
+    新版直播-全屏点分享
+    新版直播-全屏分享到微信
+    sleep    3
+    公共－校验结果    ${share}    share_28    mpp_jiaohu_ipad    1
+
+全屏分享-到微信结果
+    公共－校验结果    ${shareresult}    share_28    mpp_jiaohu_result_ipad    1
+
+全屏分享－分享到朋友圈
+    公共－清除数据
+    新版直播-全屏分享到朋友圈
+    sleep    2
+    公共－校验结果    ${share}    share_27    mpp_jiaohu_ipad    1
+
+全屏分享－分享到朋友圈结果
+    公共－校验结果    ${shareresult}    share_27    mpp_jiaohu_result_ipad    1
+
+全屏分享－分享到微博
+    公共－清除数据
+    新版直播-全屏分享到微博
+    sleep    2
+    公共－校验结果    ${share}    share_29    mpp_jiaohu_ipad    1
+
+全屏分享－分享到微博结果
+    公共－校验结果    ${shareresult}    share_29    mpp_jiaohu_result_ipad    1
+
+全屏分享-分享到QQ
+    公共－清除数据
+    新版直播-全屏分享到QQ
+    sleep    3
+    公共－校验结果    ${share}    share_30    mpp_jiaohu_ipad    1
+
+全屏分享－分享到QQ结果
+    公共－校验结果    ${shareresult}    share_30    mpp_jiaohu_result_ipad    1
+
+切换清晰度不上报pv
+    #关闭分享浮层
+    公共－清除数据
+    新版直播-点屏幕
+    新版直播-点屏幕
+    sleep    1
+    新版直播-点清晰度
+    sleep    2
+    新版直播-选择超清
+    sleep    3
+    # 公共－校验结果    ${pvs}    changjing_001    mpp_pvs_ipad    0    #后端无法校验条数为0的数据
+
+切换清晰度不上报vv
+    Capture Page Screenshot
+    #公共－校验结果    ${aplay}    ipad_changjing_001    mpp_aplay_5_ipad    0    #后端无法校验条数为0的数据
+
+切换清晰度不上报结束心跳
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat_end}    ipad_changjing_001    mpp_heartbeat_5_ipad    0    #后端无法校验条数为0的数据
+
+切换清晰度不重新报心跳
+    Capture Page Screenshot
+    #公共－校验结果    ${heartbeat_start}    ipad_changjing_001    mpp_heartbeat_5_ipad    0    #后端无法校验条数为0的数据
+
+重新上报cdn1
+    公共－校验结果    ${cdn1}    ipad_dianshitai_001    mpp_cdn_5_ipad_zhibo    1
+
+重新上报cdn2
+    公共－校验结果    ${cdn2}    ipad_dianshitai_002    mpp_cdn_5_ipad_zhibo    1
+
+重新上报cdn3
+    公共－校验结果    ${cdn3}    ipad_dianshitai_0031    mpp_cdn_5_ipad_zhibo    1

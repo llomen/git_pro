@@ -1,0 +1,24 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+大芒
+    首页－大芒
+    图片对比
+
+大芒下一页
+    swipe    100    600    100   200
+    图片对比

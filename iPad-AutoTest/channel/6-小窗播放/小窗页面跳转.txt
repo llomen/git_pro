@@ -1,0 +1,322 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+Resource          ../../对象库/功能.txt
+
+
+*** Variables ***
+${xc}             {'act':'xc'}
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${hb_15_sdk}      {'act':'hb','ht':'3','mf':'Apple manufacturer'}
+${hb_45_sdk}      {'act':'hb','ht':'4','mf':'Apple manufacturer'}
+${hb_60_sdk}      {'act':'hb','ht':'5','mf':'Apple manufacturer'}
+${hb_120_sdk}     {'act':'hb','ht':'6','mf':'Apple manufacturer'}
+${hb_out_sdk}     {'act':'hb','ht':'2','mf':'Apple manufacturer'}
+${table_sdk}      mpp_hb_5_ipad_sdk
+${table}          mpp_hb_5_ipad
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${sp}             {'act':'sp'}
+
+*** Test Cases ***
+应用启动xc
+    comment    前提：1/绑定Host；2/未登录；3/不勾选设置开关小窗
+    公共－校验结果    ${xc}    xc_01    mpp_jiaohu_ipad    1
+
+
+
+
+设置关闭小窗xc
+    公共－清除数据
+    comment    公共－点击页面文本    我的
+    公共－点击页面文本    UserSetting
+    sleep    1
+    tap    mine back    301    345
+    sleep    1
+    公共－校验结果    ${xc}    xc_02    mpp_jiaohu_ipad    1
+
+
+
+
+设置开启小窗xc
+    公共－清除数据
+    tap    mine back    301    345
+    sleep    1
+    公共－校验结果    ${xc}    xc_03    mpp_jiaohu_ipad    1
+
+
+
+
+
+半屏播放广告时切小窗xc
+    公共－点击页面文本    精选
+    首页－少儿频道
+    sleep    1
+    Click Element    name=青云志异常
+    sleep    3
+    公共－清除数据
+    点播播放页－小窗
+    sleep    2
+    公共－校验结果    ${xc}    xc_04    mpp_jiaohu_ipad    1
+
+
+
+
+半屏播放广告时切小窗pvs
+    公共－校验结果    ${pvs_field}    xiaochuang_01    mpp_pvs_ipad    1
+
+
+
+
+
+半屏播放广告时切小窗pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_01    mpp_pvs_ipad_other    0
+
+
+
+
+带小窗-频道页切换pvs
+    公共－清除数据
+    首页－动漫频道
+    公共－校验结果    ${pvs_field}    xiaochuang_02    mpp_pvs_ipad    1
+
+
+
+
+带小窗-频道页切换pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_02    mpp_pvs_ipad_other    0
+
+
+
+
+带小窗-频道页到我的pvs
+    公共－清除数据
+    首页－我的
+    公共－校验结果    {'act':'pvs','mf':'Apple','cpn':'5'}    xiaochuang_03    mpp_pvs_ipad    1
+
+
+
+
+
+带小窗-频道页到我的pvs_sdk
+    公共－校验结果    {'act':'pvs','mf':'Apple manufacturer','cpn':'5'}    xiaochuang_03    mpp_pvs_ipad_other    0
+
+
+
+
+
+带小窗-我的到缓存页pvs
+    公共－清除数据
+    首页－离线缓存
+    sleep    3
+    公共－校验结果    {'act':'pvs','mf':'Apple','fpn':'1'}    xiaochuang_04    mpp_pvs_ipad    1
+
+
+
+
+带小窗-我的到缓存页pvs_sdk
+    公共－校验结果    {'act':'pvs','mf':'Apple manufacturer','fpn':'1'}    xiaochuang_04    mpp_pvs_ipad_other    0
+
+
+
+
+
+带小窗-缓存页到频道页pvs
+    公共－清除数据
+    搜索－返回
+    sleep    3
+    公共－校验结果    ${pvs_field}    xiaochuang_05    mpp_pvs_ipad    1
+
+
+
+
+
+带小窗-缓存页到频道页pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_05    mpp_pvs_ipad_other    0
+
+
+
+
+带小窗-点别的视频切回点播页xc
+    首页－少儿频道
+    公共－清除数据
+    Click Element    name=杀破狼·贪狼
+    sleep    5
+    公共－校验结果    ${xc}    xc_05    mpp_jiaohu_ipad    0
+
+
+
+
+带小窗-点别的视频切回点播页pvs
+    公共－校验结果    ${pvs_field}    xiaochuang_06    mpp_pvs_ipad    1
+
+
+
+
+
+带小窗-点别的视频切回点播页pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_06    mpp_pvs_ipad_dianbo    0
+
+
+
+
+
+带小窗-点别的视频切回点播页sp
+    公共－校验结果    ${sp}    xiaochuang_01    mpp_sp_ipad    1
+
+
+
+
+
+半屏播放正片时切小窗xc
+    点播播放页－小窗
+    sleep    2
+    公共－校验结果    {'act':'xc','pos':'2'}    xc_06    mpp_jiaohu_ipad    1
+
+
+
+
+
+小窗播放15hb
+    sleep    190
+    公共－校验结果    ${hb_15}    ipad_xiaochuang_15    ${table}    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+
+小窗播放45hb
+    公共－校验结果    ${hb_45}    ipad_xiaochuang_45    ${table}    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+
+小窗播放60hb
+    公共－校验结果    ${hb_60}    ipad_xiaochuang_60    ${table}    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+
+小窗播放120hb
+    公共－校验结果    ${hb_120}    ipad_xiaochuang_120    ${table}    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+
+小窗播放15hb_sdk
+    公共－校验结果    ${hb_15_sdk}    ipad_shikan_15    ${table_sdk}    0
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+小窗播放45hb_sdk
+    公共－校验结果    ${hb_45_sdk}    ipad_xiaochuang_45    ${table_sdk}    0
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+小窗播放60hb_sdk
+    公共－校验结果    ${hb_60_sdk}    ipad_xiaochuang_60    ${table_sdk}    0
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+小窗播放120hb_sdk
+    公共－校验结果    ${hb_120_sdk}    ipad_xiaochuang_120    ${table_sdk}    0
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+
+
+带小窗-频道页到搜索首页pvs
+    公共－清除数据
+    首页－搜索视频
+    sleep    2
+    公共－校验结果    ${pvs_field}    xiaochuang_07    mpp_pvs_ipad    1
+
+
+
+
+
+带小窗-频道页到搜索首页pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_07    mpp_pvs_ipad_other    0
+
+
+
+
+
+带小窗-搜索首页到搜索结果页pvs
+    搜索－点击搜索框
+    搜索－输入搜索词    快乐大本营
+    公共－清除数据
+    搜索－键盘搜索
+    sleep    3
+    公共－校验结果    ${pvs_field}    xiaochuang_08    mpp_pvs_ipad    1
+
+
+
+
+带小窗-搜索首页到搜索结果页pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_08    mpp_pvs_ipad_other    0
+
+
+
+
+
+带小窗-搜索结果页到动态详情页pvs
+    公共－清除数据
+    tap    综合 1    83    490
+    Comment    Click Element    name=快乐大本营 1
+    sleep    4
+    公共－校验结果    {'act':'pvs','mf':'apple'}    xiaochuang_09    mpp_pvs_ipad    1
+
+
+
+
+
+带小窗-搜索结果页到动态详情页pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_09    mpp_pvs_ipad_zhibo    0
+
+
+
+
+带小窗-搜索结果页到空间页pvs
+    动态详情－关闭
+    公共－清除数据
+    tap    综合 1    891    490
+    Comment    Click Element    name=更多
+    sleep    3
+    公共－校验结果    {'act':'pvs','mf':'apple'}    xiaochuang_10    mpp_pvs_ipad    1
+
+
+
+
+
+带小窗-搜索结果页到空间页pvs_sdk
+    公共－校验结果    ${pvs_field_sdk}    xiaochuang_10    mpp_pvs_ipad_zhibo    0
+
+
+
+

@@ -1,0 +1,153 @@
+*** Settings ***
+Library           AppiumLibrary
+Resource          ./公共.txt
+
+*** Keywords ***
+搜索－输入搜索词
+    [Arguments]    ${value}
+#    click a point  750  30
+#    sleep   2
+    Input Value    name=searchTextField  ${value}
+    sleep   2
+
+搜索－点击搜索框
+    sleep    1
+    click element    xpath=//XCUIElementTypeTextField[@name="search_textField"]
+
+搜索-功能模块 点击搜索框
+    sleep    2
+    click element  xpath=//XCUIElementTypeTextField[@name="search_textField"]/parent::XCUIElementTypeOther
+
+搜索－点击搜索按钮
+    click element    name=search_icon
+
+搜索－删除搜索词
+    公共－点击页面文本    close
+
+搜索－删除搜索历史
+    公共－点击页面文本    Trash
+
+搜索－取消
+    公共－点击页面文本    取消
+
+搜索－点击下载
+    #公共－xpath    (//XCUIElementTypeButton[@name="search result cell download ic"])[1]
+    click element    nsp=name=="search result cell download ic" and type=="XCUIElementTypeButton"
+
+搜索－关闭缓存列表
+    公共－点击页面文本    	vod close
+
+
+搜索－点播放
+    comment    //XCUIElementTypeButton[@name=“ 播放”]
+    comment    公共－xpath    **/XCUIElementTypeButton[`label == " 播放"`][1]
+    sleep    3
+    click element    nsp= name contains "播放" and type =="XCUIElementTypeButton"
+    #click a point    243 368
+    click a point   250   360
+
+搜索－点更多...
+    tap    xpath=(//XCUIElementTypeStaticText[@name="..."])[1]    0    0
+
+搜索－关闭点播列表
+    Click Element    name=vodInfo cancel
+    sleep    3
+
+搜索－站外返回
+    Click Element    name=My Title BlackBack
+
+搜索－返回
+    sleep    2
+    Click Element    name=NavigantionBar OrangeBack
+    comment    Click Element    name=back white nor
+
+片库－播放第一个
+    公共－xpath    (//XCUIElementTypeImage)[1]/following-sibling::XCUIElementTypeStaticText[1]
+    sleep    5
+
+搜索－search
+    sleep    1
+    Click Element    name=SearchStart
+    sleep    1
+
+搜索结果－点击关闭按钮
+    click a point    1259    71
+
+搜索结果－最新
+    sleep    1
+    Click Element    name=最新
+    sleep    1
+
+搜索结果－最热
+    sleep    1
+    Click Element    name=最热
+    sleep    1
+
+搜索结果－点击短片
+    Click Element    name=发布时间：2014-08-22
+    Comment    Click Element    name=吻戏来啦！清锁长恭触不及防的一吻
+    sleep    1
+
+搜索无结果－查看全部
+    sleep    1
+    Click Element    name=查看全部搜索结果
+    sleep    2
+
+搜索无结果－播放第一个视频
+    sleep    1
+    Click Element    name=快乐大本营 2017
+    sleep    1
+
+搜索－键盘搜索
+    sleep    1
+    Click Element    name=Search
+    sleep    3
+
+搜索－相关明星
+    swipe    400    700    400    200
+    tap    相关明星    492    129
+    Comment    Click Element    name=房祖名
+    sleep    1
+
+搜索－上传视频
+    comment    swipe    400    700    400    200
+    comment    tap    综合    0    700
+    Comment    Click Element    name=偶像来了1
+    comment    tap    综合    0    700
+    comment    Click Element    xpath=//XCUIElementTypeStaticText[@name="04:21”]/following-sibling::XCUIElementTypeButton[1]
+    comment    tap    综合    0    700
+    公共-屏幕上滑
+    click element    name=颖宝拍戏真的太拼了！原来她背上的疤是这么来的，太心疼了?
+
+搜索－上传视频更多
+    Click Element    xpath=(//XCUIElementTypeStaticText[@name="更多"])[2]
+    sleep    1
+
+片库列表－屏幕上滑
+    swipe_by_percent    50    65    80    65
+    sleep    1
+
+搜索－屏幕左滑
+    Comment    swipe    950    500    0    -500
+    swipe    750    100    350    100
+    sleep    1
+
+搜索－屏幕右滑
+    Comment    swipe    950    500    0    200
+    swipe    350    100    750    100
+    sleep    1
+
+搜索－删除下载
+    Click Element    name=35
+    sleep    2
+    点击删除
+    sleep    3
+
+搜索－删除下载2
+    Click Element    name=8
+    sleep    2
+    点击删除
+    sleep    3
+
+点击删除
+    Click Element    name=删除

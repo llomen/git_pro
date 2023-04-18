@@ -1,0 +1,114 @@
+*** Settings ***
+Documentation     电视剧搜索点击search按钮搜索12
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${pvs_field_1}      {'act':'pvs','mf':'Apple','fpn':'40'}
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${hot_field}      {'act':'recommend_hot'}
+
+*** Test Cases ***
+电视剧搜索search
+    首页－搜索视频
+    公共－清除数据
+    搜索－输入搜索词    旋风少女
+    搜索－键盘搜索
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_search_001    mpp_search_data_ipad    1
+
+电视剧搜索view
+    公共－校验结果    ${view_field}    ipad_view_001    mpp_view_data_ipad    1
+
+选集中间页pvs
+    公共－清除数据
+    搜索－点更多...
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_009    mpp_pvs_ipad    1
+
+选集...点击click
+    公共－校验结果    ${click_field}    ipad_click_002    mpp_click_data_ipad    1
+
+选集点击click
+    公共－清除数据
+    sleep    2
+    公共－xpath    //XCUIElementTypeStaticText[@name="25"]/following-sibling::XCUIElementTypeButton[1]
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_click_002    mpp_click_data_ipad    0
+
+选集播放pvs
+    公共－校验结果    ${pvs_field}    search_010    mpp_pvs_ipad    1
+
+选集播放返回pvs
+    公共－清除数据
+    sleep    5
+    点播播放页－返回
+    sleep    2
+    公共－校验结果    ${pvs_field_1}    search_011    mpp_pvs_ipad    1
+
+选集列表返回pvs
+    公共－清除数据
+    搜索－关闭点播列表
+    sleep    3
+    公共－校验结果    ${pvs_field}    search_014    mpp_pvs_ipad    1
+
+缓存列表pvs
+    公共－清除数据
+    搜索.搜索－点击下载
+    sleep    5
+    公共－校验结果    ${pvs_field}    search_013    mpp_pvs_ipad    1
+
+缓存按钮click
+    公共－校验结果    ${click_field}    ipad_click_003    mpp_click_data_ipad    1
+
+缓存tap页click
+    公共－清除数据
+    Click Element    name=29
+    sleep    2
+    公共－校验结果    ${click_field}    ipad_click_003    mpp_click_data_ipad    1
+
+
+缓存列表返回pvs
+    公共－清除数据
+    搜索－关闭缓存列表
+    sleep    5
+    公共－校验结果    ${pvs_field}    search_015    mpp_pvs_ipad    1
+
+
+
+
+
+短片click
+    公共－清除数据
+    sleep    1
+    Click Element    name=世纪和解 长安劝廷皓离开风云
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_click_004    mpp_click_data_ipad    1
+
+
+
+
+
+播放返回pvs
+    公共－清除数据
+    点播播放页－返回
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_012    mpp_pvs_ipad    1
+
+
+
+

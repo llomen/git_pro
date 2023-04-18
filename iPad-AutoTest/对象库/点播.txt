@@ -1,0 +1,191 @@
+*** Settings ***
+Library           AppiumLibrary
+Resource          ./公共.txt
+Resource          ../对象库/搜索.txt
+Resource          ../对象库/点播.txt
+
+*** Keywords ***
+首页-进入点播页快乐大本营
+#改成搜索进入
+    首页－频道
+    首页－搜索视频
+    搜索－输入搜索词    女儿们的恋爱4
+    搜索－键盘搜索
+    搜索－点播放
+    sleep    5
+
+新版点播-节目简介
+    click element    nsp=label CONTAINS "次播放" and type=="XCUIElementTypeButton"
+    #click a point    237    557
+
+点播播放页－返回
+    sleep    5
+    tap    name=player back icon    5    5
+    sleep    3
+
+点播播放页－评论
+    click element    nsp=label CONTAINS "条评论" and type=="XCUIElementTypeButton"
+
+点播播放页－全屏
+    Click Element    nsp=name=="icon magnify" and type=="XCUIElementTypeButton"
+    sleep    2
+
+点播播放页－取消全屏
+    #click element    nsp=name=="icon narrow" and type=="XCUIElementTypeButton"
+    click a point   1060    800
+    sleep    3
+
+点播播放页－画中画
+    sleep    3
+    Click Element    nsp=name contains "pip" and type=="XCUIElementTypeButton"
+
+点播评论-发布页取消发布
+    click element    nsp=name contains "NavigantionBar" and type=="XCUIElementTypeButton"
+
+全屏播放页－返回
+    tap    400    400
+    Click Element    name=play backicon
+    sleep    1
+    新版点播-加入看单
+    Comment    公共－点击页面文本    Player Floor Collect Normal
+    comment    公共－xpath    //XCUIElementTypeButton[@name="vodinfo share"]/preceding-sibling::XCUIElementTypeButton[1]
+    click a point    649    576
+
+新版点播-点赞
+    sleep    2
+    #comment    公共－xpath    //XCUIElementTypeButton[@name="Player Floor Collect Normal"]/preceding-sibling::XCUIElementTypeButton[1]
+    #click element accessibility_id=68
+    #click a point    652    582
+    #click element    nsp=label contains "万" and type=="XCUIElementTypeButton"
+    #comment     公共－xpath    //XCUIElementTypeButton[@name="Player Floor Collect Normal"]/preceding-sibling::XCUIElementTypeButton[1]
+    click a point   487     473
+
+新版点播-加入看单
+    sleep    3
+    click element    nsp=label contains "Collect" and type=="XCUIElementTypeButton"
+
+点播播放页－下载
+    click element    nsp=label contains "DownLoad" and type=="XCUIElementTypeButton"
+
+点播播放页－异常返回
+    sleep    1
+    Click Element    name=play backicon
+    sleep    2
+
+点播播放页－会员免广告
+    sleep    1
+    Click Element    name=会员免广告
+    sleep    2
+
+关闭vip提示
+    ${aa}=    run keyword and return status    page should contain text    开通VIP
+    run keyword if    ${aa}    公共－点击页面文本    取消
+
+点屏幕
+    click a point    300    300
+    sleep    1
+
+点清晰度
+    click a point    950    800
+    sleep   1
+    #comment     公共－xpath    	//XCUIElementTypeButton[@name="选集"]/following-sibling::XCUIElementTypeButton[1]
+
+
+
+点播播放页－广告详情
+    sleep    1
+    tap    550    370
+    comment    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAStaticText[10]/UIAStaticText[1]
+    sleep    2
+
+点播播放页－收藏
+    sleep    1
+    Click Element    name=vodinfo collection
+    sleep    2
+
+点播播放页－小屏分享
+    #Comment    Click Element    name=vodinfo share
+    #公共－点击页面文本    	Player Floor share
+    #click element    nsp=label contains "Player Floor share" and type=="XCUIElementTypeButton"
+    click a point    632    454
+    #按坐标点击元素  name=Player Floor share
+
+全屏播放页－设置
+    comment    tap    300    300
+    sleep    1
+    Click Element    name=icon set
+
+直播播放页－分享
+    click a point    200    200
+    Click Element    name=plyer share
+    sleep    2
+
+点播播放页－点击猜你喜欢
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]
+    sleep    2
+
+点播播放页－点击相关推荐
+    sleep    1
+    scroll to    xpath=//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIACollectionView[3]/UIACollectionCell[1]/UIAStaticText[2]
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIACollectionView[3]/UIACollectionCell[1]/UIAStaticText[2]
+    sleep    2
+
+点播播放页－立即开通
+    click element    name=立即开通
+    comment    xpath: //UIAApplication[1]/UIAWindow[2]/UIAButton[2]
+
+点播播放－立刻开通
+    click element    name: 立刻开通
+    comment    xpath: //UIAApplication[1]/UIAWindow[2]/UIAButton[2]
+
+下载－关闭
+    click element    name=vod close
+    sleep    1
+
+下载－下载第一个
+    click element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAButton[1]
+
+换一换
+    click element    name=change
+
+短片更多-关闭
+    click element    name=vodInfo cancel
+
+播单－看了还会看
+    sleep    1
+    tap    看了还会看    0    100
+    sleep    2
+
+点播－评论滑动
+    swipe    600    700    -500    0
+    swipe    600    700    -250    0
+
+广告播放页－返回
+    sleep    1
+    tap    play backicon    20    10
+    sleep    2
+
+点播播放页－小窗
+    sleep    2
+    tap    player Smallwindow icon    20    10
+    sleep    2
+
+清空缓存
+    ${ret}    Run Keyword And Return Status    Page Should Not Contain Element    download-default-background
+    run keyword if    ${ret}    删除所有缓存
+
+删除所有缓存
+    公共－点击页面文本    删除
+    #点击所有元素    playlist delete icon
+    click element    nsp=name=="playlist delete icon" and type=="XCUIElementTypeButton"
+    click element    name=确定
+
+点击所有元素
+    [Arguments]    ${ele}
+    @{list}    get webelements    name = ${ele}
+    ${length}    get length    ${list}
+    log    ${length}
+    FOR    ${a}    IN RANGE    ${length}
+    click element    ${ele}
+    sleep    5

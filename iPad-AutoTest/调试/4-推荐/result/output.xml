@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.9.4 on darwin)" generated="20220716 15:45:54.727" rpa="false">
+<suite id="s1" name="03猜你喜欢" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/4-推荐/03猜你喜欢.txt">
+<kw name="公共－初始化环境" library="公共" type="setup">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20220716 15:45:58.843" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220716 15:45:55.843" endtime="20220716 15:45:58.844"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20220716 15:45:58.844" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20220716 15:45:58.844" endtime="20220716 15:45:58.955"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20220716 15:46:03.956" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220716 15:45:58.955" endtime="20220716 15:46:03.956"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:45:55.843" endtime="20220716 15:46:03.956"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=iPad</arg>
+<arg>platformVersion=14.4.1</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>udid=f4168aea0d6a99829d75f3ea681f430ad71df1ea</arg>
+<arg>bundleId=com.imgo.tv.hd</arg>
+<arg>AutomationName=XCUITest</arg>
+</arguments>
+<status status="PASS" starttime="20220716 15:46:03.956" endtime="20220716 15:46:12.302"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20220716 15:46:22.304" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:12.302" endtime="20220716 15:46:22.304"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:45:55.842" endtime="20220716 15:46:22.304"></status>
+</kw>
+<test id="s1-t1" name="p_graphic模块show">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20220716 15:46:25.306" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:22.305" endtime="20220716 15:46:25.306"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20220716 15:46:25.307" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20220716 15:46:25.306" endtime="20220716 15:46:25.408"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20220716 15:46:30.410" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:25.408" endtime="20220716 15:46:30.410"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:46:22.305" endtime="20220716 15:46:30.410"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>230</arg>
+</arguments>
+<status status="PASS" starttime="20220716 15:46:30.411" endtime="20220716 15:46:33.703"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20220716 15:46:35.704" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:33.703" endtime="20220716 15:46:35.704"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:46:30.410" endtime="20220716 15:46:35.704"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>230</arg>
+</arguments>
+<status status="PASS" starttime="20220716 15:46:35.705" endtime="20220716 15:46:38.953"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20220716 15:46:40.954" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:38.953" endtime="20220716 15:46:40.954"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:46:35.704" endtime="20220716 15:46:40.954"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>230</arg>
+</arguments>
+<status status="PASS" starttime="20220716 15:46:40.955" endtime="20220716 15:46:44.230"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20220716 15:46:46.231" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:44.230" endtime="20220716 15:46:46.231"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:46:40.954" endtime="20220716 15:46:46.232"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>230</arg>
+</arguments>
+<status status="PASS" starttime="20220716 15:46:46.232" endtime="20220716 15:46:49.518"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20220716 15:46:51.520" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:49.518" endtime="20220716 15:46:51.520"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:46:46.232" endtime="20220716 15:46:51.520"></status>
+</kw>
+<kw name="公共-屏幕上滑" library="公共">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>230</arg>
+</arguments>
+<status status="PASS" starttime="20220716 15:46:51.521" endtime="20220716 15:46:54.798"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20220716 15:46:56.799" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:54.799" endtime="20220716 15:46:56.799"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:46:51.521" endtime="20220716 15:46:56.799"></status>
+</kw>
+<kw name="公共－校验结果" library="公共">
+<arguments>
+<arg>{'act':'show','flag':'16986'}</arg>
+<arg>index_feed_1</arg>
+<arg>${table_show}</arg>
+<arg>3</arg>
+</arguments>
+<kw name="Check Result" library="auto">
+<doc>校验结果
+:param field: 要查询的域
+:param platform: 平台类型
+:param test_point: 测试点
+:param field_table: 数据模板表
+:param act_count: 校验条数
+:return:</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${platform}</arg>
+<arg>${test_point}</arg>
+<arg>${field_table}</arg>
+<arg>${act_count}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.801" level="INFO">check_result...</msg>
+<msg timestamp="20220716 15:46:56.912" level="INFO">${result} = {'count': [0, 7], 'field': [1, ''], 'errdata': [1, '']}</msg>
+<status status="PASS" starttime="20220716 15:46:56.800" endtime="20220716 15:46:56.912"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['count'][0]}==1</arg>
+<arg>条数错误：${result['count'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+<var>${error1}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.916" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:46:56.916" endtime="20220716 15:46:56.916"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.917" level="INFO">${error} = 条数错误：7
+</msg>
+<status status="PASS" starttime="20220716 15:46:56.917" endtime="20220716 15:46:56.917"></status>
+</kw>
+<msg timestamp="20220716 15:46:56.917" level="INFO">${count} = False</msg>
+<msg timestamp="20220716 15:46:56.917" level="INFO">${error1} = 条数错误：7
+</msg>
+<status status="PASS" starttime="20220716 15:46:56.913" endtime="20220716 15:46:56.917"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['field'][0]} ==1</arg>
+<arg>字段错误：${result['field'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${field}</var>
+<var>${error2}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.918" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20220716 15:46:56.918" endtime="20220716 15:46:56.918"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.918" level="INFO">${error} = </msg>
+<status status="PASS" starttime="20220716 15:46:56.918" endtime="20220716 15:46:56.918"></status>
+</kw>
+<msg timestamp="20220716 15:46:56.918" level="INFO">${field} = True</msg>
+<msg timestamp="20220716 15:46:56.918" level="INFO">${error2} = </msg>
+<status status="PASS" starttime="20220716 15:46:56.917" endtime="20220716 15:46:56.918"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['errdata'][0]}==1</arg>
+<arg>字段值错误：${result['errdata'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${errdata}</var>
+<var>${error3}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.919" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20220716 15:46:56.919" endtime="20220716 15:46:56.919"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.920" level="INFO">${error} = </msg>
+<status status="PASS" starttime="20220716 15:46:56.919" endtime="20220716 15:46:56.920"></status>
+</kw>
+<msg timestamp="20220716 15:46:56.920" level="INFO">${errdata} = True</msg>
+<msg timestamp="20220716 15:46:56.920" level="INFO">${error3} = </msg>
+<status status="PASS" starttime="20220716 15:46:56.919" endtime="20220716 15:46:56.920"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${count}&amp;${field}&amp;${errdata}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.920" level="INFO">${res} = False</msg>
+<status status="PASS" starttime="20220716 15:46:56.920" endtime="20220716 15:46:56.920"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${error1}</arg>
+<arg>${error2}</arg>
+<arg>${error3}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.921" level="INFO">${error} = 条数错误：7
+</msg>
+<status status="PASS" starttime="20220716 15:46:56.920" endtime="20220716 15:46:56.921"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${error}</arg>
+</arguments>
+<msg timestamp="20220716 15:46:56.921" level="FAIL">条数错误：7
+</msg>
+<status status="FAIL" starttime="20220716 15:46:56.921" endtime="20220716 15:46:56.921"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:46:56.800" endtime="20220716 15:46:56.921"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:46:22.304" endtime="20220716 15:46:56.922" critical="yes">条数错误：7
+</status>
+</test>
+<test id="s1-t2" name="p_graphic模块chfeedshow">
+<kw name="公共－校验结果" library="公共">
+<arguments>
+<arg>${chfeedshow}</arg>
+<arg>chfeedshow_ipad_1</arg>
+<arg>${table_chfeedshow}</arg>
+<arg>2</arg>
+</arguments>
+<kw name="Check Result" library="auto">
+<doc>校验结果
+:param field: 要查询的域
+:param platform: 平台类型
+:param test_point: 测试点
+:param field_table: 数据模板表
+:param act_count: 校验条数
+:return:</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${platform}</arg>
+<arg>${test_point}</arg>
+<arg>${field_table}</arg>
+<arg>${act_count}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20220716 15:46:56.923" level="INFO">check_result...</msg>
+<msg timestamp="20220716 15:46:57.034" level="INFO">${result} = {'count': [0, 3], 'field': [1, ''], 'errdata': [1, '']}</msg>
+<status status="PASS" starttime="20220716 15:46:56.923" endtime="20220716 15:46:57.034"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['count'][0]}==1</arg>
+<arg>条数错误：${result['count'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+<var>${error1}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.035" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:46:57.035" endtime="20220716 15:46:57.035"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.036" level="INFO">${error} = 条数错误：3
+</msg>
+<status status="PASS" starttime="20220716 15:46:57.036" endtime="20220716 15:46:57.036"></status>
+</kw>
+<msg timestamp="20220716 15:46:57.036" level="INFO">${count} = False</msg>
+<msg timestamp="20220716 15:46:57.036" level="INFO">${error1} = 条数错误：3
+</msg>
+<status status="PASS" starttime="20220716 15:46:57.035" endtime="20220716 15:46:57.036"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['field'][0]} ==1</arg>
+<arg>字段错误：${result['field'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${field}</var>
+<var>${error2}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.037" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20220716 15:46:57.037" endtime="20220716 15:46:57.037"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.037" level="INFO">${error} = </msg>
+<status status="PASS" starttime="20220716 15:46:57.037" endtime="20220716 15:46:57.037"></status>
+</kw>
+<msg timestamp="20220716 15:46:57.037" level="INFO">${field} = True</msg>
+<msg timestamp="20220716 15:46:57.037" level="INFO">${error2} = </msg>
+<status status="PASS" starttime="20220716 15:46:57.036" endtime="20220716 15:46:57.038"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['errdata'][0]}==1</arg>
+<arg>字段值错误：${result['errdata'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${errdata}</var>
+<var>${error3}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.038" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20220716 15:46:57.038" endtime="20220716 15:46:57.038"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.039" level="INFO">${error} = </msg>
+<status status="PASS" starttime="20220716 15:46:57.038" endtime="20220716 15:46:57.039"></status>
+</kw>
+<msg timestamp="20220716 15:46:57.039" level="INFO">${errdata} = True</msg>
+<msg timestamp="20220716 15:46:57.039" level="INFO">${error3} = </msg>
+<status status="PASS" starttime="20220716 15:46:57.038" endtime="20220716 15:46:57.039"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${count}&amp;${field}&amp;${errdata}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.039" level="INFO">${res} = False</msg>
+<status status="PASS" starttime="20220716 15:46:57.039" endtime="20220716 15:46:57.039"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${error1}</arg>
+<arg>${error2}</arg>
+<arg>${error3}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:46:57.040" level="INFO">${error} = 条数错误：3
+</msg>
+<status status="PASS" starttime="20220716 15:46:57.039" endtime="20220716 15:46:57.040"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${error}</arg>
+</arguments>
+<msg timestamp="20220716 15:46:57.040" level="FAIL">条数错误：3
+</msg>
+<status status="FAIL" starttime="20220716 15:46:57.040" endtime="20220716 15:46:57.040"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:46:56.922" endtime="20220716 15:46:57.040"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:46:56.922" endtime="20220716 15:46:57.040" critical="yes">条数错误：3
+</status>
+</test>
+<test id="s1-t3" name="p_1big4small模块show">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20220716 15:47:00.042" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220716 15:46:57.041" endtime="20220716 15:47:00.042"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20220716 15:47:00.042" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20220716 15:47:00.042" endtime="20220716 15:47:00.142"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20220716 15:47:05.143" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220716 15:47:00.142" endtime="20220716 15:47:05.143"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:46:57.041" endtime="20220716 15:47:05.143"></status>
+</kw>
+<kw name="公共－校验结果" library="公共">
+<arguments>
+<arg>{'act':'show','flag':'16986'}</arg>
+<arg>index_feed_2</arg>
+<arg>${table_show}</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Check Result" library="auto">
+<doc>校验结果
+:param field: 要查询的域
+:param platform: 平台类型
+:param test_point: 测试点
+:param field_table: 数据模板表
+:param act_count: 校验条数
+:return:</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${platform}</arg>
+<arg>${test_point}</arg>
+<arg>${field_table}</arg>
+<arg>${act_count}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.144" level="INFO">check_result...</msg>
+<msg timestamp="20220716 15:47:05.247" level="INFO">${result} = {'count': [0, 0], 'field': [0, 'not data report'], 'errdata': [0, 'not data report']}</msg>
+<status status="PASS" starttime="20220716 15:47:05.144" endtime="20220716 15:47:05.247"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['count'][0]}==1</arg>
+<arg>条数错误：${result['count'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+<var>${error1}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.248" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.248" endtime="20220716 15:47:05.248"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.249" level="INFO">${error} = 条数错误：0
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.248" endtime="20220716 15:47:05.249"></status>
+</kw>
+<msg timestamp="20220716 15:47:05.249" level="INFO">${count} = False</msg>
+<msg timestamp="20220716 15:47:05.249" level="INFO">${error1} = 条数错误：0
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.247" endtime="20220716 15:47:05.249"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['field'][0]} ==1</arg>
+<arg>字段错误：${result['field'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${field}</var>
+<var>${error2}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.250" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.250" endtime="20220716 15:47:05.250"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.250" level="INFO">${error} = 字段错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.250" endtime="20220716 15:47:05.250"></status>
+</kw>
+<msg timestamp="20220716 15:47:05.250" level="INFO">${field} = False</msg>
+<msg timestamp="20220716 15:47:05.250" level="INFO">${error2} = 字段错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.249" endtime="20220716 15:47:05.250"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['errdata'][0]}==1</arg>
+<arg>字段值错误：${result['errdata'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${errdata}</var>
+<var>${error3}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.251" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.251" endtime="20220716 15:47:05.251"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.252" level="INFO">${error} = 字段值错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.251" endtime="20220716 15:47:05.252"></status>
+</kw>
+<msg timestamp="20220716 15:47:05.252" level="INFO">${errdata} = False</msg>
+<msg timestamp="20220716 15:47:05.252" level="INFO">${error3} = 字段值错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.251" endtime="20220716 15:47:05.252"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${count}&amp;${field}&amp;${errdata}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.252" level="INFO">${res} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.252" endtime="20220716 15:47:05.252"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${error1}</arg>
+<arg>${error2}</arg>
+<arg>${error3}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.253" level="INFO">${error} = 条数错误：0
+字段错误：not data report
+字段值错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.252" endtime="20220716 15:47:05.253"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${error}</arg>
+</arguments>
+<msg timestamp="20220716 15:47:05.253" level="FAIL">条数错误：0
+字段错误：not data report
+字段值错误：not data report
+</msg>
+<status status="FAIL" starttime="20220716 15:47:05.253" endtime="20220716 15:47:05.253"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:47:05.143" endtime="20220716 15:47:05.253"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:46:57.040" endtime="20220716 15:47:05.253" critical="yes">条数错误：0
+字段错误：not data report
+字段值错误：not data report
+</status>
+</test>
+<test id="s1-t4" name="p_1big4small模块chfeedshow">
+<kw name="公共－校验结果" library="公共">
+<arguments>
+<arg>${chfeedshow}</arg>
+<arg>chfeedshow_ipad_1</arg>
+<arg>${table_chfeedshow}</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Check Result" library="auto">
+<doc>校验结果
+:param field: 要查询的域
+:param platform: 平台类型
+:param test_point: 测试点
+:param field_table: 数据模板表
+:param act_count: 校验条数
+:return:</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${platform}</arg>
+<arg>${test_point}</arg>
+<arg>${field_table}</arg>
+<arg>${act_count}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.255" level="INFO">check_result...</msg>
+<msg timestamp="20220716 15:47:05.357" level="INFO">${result} = {'count': [0, 0], 'field': [0, 'not data report'], 'errdata': [0, 'not data report']}</msg>
+<status status="PASS" starttime="20220716 15:47:05.254" endtime="20220716 15:47:05.357"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['count'][0]}==1</arg>
+<arg>条数错误：${result['count'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+<var>${error1}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.358" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.357" endtime="20220716 15:47:05.358"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.358" level="INFO">${error} = 条数错误：0
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.358" endtime="20220716 15:47:05.358"></status>
+</kw>
+<msg timestamp="20220716 15:47:05.358" level="INFO">${count} = False</msg>
+<msg timestamp="20220716 15:47:05.358" level="INFO">${error1} = 条数错误：0
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.357" endtime="20220716 15:47:05.359"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['field'][0]} ==1</arg>
+<arg>字段错误：${result['field'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${field}</var>
+<var>${error2}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.359" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.359" endtime="20220716 15:47:05.359"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.360" level="INFO">${error} = 字段错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.359" endtime="20220716 15:47:05.360"></status>
+</kw>
+<msg timestamp="20220716 15:47:05.360" level="INFO">${field} = False</msg>
+<msg timestamp="20220716 15:47:05.360" level="INFO">${error2} = 字段错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.359" endtime="20220716 15:47:05.360"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['errdata'][0]}==1</arg>
+<arg>字段值错误：${result['errdata'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${errdata}</var>
+<var>${error3}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.361" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.361" endtime="20220716 15:47:05.361"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.361" level="INFO">${error} = 字段值错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.361" endtime="20220716 15:47:05.361"></status>
+</kw>
+<msg timestamp="20220716 15:47:05.361" level="INFO">${errdata} = False</msg>
+<msg timestamp="20220716 15:47:05.361" level="INFO">${error3} = 字段值错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.360" endtime="20220716 15:47:05.361"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${count}&amp;${field}&amp;${errdata}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.362" level="INFO">${res} = False</msg>
+<status status="PASS" starttime="20220716 15:47:05.361" endtime="20220716 15:47:05.362"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${error1}</arg>
+<arg>${error2}</arg>
+<arg>${error3}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:05.362" level="INFO">${error} = 条数错误：0
+字段错误：not data report
+字段值错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:05.362" endtime="20220716 15:47:05.362"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>${error}</arg>
+</arguments>
+<msg timestamp="20220716 15:47:05.363" level="FAIL">条数错误：0
+字段错误：not data report
+字段值错误：not data report
+</msg>
+<status status="FAIL" starttime="20220716 15:47:05.362" endtime="20220716 15:47:05.363"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:47:05.254" endtime="20220716 15:47:05.363"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:47:05.254" endtime="20220716 15:47:05.363" critical="yes">条数错误：0
+字段错误：not data report
+字段值错误：not data report
+</status>
+</test>
+<test id="s1-t5" name="p_graphic模块点视频chfeedclick">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20220716 15:47:08.365" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220716 15:47:05.364" endtime="20220716 15:47:08.366"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20220716 15:47:08.366" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20220716 15:47:08.366" endtime="20220716 15:47:08.465"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20220716 15:47:13.465" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220716 15:47:08.465" endtime="20220716 15:47:13.465"></status>
+</kw>
+<status status="PASS" starttime="20220716 15:47:05.364" endtime="20220716 15:47:13.466"></status>
+</kw>
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeStaticText[@name="“ 百炼成钢 第21集 ”"]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20220716 15:47:14.468" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220716 15:47:13.467" endtime="20220716 15:47:14.469"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20220716 15:47:14.470" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="“ 百炼成钢 第21集 ”"]'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220716 15:47:16.922" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220716 15:47:16.080" endtime="20220716 15:47:16.923"></status>
+</kw>
+<msg timestamp="20220716 15:47:16.971" level="FAIL">ValueError: Element locator 'xpath=//XCUIElementTypeStaticText[@name="“ 百炼成钢 第21集 ”"]' did not match any elements.</msg>
+<status status="FAIL" starttime="20220716 15:47:14.469" endtime="20220716 15:47:16.971"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:47:13.466" endtime="20220716 15:47:16.972"></status>
+</kw>
+<status status="FAIL" starttime="20220716 15:47:05.363" endtime="20220716 15:47:16.972" critical="yes">ValueError: Element locator 'xpath=//XCUIElementTypeStaticText[@name="“ 百炼成钢 第21集 ”"]' did not match any elements.</status>
+</test>
+<test id="s1-t6" name="p_graphic模块点视频跳点播pvs">
+<kw name="公共－校验结果" library="公共">
+<arguments>
+<arg>${pvs_field}</arg>
+<arg>yuyue_09</arg>
+<arg>${table_pvs}</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Check Result" library="auto">
+<doc>校验结果
+:param field: 要查询的域
+:param platform: 平台类型
+:param test_point: 测试点
+:param field_table: 数据模板表
+:param act_count: 校验条数
+:return:</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${platform}</arg>
+<arg>${test_point}</arg>
+<arg>${field_table}</arg>
+<arg>${act_count}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20220716 15:47:16.974" level="INFO">check_result...</msg>
+<msg timestamp="20220716 15:47:17.077" level="INFO">${result} = {'count': [0, 0], 'field': [0, 'not data report'], 'errdata': [0, 'not data report']}</msg>
+<status status="PASS" starttime="20220716 15:47:16.973" endtime="20220716 15:47:17.077"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['count'][0]}==1</arg>
+<arg>条数错误：${result['count'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+<var>${error1}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:17.078" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:17.078" endtime="20220716 15:47:17.078"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:17.079" level="INFO">${error} = 条数错误：0
+</msg>
+<status status="PASS" starttime="20220716 15:47:17.078" endtime="20220716 15:47:17.079"></status>
+</kw>
+<msg timestamp="20220716 15:47:17.079" level="INFO">${count} = False</msg>
+<msg timestamp="20220716 15:47:17.079" level="INFO">${error1} = 条数错误：0
+</msg>
+<status status="PASS" starttime="20220716 15:47:17.077" endtime="20220716 15:47:17.079"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['field'][0]} ==1</arg>
+<arg>字段错误：${result['field'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${field}</var>
+<var>${error2}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>${passed}</var>
+</assign>
+<msg timestamp="20220716 15:47:17.080" level="INFO">${passed} = False</msg>
+<status status="PASS" starttime="20220716 15:47:17.079" endtime="20220716 15:47:17.080"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${passed}</arg>
+<arg>${EMPTY}</arg>
+<arg>${text}</arg>
+</arguments>
+<assign>
+<var>${error}</var>
+</assign>
+<msg timestamp="20220716 15:47:17.080" level="INFO">${error} = 字段错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:17.080" endtime="20220716 15:47:17.080"></status>
+</kw>
+<msg timestamp="20220716 15:47:17.080" level="INFO">${field} = False</msg>
+<msg timestamp="20220716 15:47:17.080" level="INFO">${error2} = 字段错误：not data report
+</msg>
+<status status="PASS" starttime="20220716 15:47:17.079" endtime="20220716 15:47:17.080"></status>
+</kw>
+<kw name="公共-校验" library="公共">
+<arguments>
+<arg>${result['errdata'][0]}==1</arg>
+<arg>字段值错误：${result['errdata'][1]}\n</arg>
+</arguments>
+<assign>
+<var>${errdata}</var>
+<var>${error3}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<assign>
+<var>

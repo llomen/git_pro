@@ -1,0 +1,124 @@
+*** Settings ***
+Documentation     缓存13
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+
+*** Test Cases ***
+
+
+无缓存首页pvs
+    首页－我的
+    判断是否登录-未登陆执行登陆
+    我的－离线中心
+    清空缓存
+    缓存－返回
+    公共－清除数据
+    我的－离线中心
+    sleep    2
+    公共－校验结果    ${pvs_field}    huancun_000    mpp_pvs_ipad    1
+
+点播正在缓存页pvs
+    缓存－返回
+    首页－频道
+    首页－搜索视频
+    搜索－输入搜索词    快乐大本营
+    搜索－键盘搜索
+    搜索－点播放
+    sleep    3
+    点播播放页－下载
+    sleep    3
+    click a point    960    230    #下载第一个视频
+    公共－清除数据
+    公共－点击页面文本    正在缓存
+    sleep    2
+    公共－校验结果    ${pvs_field}    huancun_011    mpp_pvs_ipad    1
+
+缓存首页pvs
+    下载－关闭
+    点播播放页－返回
+    搜索－取消
+    首页－我的
+    公共－清除数据
+    我的－离线中心
+    公共－校验结果    ${pvs_field}    huancun_001    mpp_pvs_ipad    1
+
+缓存合集pvs
+    公共－清除数据
+    sleep    2
+    click element    xpath=//XCUIElementTypeProgressIndicator[@name="进度"]/parent::XCUIElementTypeOther
+    sleep    3
+    公共－校验结果    ${pvs_field}    huancun_002    mpp_pvs_ipad    1
+    Capture Page Screenshot
+
+添加更多pvs
+    公共－清除数据
+    sleep    2
+    click element    xpath=//XCUIElementTypeButton[@name="缓存更多剧集"]/parent::XCUIElementTypeOther
+    sleep    2
+    公共－校验结果    ${pvs_field}    huancun_003    mpp_pvs_ipad    1
+
+添加更多返回pvs
+    公共－清除数据
+    click element    nsp=name=="close icon" and type="XCUIElementTypeButton"
+    公共－校验结果    ${pvs_field}    huancun_004    mpp_pvs_ipad    1
+
+缓存合集返回pvs
+    公共－清除数据
+    sleep    2
+    缓存合集返回
+    公共－校验结果    ${pvs_field}    huancun_005    mpp_pvs_ipad    1
+
+缓存首页返回pvs
+    公共－清除数据
+    缓存－返回
+    sleep    2
+    公共－校验结果    ${pvs_field}    huancun_006    mpp_pvs_ipad    1
+    Capture Page Screenshot
+
+个人中心点缓存合集pvs
+    sleep    2
+    公共－清除数据    #需要下载完成后点击合集封面进入
+    #tap    xpath=(//XCUIElementTypeButton[@name="活色生香"])[1]    0    -50
+    #公共－校验结果    ${pvs_field}    huancun_013    mpp_pvs_ipad    1
+
+合集返回个人中心pvs
+    公共－清除数据
+    #缓存合集返回
+    #公共－校验结果    ${pvs_field}    huancun_014    mpp_pvs_ipad    1
+
+清空缓存pvs
+    我的－离线中心
+    公共－清除数据
+    删除所有缓存
+    sleep    3
+    公共－校验结果    ${pvs_field}    huancun_007    mpp_pvs_ipad    1
+
+无缓存返回pvs
+    公共－清除数据
+    缓存－返回
+    sleep    2
+    公共－校验结果    ${pvs_field}    huancun_008    mpp_pvs_ipad    1
+
+搜索正在缓存页pvs
+    首页－频道
+    首页－搜索视频
+    搜索－输入搜索词    快乐大本营
+    搜索－键盘搜索
+    搜索－点击下载
+    sleep    2
+    公共－清除数据
+    sleep    2
+    公共－点击页面文本    正在缓存
+    sleep    2
+    公共－校验结果    ${pvs_field}    huancun_012    mpp_pvs_ipad    1

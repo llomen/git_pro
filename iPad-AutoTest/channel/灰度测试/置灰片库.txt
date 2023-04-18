@@ -1,0 +1,72 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+片库-综艺页面置灰
+    首页-片库
+    图片对比
+
+片库-电视剧页面置灰
+    click element    //XCUIElementTypeStaticText[@name="电视剧"]
+    图片对比
+
+片库-电影页面置灰
+    click element    //XCUIElementTypeStaticText[@name="电影"]
+    图片对比
+
+片库-动漫页面置灰
+    click element    //XCUIElementTypeStaticText[@name="动漫"]
+    图片对比
+
+片库-少儿页面置灰
+    click element    //XCUIElementTypeStaticText[@name="少儿"]
+    图片对比
+
+片库-纪录片页面置灰
+    click element    //XCUIElementTypeStaticText[@name="纪录片"]
+    图片对比
+
+片库-新闻页面置灰
+    click element    //XCUIElementTypeStaticText[@name="新闻"]
+    图片对比
+
+片库-音乐页面置灰
+    click element    //XCUIElementTypeStaticText[@name="音乐"]
+    图片对比
+
+片库-乐活页面置灰
+    click element    //XCUIElementTypeStaticText[@name="乐活"]
+    图片对比
+
+片库-游戏页面置灰
+    click element    //XCUIElementTypeStaticText[@name="游戏"]
+    图片对比
+
+片库-体育页面置灰
+    click element    //XCUIElementTypeStaticText[@name="体育"]
+    图片对比
+
+片库-教育页面置灰
+    click element    //XCUIElementTypeStaticText[@name="教育"]
+    图片对比
+
+片库-原创页面置灰
+    click element    //XCUIElementTypeStaticText[@name="原创"]
+    图片对比
+
+片库-娱乐页面置灰
+    click element    //XCUIElementTypeStaticText[@name="娱乐"]
+    图片对比

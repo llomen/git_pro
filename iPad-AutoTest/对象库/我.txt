@@ -1,0 +1,250 @@
+*** Settings ***
+Library           AppiumLibrary
+Resource          ./公共.txt
+#Resource          ../../对象库/首页.txt
+#Resource          ../../对象库/我.txt
+
+
+*** Keywords ***
+账户-登录初始化
+    首页－我的
+    判断是否登录-未登陆执行登陆
+
+
+账户-退出初始化
+    首页－我的
+    我的－判断是否登录
+
+
+我的－点击登录
+    comment    Click Element    name=未登录
+    Click Element    xpath=//XCUIElementTypeButton[@label="登录/注册"]
+    click a point
+    sleep    2
+
+我的－点击“登录/注册”按钮
+    Click Element    xpath=//XCUIElementTypeStaticText[@label="登录/注册"]/preceding-sibling::XCUIElementTypeButton[1]
+
+我的－勾选隐私协议
+    Click Element    xpath=//XCUIElementTypeButton[@name="mg checkbox"]
+
+我的－点击弹窗登录按钮
+    sleep    5
+    Click Element    xpath=//XCUIElementTypeButton[@name="cancel login"]/following-sibling::XCUIElementTypeButton[1]
+
+我的－判断是否登录
+    comment    如果登录则退出已登录的账户
+    ${res_login}=    Run Keyword And Return Status    Page Should Contain Text    登录/注册
+    Run keyword if    ${res_login}==True    log    user not login
+    ...    ELSE    我的-退出登录
+
+判断是否登录-未登陆执行登陆
+    ${res_login}=    Run Keyword And Return Status    Page Should Contain Text    登录/注册
+    Run keyword if    ${res_login}==True    登录-邮箱登陆
+    ...    ELSE    log    user not login
+
+登录-是否有历史页面
+    ${bb}=    Run Keyword And Return Status    Page Should Contain Text    使用其他账号登录
+    Run keyword if    ${bb}    登录-使用其它账号登录
+
+登录-使用其它账号登录
+    公共－点击页面文本    使用其他账号登录
+
+登录-点邮箱icon
+    公共－点击页面文本    icon mail login
+
+登录-邮箱登陆
+    我的－点击登录
+    登录-是否有历史页面
+    登录-点邮箱icon
+    公共-邮箱登录_xzx    testitv@163.com    888888
+
+登录-账号登陆
+    [Arguments]    ${username}    ${password}
+    click element    xpath=//XCUIElementTypeButton[@name="密码登录"]
+    input text    xpath=//XCUIElementTypeTextField[@value="请输入手机号"]    ${username}
+    input password    xpath=//XCUIElementTypeSecureTextField[@value="请输入密码"]    ${password}
+    click element     xpath=//XCUIElementTypeButton[@name="隐藏键盘"]
+    sleep    2
+    我的－勾选隐私协议
+    click a point    533    451
+
+历史登陆
+    我的－点击“登录/注册”按钮
+    我的－勾选隐私协议
+    我的－点击弹窗登录按钮
+
+我的-进入青少年界面
+    我的－设置
+    click element    name=青少年模式
+
+我的-设置青少年模式密码
+    #我的－判断是否登录
+    #我的－设置
+    #click element    name=青少年模式
+    click element    name=开启青少年模式
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[1]    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[2]    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[3]    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入验证密码"]/../descendant::XCUIElementTypeSecureTextField[4]    1
+
+我的-关闭青少年模式
+    click element    name=关闭青少年模式
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[1]    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[2]    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[3]    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="请输入解锁密码"]/../descendant::XCUIElementTypeSecureTextField[4]    1
+    sleep    3
+    click a point    46    55
+
+我的-青少年密码输入
+
+我的-同步
+    sleep    1
+    Click Element    name=合并
+    sleep    2
+    comment    739 119
+
+我的-设置菜单上滑
+    sleep    1
+    swipe by percent    90  80  90  30
+    sleep    3
+
+我的-退出登录
+#    公共-屏幕上滑
+    我的－设置
+    我的-设置菜单上滑
+    Click Element    name=退出登录
+    sleep    2
+
+我的-关闭右侧窗口
+    Click Element    name=cancel phoneBind
+
+我的-二级页面返回
+    Click Element    name=back icon
+    click a point     687    23
+
+我的－播放记录删除
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAStaticText[6]
+    公共－点击页面文本    《法治中国》宣传片・第2017-08-17期
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAStaticText[8]
+    sleep    1
+    公共－点击页面文本    完成
+    comment    xpath: //UIAApplication[1]/UIAWindow[1]/UIAStaticText[6]
+
+我的－收藏记录删除
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAStaticText[5]
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[1]/UIAButton[1]
+    sleep    1
+    Click Element    name=Delete
+    sleep    1
+    comment    639    234
+    comment    941    234
+
+我的－我的收藏
+    Click Element    name=我的收藏
+    sleep    1
+
+我的-点头像
+#    Click Element    xpath=//XCUIElementTypeStaticText[@name=“VIP会员"]/../preceding-sibling::XCUIElementTypeCell[1]/XCUIElementTypeButton[last()-1]
+#    Click Element    xpath=//XCUIElementTypeButton[@name=“签到领5积分"]/preceding-sibling::XCUIElementTypeButton[2]
+    click a point  78   145
+
+我的-关闭头像
+    Click Element    name=mine back
+
+我的－离线中心
+    #公共-点击元素     离线中心
+    click a point   400    531
+    sleep    2
+
+缓存－返回
+    comment    Click Element    name=vault return
+    Click Element    name=vod close
+    sleep    1
+
+我的-看单
+    Click Element    xpath=//XCUIElementTypeStaticText[@name="我的看单"]/following-sibling::XCUIElementTypeButton[1]
+    sleep    1
+
+我的－设置
+    sleep    3
+    公共-屏幕上滑
+    Click Element    name=设置
+    sleep    3
+
+我的－播放记录
+    sleep    1
+    Click Element    name=点击登录
+    sleep    2
+
+登录－返回
+    Click Element    name=My Title BlackBack
+    Comment    Click Element    name=mine back
+    sleep    2
+
+会员中心－返回
+    Click Element    name=My Title BlackBack
+    sleep    2
+    comment    xpath: //UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAButton[1]
+
+登录－提示信息关闭
+    Click Element    name=点击登录
+    sleep    1
+
+芒果登录－返回
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[21]
+    sleep    1
+
+设置－返回
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[17]
+    sleep    1
+
+设置－意见反馈
+    Click Element    name=帮助反馈
+    sleep    1
+
+设置-上滑
+    sleep    2
+    log    设置-上滑
+    swipe by percent    80    80    80    40
+
+芒果登录-输入账号
+    [Arguments]    ${username}
+    Input text    xpath=//UIAApplication[1]/UIAWindow[1]/UIATextField[1]    ${username}
+
+芒果登录-输入密码
+    [Arguments]    ${password}
+    input password    xpath=//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]    ${password}
+
+芒果登录-登录
+    click element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[13]
+
+我的－立即开通
+    click element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[8]
+    comment
+
+登录成功－返回
+    click element    name=My Title BlackBack
+    sleep    1
+
+缓存合集返回
+    Click Element    name=back icon
+
+我的-开通会员
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[7]
+    sleep    1
+    comment    739 119
+
+我－按钮点击
+    tap    642    64
+    sleep    2
+
+登录－关闭
+    click element    name=cancel login
+
+看单-删除视频
+    sleep    2
+    click element    xpath=//XCUIElementTypeButton[@name="编辑"]
+    click element    xpath=//XCUIElementTypeButton[@name="全选"]
+    click element    xpath=//XCUIElementTypeButton[@name="删除"]

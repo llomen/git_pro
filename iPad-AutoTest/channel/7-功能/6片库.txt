@@ -1,0 +1,320 @@
+*** Settings ***
+Documentation     我的
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Test Cases ***
+首页-进入片库
+    首页－片库
+    sleep    2
+    验证-页面存在元素    xpath=//XCUIElementTypeStaticText[@name="说唱听我的"]
+    sleep    3
+
+片库-电视剧
+    click element    //XCUIElementTypeStaticText[@name="电视剧"]
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="从结婚开始恋爱"]
+    sleep    3
+
+片库-电影
+    click element    //XCUIElementTypeStaticText[@name="电影"]
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="全球热恋"]
+    sleep    3
+
+片库-动漫
+    click element    //XCUIElementTypeStaticText[@name="动漫"]
+    sleep    2
+    验证-页面存在元素    name=宝宝巴士儿歌
+    sleep    3
+
+片库-少儿
+    click element    //XCUIElementTypeStaticText[@name="少儿"]
+    sleep    2
+    验证-页面存在元素    name=萌鸡小队
+    sleep    3
+
+片库-纪录片
+    click element    //XCUIElementTypeStaticText[@name="纪录片"]
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="中国通史"]
+    sleep    3
+
+片库-新闻
+    click element    //XCUIElementTypeStaticText[@name="新闻"]
+    sleep    2
+    验证-页面存在元素    name=新华视频
+    sleep    3
+
+片库-音乐
+    click element    //XCUIElementTypeStaticText[@name="音乐"]
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="赵露思演唱《时光话》"]
+    sleep    3
+
+片库-乐活
+    click element    //XCUIElementTypeStaticText[@name="乐活"]
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="李子柒 2019"]
+    sleep    3
+
+片库-游戏
+    click element    //XCUIElementTypeStaticText[@name="游戏"]
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="迷你世界"]
+
+片库-体育
+    click element    //XCUIElementTypeStaticText[@name="体育"]
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="体坛快讯 2020"]
+    sleep    3
+
+片库-教育
+    click element    //XCUIElementTypeStaticText[@name="教育"]
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="阿哦玩具"]
+    sleep    3
+
+片库-原创
+    click element    //XCUIElementTypeStaticText[@name="原创"]
+    sleep    2
+    验证-页面存在元素    name=办公室小野 2018
+    sleep    3
+
+综艺-王牌综艺
+    click element    //XCUIElementTypeStaticText[@name="电视剧"]
+    click element    nsp= name==“综艺” and type ==“XCUIElementTypeStaticText”
+    sleep    2
+    click element    //XCUIElementTypeStaticText[@name="王牌综艺"]
+    sleep    2
+    验证-页面存在元素    name=密室大逃脱 第二季
+
+综艺-大咖秀场
+    click element    name=大咖秀场
+    sleep    2
+    验证-页面存在元素    name=小小的追球
+
+综艺-搞笑
+    click element    name=搞笑
+    sleep    2
+    验证-页面存在元素    name=快乐大本营 2019
+
+综艺-情感
+    click element    name=情感
+    sleep    2
+    验证-页面存在元素    name=朋友请听好
+
+综艺-音乐
+    click element    name=音乐
+    sleep    2
+    验证-页面存在元素    name=朋友请听好
+
+综艺-生活
+    click element    name=生活
+    sleep    2
+    验证-页面存在元素    name=奇妙小森林
+
+
+综艺-旅游
+    click element    name=旅游
+    sleep    2
+    验证-页面存在元素    name=婆婆和妈妈
+
+综艺-时尚
+    click element    name=时尚
+    sleep    2
+    验证-页面存在元素    name=来自手机的你
+
+综艺-真人秀
+    click element    name=真人秀
+    sleep    2
+    验证-页面存在元素    name=我们的乐队
+
+综艺-竞技
+    click element    name=竞技
+    sleep    2
+    验证-页面存在元素    name=舞蹈风暴
+
+综艺-访谈
+    click element    name=访谈
+    sleep    2
+    验证-页面存在元素    name=来自手机的你
+
+综艺-脱口秀
+    click element    name=脱口秀
+    sleep    2
+    验证-页面存在元素    name=天天向上 2020
+
+综艺-分类全部
+    click a point    58    89
+    sleep    2
+    验证-页面存在元素    name=乘风破浪的姐姐
+
+综艺-内地
+    click element    name=内地
+    sleep    2
+    验证-页面存在元素    name=我们的乐队
+
+综艺-港台
+    click element    name=港台
+    sleep    2
+    验证-页面存在元素    name=幸福空间 2011
+
+综艺-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=情书 第二季
+
+综艺-地区全部
+    click a point    43    135
+    sleep    2
+    验证-页面存在元素    name=乘风破浪的姐姐
+
+综艺-免费
+    click element    name=免费
+    sleep    2
+    验证-页面存在元素    name=芒果捞星闻 2020
+
+综艺-VIP
+    click element    name=VIP
+    sleep    2
+    验证-页面存在元素    name=向往的生活 第四季
+
+综艺-付费类型全部
+    click a point    58    181
+    sleep    2
+    验证-页面存在元素    name=乘风破浪的姐姐
+
+综艺-最新
+    click element    name=最新
+    sleep    2
+    验证-页面存在元素    name=说唱听我的
+
+综艺-最热
+    click element    name=最热
+    sleep    2
+    验证-页面存在元素    name=乘风破浪的姐姐
+
+电视剧-甜蜜互宠
+    click element    //XCUIElementTypeStaticText[@name="电视剧"]
+    click element    name=甜蜜互宠
+    sleep    2
+    验证-页面存在元素    name=三千鸦杀
+
+电视剧-虐恋情深
+    click element    name=虐恋情深
+    sleep    2
+    验证-页面存在元素    name=天使的幸福
+
+电视剧-青涩校园
+    click element    name=青涩校园
+    sleep    2
+    验证-页面存在元素    name=旋风少女
+
+电视剧-仙侠玄幻
+    click element    name=仙侠玄幻
+    sleep    2
+    验证-页面存在元素    name=不一样的美男子2
+
+电视剧-古装
+    click element    name=古装
+    sleep    2
+    验证-页面存在元素    name=三千鸦杀
+
+电视剧-都市职场
+    click element    name=都市职场
+    sleep    2
+    验证-页面存在元素    name=韫色过浓
+
+电视剧-快意江湖
+    click element    name=快意江湖
+    sleep    2
+    验证-页面存在元素    name=楚乔传
+
+电视剧-偶像
+    click element    name=偶像
+    sleep    2
+    验证-页面存在元素    name=长安少年行
+
+电视剧-悬疑推理
+    click element    name=悬疑推理
+    sleep    2
+    验证-页面存在元素    name=秋蝉
+
+电视剧-家长里短
+    click element    name=家长里短
+    sleep    2
+    验证-页面存在元素    name=远方的家
+
+电视剧-芒果出品
+    click element    name=芒果出品
+    sleep    2
+    验证-页面存在元素    name=半妖倾城
+
+电视剧-轻松搞笑
+    swipe    1075    92    600    92
+    click element    name=轻松搞笑
+    sleep    2
+    验证-页面存在元素    name=山寨小萌主
+
+电视剧-铁血战争
+    click element    name=铁血战争
+    sleep    2
+    验证-页面存在元素    name=烽火佳人
+
+电视剧-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=一生只爱你
+    swipe    600    92    1075    92
+    sleep    3
+    click a point    49    98
+
+电视剧-内地
+    click element    name=内地
+    sleep    2
+    验证-页面存在元素    name=三千鸦杀
+
+电视剧-日韩
+    click element    name=日韩
+    sleep    2
+    验证-页面存在元素    name=非自然死亡
+
+电视剧-港台
+    click element    name=港台
+    sleep    2
+    验证-页面存在元素    name=画皮
+
+电视剧-泰国
+    click element    name=泰国
+    sleep    2
+    验证-页面存在元素    name=铁石心肠2019
+    click a point    46    134
+
+电视剧-免费
+    click element    name=免费
+    sleep    2
+    验证-页面存在元素    name=三千鸦杀
+
+电视剧-VIP
+    click element    name=VIP
+    sleep    2
+    验证-页面存在元素    name=楼下女友请签收
+    click a point    57    178
+
+电视剧-最新
+    click element    name=最新
+    sleep    2
+    验证-页面存在元素    name=秋蝉
+
+电视剧-最热
+    click element    name=最热
+    sleep    2
+    验证-页面存在元素    name=天醒之路

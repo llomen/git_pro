@@ -1,0 +1,201 @@
+*** Settings ***
+Documentation     频道页pvs11+21
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${support}        {'act':'support'}
+${DoLogin}        {'act':'DoLogin','mf':'Apple'}
+${Logout}         {'act':'Logout','mf':'Apple'}
+${VerifyImgGet}    {'act':'VerifyImgGet','mf':'Apple'}
+${Logout}         {'act':'Logout','mf':'Apple'}
+${UpdateProfile}    {'act':'UpdateProfile','mf':'Apple'}
+${UpdatePwd}      {'act':'UpdatePwd','mf':'Apple'}
+${imy}            {'act':'imy'}
+${table_imy}      mpp_jiaohu_ipad_imy
+
+*** Test Cases ***
+
+
+我的pvs
+    #初始退出登录
+    公共－清除数据
+    首页－我的
+    sleep    1
+    公共－校验结果    ${pvs_field}    wode_001    mpp_pvs_ipad    1
+
+点我的imy
+    公共－校验结果    ${imy}    imy_01    ${table_imy}    1
+
+退出初始化
+    账户-退出初始化
+
+登录pvs
+    公共－清除数据
+    我的－点击登录
+    公共－校验结果    ${pvs_field}    login_001    mpp_pvs_ipad    1
+
+点登录imy
+    公共－校验结果    ${imy}    imy_03    ${table_imy}    1
+
+短信登录pvs
+    公共－清除数据
+    公共－点击页面文本    使用其他账号登录
+    sleep    2
+    公共－校验结果    ${pvs_field}    duanxin_login001    mpp_pvs_ipad    1
+
+扫码登录pvs
+    公共－清除数据
+    公共－点击页面文本    扫码登录
+    sleep    2
+    公共－校验结果    ${pvs_field}    duanxin_login003    mpp_pvs_ipad    1
+
+退出扫码登录pvs
+    公共－清除数据
+    #扫码页面的账号登录
+    公共－点击页面文本    账号登录
+    sleep    2
+    公共－校验结果    ${pvs_field}    duanxin_login004    mpp_pvs_ipad    1
+
+账号登录pvs
+    公共－清除数据
+    #短信页面的账号登录
+    公共－点击页面文本    账号登录
+    sleep    1
+    公共－校验结果    ${pvs_field}    duanxin_login002    mpp_pvs_ipad    1
+
+忘记密码pvs
+    公共－清除数据
+    公共－点击页面文本    忘记密码
+    sleep    3
+    公共－校验结果    ${pvs_field}    forgot_password001    mpp_pvs_ipad    1
+
+忘记密码返回pvs
+    公共－清除数据
+    Comment    公共－点击页面文本    My Title BlackBack
+    公共－点击页面文本    mine back
+    sleep    2
+    公共－校验结果    ${pvs_field}    forgot_password002    mpp_pvs_ipad    1
+
+注册pvs
+    公共－清除数据
+    公共－点击页面文本    注册
+    sleep    3
+    公共－校验结果    ${pvs_field}    sign_up001    mpp_pvs_ipad    1
+
+注册返回pvs
+    公共－清除数据
+    Comment    tap    注册    -20    0
+    Comment    tap    mine back    0    0
+    公共－点击页面文本    mine back
+    Comment    tap    BackBtn    0    0
+    sleep    2
+    公共－校验结果    ${pvs_field}    sign_up002    mpp_pvs_ipad    1
+
+邮箱登录pvs
+    公共－清除数据
+    Click Element    name=icon mail login
+    sleep    2
+    公共－校验结果    ${pvs_field}    mail_login_001    mpp_pvs_ipad    1
+
+邮箱登录返回个人中心pvs
+    公共－清除数据
+    sleep    1
+    Click Element    name=cancel login
+    sleep    2
+    公共－校验结果    ${pvs_field}    login_002    mpp_pvs_ipad    1
+
+意见反馈pvs
+    公共－清除数据
+    设置－意见反馈
+    公共－校验结果    ${pvs_field}    yijian_003    mpp_pvs_ipad    1
+
+点意见反馈click
+    公共－校验结果    ${imy}    imy_21    ${table_imy}    1
+
+意见反馈返回pvs
+    公共－清除数据
+    我的-关闭右侧窗口
+    公共－校验结果    ${pvs_field}    yijian_004    mpp_pvs_ipad    1
+
+消息中心pvs
+    公共－清除数据
+    Click Element    name=消息中心
+    sleep    1
+    公共－校验结果    ${pvs_field}    yijian_003    mpp_pvs_ipad    1
+
+点消息中心imy
+    公共－校验结果    ${imy}    imy_16    ${table_imy}    1
+
+消息中心返回pvs
+    公共－清除数据
+    我的-关闭右侧窗口
+    公共－校验结果    ${pvs_field}    yijian_004    mpp_pvs_ipad    1
+
+VIP会员点击pvs
+    公共－清除数据
+    Click Element    name=VIP会员
+    sleep    3
+    公共－校验结果    ${pvs_field}    vip_001    mpp_pvs_ipad    1
+
+未登录点VIP会员imy
+    公共－校验结果    ${imy}    imy_04    ${table_imy}    1
+
+VIP会员关闭pvs
+    公共－清除数据
+    公共－支付页关闭
+    sleep    3
+    公共－校验结果    ${pvs_field}    vip_002    mpp_pvs_ipad    1
+
+取消合并播放记录
+    ${res}    元素是否存在    name=不合并
+    Run keyword If    "${res}"=="${true}"    Click element    name=不合并
+
+设置pvs
+    公共－清除数据
+    我的－设置
+    sleep    3
+    公共－校验结果    ${pvs_field}    shezhi_001    mpp_pvs_ipad    1
+
+点设置imy
+    公共－校验结果    ${imy}    imy_09    ${table_imy}    1
+
+关于我们pvs
+    公共－清除数据
+    sleep    3
+    click element    xpath=//XCUIElementTypeStaticText[@name="关于我们"]
+    sleep    1
+    公共－校验结果    ${pvs_field}    yijian_001    mpp_pvs_ipad    1
+
+关于我们返回pvs
+    公共－清除数据
+    sleep    2
+    我的-二级页面返回
+    sleep    2
+    公共－校验结果    ${pvs_field}    yijian_002    mpp_pvs_ipad    1
+
+设置返回pvs
+    公共－清除数据
+    我的-关闭右侧窗口
+    sleep    2
+    公共－校验结果    ${pvs_field}    shezhi_002    mpp_pvs_ipad    1
+
+检测已登录帐号pvs
+    公共－清除数据
+    我的－点击登录
+    公共－校验结果    ${pvs_field}    login_004    mpp_pvs_ipad    1
+
+检测已登录帐号退出pvs
+    公共－清除数据
+    click element    name=使用其他账号登录
+    sleep    2
+    公共－校验结果    ${pvs_field}    login_005    mpp_pvs_ipad    1

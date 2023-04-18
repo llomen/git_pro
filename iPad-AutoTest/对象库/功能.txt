@@ -1,0 +1,51 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+元素是否存在
+    [Arguments]    ${locator}
+    ${res}    Run Keyword And Return Status    Element Should Be Visible    ${locator}
+    [Return]    ${res}
+
+功能－通过非
+    [Arguments]    ${result}
+    should be true    "${result}"=="False"    ${result}
+
+功能－通过是
+    [Arguments]    ${result}
+    should be true    "${result}"=="True"    ${result}
+
+验证-页面存在元素值
+    [Arguments]    ${text}
+    page should contain text    ${text}
+
+验证-页面存在元素
+    [Arguments]    ${loc}
+    Page Should Contain Element    ${loc}
+
+验证-页面不存在元素
+    [Arguments]    ${loc}
+    Page Should Not Contain Element    ${loc}
+
+验证-页面不存在元素值
+    [Arguments]    ${text}
+    page should not contain text    ${text}
+    sleep    1
+
+功能-元素存在则点击
+    [Arguments]    ${name}
+    ${res}    元素是否存在    name=${name}
+    Run keyword If    "${res}"=="${true}"    click element    name=${name}
+    sleep    2
+
+功能-xpath存在则点击
+    [Arguments]    ${xpath}
+    ${res}    元素是否存在    xpath=${xpath}
+    Run keyword If    "${res}"=="${true}"    click element    xpath=${xpath}
+    sleep    2
+
+
+校验-获取元素属性值校验-value
+    [Arguments]    ${loc}    ${value}
+    ${res}    Get Element Attribute    ${loc}    value
+    should be equal    ${res}    ${value}

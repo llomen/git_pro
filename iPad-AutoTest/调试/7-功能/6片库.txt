@@ -1,0 +1,861 @@
+*** Settings ***
+Documentation     我的
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Test Cases ***
+首页-进入片库
+    首页-片库
+    sleep    2
+    验证-页面存在元素    xpath=//XCUIElementTypeStaticText[@name="大侦探 第七季"]
+    sleep    3
+
+片库-电视剧
+    #click element    //XCUIElementTypeStaticText[@name="电视剧"]
+    click a point  115  76
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="尚食"]
+    sleep    3
+
+片库-电影
+    #click element    //XCUIElementTypeStaticText[@name="电影"]
+    click a point  221  76
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="这个杀手不太冷静"]
+    sleep    3
+
+片库-动漫
+    #click element    //XCUIElementTypeStaticText[@name="动漫"]
+    click a point  291  76
+    sleep    2
+    验证-页面存在元素    name=宝贝赳赳 第三季
+    sleep    3
+
+片库-少儿
+    #click element    //XCUIElementTypeStaticText[@name="少儿"]
+    click a point  371  76
+    sleep    2
+    验证-页面存在元素    name=宝贝赳赳 第三季
+    sleep    3
+
+片库-纪录片
+    #click element    //XCUIElementTypeStaticText[@name="纪录片"]
+    click a point  450  76
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="寻情记 2022"]
+    sleep    3
+
+片库-新闻
+    #click element    //XCUIElementTypeStaticText[@name="新闻"]
+    click a point  546  76
+    sleep    2
+    验证-页面存在元素    name=焦点时刻 2022
+    sleep    3
+
+片库-音乐
+    #click element    //XCUIElementTypeStaticText[@name="音乐"]
+    click a point  636  76
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="【王俊凯】四面楚歌"]
+    sleep    3
+
+片库-乐活
+    #click element    //XCUIElementTypeStaticText[@name="乐活"]
+    click a point  640  76
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="燃烧吧，卡路里 2022"]
+    sleep    3
+
+片库-游戏
+    #click element    //XCUIElementTypeStaticText[@name="游戏"]
+    click a point  720  76
+    sleep    2
+    验证-页面存在元素    name=猫猫星露谷语物 夏季生活
+
+片库-体育
+    #click element    //XCUIElementTypeStaticText[@name="体育"]
+    click a point  800  76
+    sleep    2
+    验证-页面存在元素    name=王者之战 2016
+    sleep    3
+
+片库-教育
+    #click element    //XCUIElementTypeStaticText[@name="教育"]
+    click a point  880  76
+    sleep    2
+    验证-页面存在元素    //XCUIElementTypeStaticText[@name="妮妮猫儿歌"]
+    sleep    3
+
+片库-原创
+    #click element    //XCUIElementTypeStaticText[@name="原创"]
+    click a point  960  76
+    sleep    2
+    验证-页面存在元素    name=辣目视频 2018
+    sleep    3
+
+片库-娱乐
+    #click element    //XCUIElementTypeStaticText[@name="原创"]
+    click a point  1040  76
+    sleep    2
+    验证-页面存在元素    name=爱豆传送门 2020
+    sleep    3
+
+重新进入片库
+    click element  	xpath=//XCUIElementTypeStaticText[@name="返回"]
+    sleep  2
+    首页-片库
+
+
+综艺-王牌综艺
+    sleep    2
+    click element    //XCUIElementTypeStaticText[@name="王牌综艺"]
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+
+#综艺-大咖秀场
+#    click element    name=大咖秀场
+#    sleep    2
+#    验证-页面存在元素    name=小小的追球
+
+综艺-搞笑
+    click element    name=搞笑
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-情感
+    click element    name=情感
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+
+综艺-音乐
+    #click element    name=音乐
+    click a point    102    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-真人秀
+    #click element    name=真人秀
+    click a point    185    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-搞笑
+    #click element    name=搞笑
+    click a point    482    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-资讯
+    #click element    name=资讯
+    click a point    565    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-亲子
+    #click element    name=亲子
+    click a point   604    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-旅游
+    #click element    name=旅游
+    click a point   604    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-美食
+    #click element    name=美食
+    click a point   604   120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-生活
+    #click element    name=生活
+    click a point    604    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+
+综艺-时尚
+    #click element    name=时尚
+    click a point   689    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+
+综艺-竞技
+    #click element    name=竞技
+    click a point   772    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-访谈
+    #click element    name=访谈
+    click a point   855    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-脱口秀
+    #click element    name=脱口秀
+    click a point   937    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-纪实
+    #click element    name=纪实
+    click a point   1036    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-分类全部
+    click a point    20    120
+    sleep    2
+    click a point    20    120
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-内地
+    click element    name=内地
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-港台
+    click element    name=港台
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-地区全部
+    click a point    20    165
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+#综艺-免费
+#    click element    name=免费
+#    sleep    2
+#    验证-页面存在元素    name=芒果捞星闻 2020
+
+#综艺-VIP
+#    click element    name=VIP
+#    sleep    2
+#    验证-页面存在元素    name=向往的生活 第四季
+
+#综艺-付费类型全部
+#    click a point    58    181
+#    sleep    2
+#    验证-页面存在元素    name=乘风破浪的姐姐
+
+综艺-最新
+    click element    name=最新
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+综艺-最热
+    click element    name=最热
+    sleep    2
+    验证-页面存在元素    name=大侦探 第七季
+
+电视剧-甜蜜互宠
+    #click element    //XCUIElementTypeStaticText[@name="电视剧"]
+    click a point  115  76
+    sleep   2
+    click element    name=甜蜜互宠
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-虐恋情深
+    click element    name=虐恋情深
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-青涩校园
+    click element    name=青涩校园
+    sleep    2
+    验证-页面存在元素    name=尚食
+    sleep    2
+
+电视剧-仙侠玄幻
+    click element    name=仙侠玄幻
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-古装
+    click element    name=古装
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-都市职场
+    click element    name=都市职场
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-偶像
+    click element    name=偶像
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+#电视剧-悬疑推理
+#    click element    name=美食
+#    sleep    2
+#    验证-页面存在元素    name=向往的生活 第五季
+
+#电视剧-家长里短
+#    click element    name=生活
+#    sleep    2
+#    验证-页面存在元素    name=明星大侦探 第六季
+
+#    电视剧-芒果出品
+#        click element    name=时尚
+#        sleep    2
+#        验证-页面存在元素    name=乘风破浪的姐姐 第二季
+
+电视剧-轻松搞笑
+    click element    name=轻松搞笑
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+#电视剧-铁血战争
+#    click element    name=访谈
+#    sleep    2
+#    验证-页面存在元素    name=快乐大本营 2021
+
+电视剧-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-内地
+    click element    name=内地
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-日韩
+    click element    name=日韩
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-港台
+    click element    name=港台
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-泰国
+    click element    name=泰国
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-免费
+    click element    name=免费
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-VIP
+    click element    name=VIP
+    sleep    2
+    验证-页面存在元素    name=尚食
+    click a point    57    178
+
+电视剧-最新
+    click element    name=最新
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电视剧-最热
+    click element    name=最热
+    sleep    2
+    验证-页面存在元素    name=尚食
+
+电影-爱情
+    click a point   221   76
+    sleep   2
+    click element    name=爱情
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-喜剧
+    click element    name=喜剧
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-奇幻
+    click element    name=奇幻
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-青春
+    click element    name=青春
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-剧情
+    click element    name=剧情
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-动画
+    click element    name=动画
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-科幻
+    click element    name=科幻
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-动作
+    click element    name=动作
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-战争
+    click element    name=战争
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-恐怖
+    click element    name=恐怖
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-悬疑
+    click element    name=悬疑
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-警匪
+    click element    name=警匪
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-历史
+    click element    name=历史
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-歌舞
+    click element    name=歌舞
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+电影-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=这个杀手不太冷静
+
+动漫-恋爱少女
+    click a point   291  76
+    sleep    2
+    click element    name=恋爱少女
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-热血少年
+    click element    name=热血少年
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-搞笑
+    click element    name=恋爱少女
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-青春
+    click element    name=青春
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-魔幻仙侠
+    click element    name=魔幻仙侠
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-激燃运动
+    click element    name=激燃运动
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-特摄
+    click element    name=特摄
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-推理
+    click element    name=推理
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-亲子幼教
+    click element    name=亲子幼教
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-芒果出品
+    click element    name=芒果出品
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-动漫音乐
+    click element    name=动漫音乐
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-经典
+    click element    name=经典
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-内地
+    click element    name=内地
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-欧美
+    click element    name=欧美
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+动漫-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+少儿-0-3岁
+    click a point   371  76
+    sleep    2
+    click element    name=0-3岁
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+少儿-4-6岁
+    click element    name=4-6岁
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+少儿-7-10岁
+    click element    name=7-10岁
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+少儿-11-14岁
+    click element    name=11-14岁
+    sleep    2
+    验证-页面存在元素    name=宝贝纠纠 第三季
+
+纪录片-美食
+    click a point   450  76
+    sleep    2
+    click element    name=美食
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-文化
+    click element    name=文化
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-社会
+    click element    name=社会
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-历史
+    click element    name=历史
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-军事
+    click element    name=军事
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-人物
+    click element    name=人物
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-探索
+    click element    name=探索
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-自然
+    click element    name=自然
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+纪录片-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=寻情记 2022
+
+新闻-时事
+    click a point   546  76
+    sleep    2
+    click element    name=时事
+    sleep    2
+    验证-页面存在元素    name=焦点时刻 2022
+
+新闻-社会
+    click element    name=社会
+    sleep    2
+    验证-页面存在元素    name=焦点时刻 2022
+
+新闻-文娱
+    click element    name=文娱
+    sleep    2
+    验证-页面存在元素    name=焦点时刻 2022
+
+新闻-军事
+    click element    name=军事
+    sleep    2
+    验证-页面存在元素    name=焦点时刻 2022
+
+音乐-MV
+    click a point   636  76
+    sleep    2
+    click element    name=MV
+    sleep    2
+    验证-页面存在元素    name=【王俊凯】四面楚歌
+
+音乐-影视原声
+    click element    name=影视原声
+    sleep    2
+    验证-页面存在元素    name=【王俊凯】四面楚歌
+
+音乐-音乐节目
+    click a point   640  76
+    sleep    2
+    验证-页面存在元素    name=【王俊凯】四面楚歌
+
+音乐-演唱会
+    click element    name=演唱会
+    sleep    2
+    验证-页面存在元素    name=【王俊凯】四面楚歌
+
+音乐-颁奖礼
+    click element    name=颁奖礼
+    sleep    2
+    验证-页面存在元素    name=【王俊凯】四面楚歌
+
+音乐-音乐现场
+    click element    name=音乐现场
+    sleep    2
+    验证-页面存在元素    name=【王俊凯】四面楚歌
+
+音乐-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=【王俊凯】四面楚歌
+
+乐活-美食
+    click a point   640  76
+    sleep    2
+    click element    name=美食
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-母婴
+    click element    name=母婴
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-奇趣
+    click element    name=奇趣
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-旅游
+    click element    name=旅游
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-健康
+    click element    name=健康
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-居家
+    click element    name=居家
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-百科
+    click element    name=百科
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-汽车
+    click element    name=汽车
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-时尚
+    click element    name=时尚
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+乐活-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=燃烧吧，卡路里 2022
+
+游戏-电竞网游
+    click a point   720  76
+    sleep    2
+    click element    name=电竞网游
+    sleep    2
+    验证-页面存在元素    name=小北英雄联盟大乱斗 英勇冲锋
+
+游戏-单机主机
+    click element    name=单机主机
+    sleep    2
+    验证-页面存在元素    name=小北英雄联盟大乱斗 英勇冲锋
+
+游戏-页游手游
+    click element    name=页游手游
+    sleep    2
+    验证-页面存在元素    name=小北英雄联盟大乱斗 英勇冲锋
+
+游戏-娱乐周边
+    click element    name=娱乐周边
+    sleep    2
+    验证-页面存在元素    name=小北英雄联盟大乱斗 英勇冲锋
+
+体育-极限
+    click a point  800  76
+    sleep    2
+    click element    name=极限
+    sleep    2
+    验证-页面存在元素    name=王者之战 2016
+
+体育-健身
+    click element    name=健身
+    sleep    2
+    验证-页面存在元素    name=王者之战 2016
+
+体育-垂钓
+    click element    name=垂钓
+    sleep    2
+    验证-页面存在元素    name=王者之战 2016
+
+体育-球类
+    click element    name=球类
+    sleep    2
+    验证-页面存在元素    name=王者之战 2016
+
+体育-综合
+    click element    name=综合
+    sleep    2
+    验证-页面存在元素    name=王者之战 2016
+
+教育-幼儿
+    click a point  880  76
+    sleep    2
+    click element    name=幼儿
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-小学
+    click element    name=小学
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-初中
+    click element    name=初中
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-高中
+    click element    name=高中
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-科普
+    click element    name=科普
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-兴趣
+    click element    name=兴趣
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-育儿
+    click element    name=育儿
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-实用
+    click element    name=实用
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-职场
+    click element    name=职场
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-外语
+    click element    name=外语
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-公开课
+    click element    name=公开课
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+教育-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=湖南省网络大课堂
+
+原创-吐槽
+    click a point  960    76
+    sleep    2
+    click element    name=吐槽
+    sleep    2
+    验证-页面存在元素    name=辣目视频 2018
+
+原创-恶搞
+    click element    name=恶搞
+    sleep    2
+    验证-页面存在元素    name=辣目视频 2018
+
+原创-爆笑
+    click element    name=爆笑
+    sleep    2
+    验证-页面存在元素    name=辣目视频 2018
+
+原创-奇趣
+    click element    name=奇趣
+    sleep    2
+    验证-页面存在元素    name=辣目视频 2018
+
+原创-饭制
+    click element    name=饭制
+    sleep    2
+    验证-页面存在元素    name=辣目视频 2018
+
+原创-其他
+    click element    name=其他
+    sleep    2
+    验证-页面存在元素    name=辣目视频 2018

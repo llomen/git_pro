@@ -1,0 +1,99 @@
+*** Settings ***
+Documentation     电影搜索结果页6
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${pvs_field}      {'act':'pvs'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${hot_field}      {'act':'recommended_hot'}
+${hotpv_field}    {'act':'hotpv'}
+${recommend_rel_field}    {'act':'recommend_rel'}
+${bdrelatepv_field}    {'act':'bdrelatepv'}
+${bdrecommend_rel_field}    {'act':'bdrecommend_rel'}
+
+*** Test Cases ***
+电影合集搜索search
+    首页－搜索视频
+    公共－清除数据
+    搜索－输入搜索词    流浪的孩子
+    搜索－键盘搜索
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_search_014    mpp_search_data_ipad    1
+
+
+
+
+电影合集搜索view
+    公共－校验结果    ${view_field}    ipad_view_011    mpp_view_data_ipad    1
+
+
+
+
+
+电影合集点击click
+    公共－清除数据
+    搜索－点播放
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_click_021    mpp_click_data_ipad    1
+
+
+
+
+
+电影播单搜索search
+    点播播放页－返回
+    搜索－取消
+    首页－搜索视频
+    公共－清除数据
+    搜索－输入搜索词    我的特工爷爷
+    搜索－键盘搜索
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_search_015    mpp_search_data_ipad    1
+
+
+
+
+
+电影播单搜索view
+    公共－校验结果    ${view_field}    ipad_view_001    mpp_view_data_ipad    1
+
+
+
+
+电影播单点击click
+    公共－清除数据
+    公共－点击页面文本    刘德华秒变坏爸爸
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_click_013    mpp_click_data_ipad    1
+
+
+
+
+
+播单相关推荐bdrelatepv
+    公共－校验结果    ${bdrelatepv_field}    ipad_search_001    mpp_recommendpv_bdrelatepv_ipad    1
+
+
+
+
+播单相关推荐recommend_rel
+    公共－清除数据
+    播单－看了还会看
+    公共－校验结果    ${bdrecommend_rel_field}    ipad_search_001    mpp_recommend_rel_ipad    1
+
+
+
+

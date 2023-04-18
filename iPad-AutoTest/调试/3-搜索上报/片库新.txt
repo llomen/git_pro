@@ -1,0 +1,355 @@
+*** Settings ***
+Documentation     片库上报56
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${tag-select}     {'act':'tag-select'}
+${list}           {'act':'list'}
+${data-click}     {'act':'data-click'}
+${pvs}            {'act':'pvs'}
+
+*** Test Cases ***
+进入片库tab页pvs
+    公共－清除数据
+    首页-片库
+    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+综艺频道筛选list
+    公共－校验结果    ${list}    zongyi_shaixuan001    mpp_list_ipad_zongyi    1
+
+综艺片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "王牌综艺")]
+    sleep    2
+    公共－校验结果    ${list}    zongyi_shaixuan002    mpp_list_ipad_zongyi    1
+
+片库跳转
+    公共－清除数据
+    片库－播放第一个
+
+综艺片库标签选择data-click
+    sleep    2
+    公共－校验结果    ${data-click}    zongyi_001    mpp_dataclick_ipad_zongyi    1
+
+
+综艺片库进点播页pvs
+    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+
+点播页返回综艺片库pvs
+    公共－清除数据
+    sleep    2
+    点播播放页－返回
+    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+
+电视剧频道筛选list
+    公共－清除数据
+    #公共－点击页面文本    电视剧
+    click a point       115    76
+    sleep    2
+    公共－校验结果    ${list}    dianshiju_shaixuan001    mpp_list_ipad_zongyi    1
+
+
+进入电视剧片库pvs
+    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+
+电视剧片库筛选list
+    公共－清除数据
+    #公共－xpath    //XCUIElementTypeStaticText[contains(@label, "甜蜜互宠")]
+    click a point       150    120
+    sleep    2
+    公共－校验结果    ${list}    dianshiju_shaixuan002    mpp_list_ipad_zongyi    1
+
+
+电视剧片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    公共－校验结果    ${data-click}    dianshiju_001    mpp_dataclick_ipad_zongyi    1
+
+
+电视剧片库进点播页pvs
+    sleep    2
+    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+
+电影频道筛选list
+    点播播放页－返回
+    公共－清除数据
+    #公共－点击页面文本    电影
+    click a point       211    76
+    sleep    3
+    公共－校验结果    ${list}    dianying_shaixuan001    mpp_list_ipad_dianying    1
+
+进入电影片库pvs
+    sleep    2
+    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+
+电影片库筛选-爱情list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "爱情")]
+    #click a point       150    210
+    sleep    2
+    公共－校验结果    ${list}    dianying_shaixuan002    mpp_list_ipad_dianying    1
+
+
+电影片库筛选-免费list
+    公共－清除数据
+    公共－xpath    (//XCUIElementTypeStaticText[contains(@label, "免费")])
+    sleep    2
+    公共－校验结果    ${list}    dianying_shaixuan003    mpp_list_ipad_dianying    1
+
+
+电影片库筛选-最新list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "最新")]
+    sleep    2
+    公共－校验结果    ${list}    dianying_shaixuan004   mpp_list_ipad_dianying    1
+
+
+电影片库筛选-院线大片list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "院线大片")]
+    sleep    2
+    公共－校验结果    ${list}    dianying_shaixuan004    mpp_list_ipad_dianying    1
+
+
+电影片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    公共－校验结果    ${data-click}    dianying_001    mpp_dataclick_ipad_zongyi    1
+
+
+电影片库进点播页pvs
+    sleep    2
+    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+
+#电影片库进搜索页pvs
+#    点播播放页－返回
+#    公共－清除数据
+#    公共－点击页面文本    高达
+#    sleep    2
+#    公共－校验结果    ${pvs}    zongyi_004    mpp_pvs_ipad    1
+
+
+点播页返回片库pvs
+    公共－清除数据
+    点播播放页－返回
+    sleep    2
+    公共－校验结果    ${pvs}    dianying_004    mpp_pvs_ipad    1
+
+
+音乐片库list
+    公共－清除数据
+    #公共－点击页面文本    音乐
+    click a point       630     80
+    sleep    1
+    公共－校验结果    ${list}    yingyue_001    mpp_list_ipad_yingyue    1
+
+
+音乐片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "MV")]
+    sleep    2
+    公共－校验结果    ${list}    yingyue_002    mpp_list_ipad_yingyue    1
+
+音乐片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    yingyue_001    mpp_dataclick_ipad_yingyue    1
+
+
+动漫片库list
+    点播播放页－返回
+    公共－清除数据
+    #公共－点击页面文本    动漫
+    click a point       225     80
+    sleep    2
+    公共－校验结果    ${list}    dongman_001    mpp_list_ipad_dongman    1
+
+动漫片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "恋爱少女")]
+    sleep    2
+    公共－校验结果    ${list}    dongman_002    mpp_list_ipad_dongman    1
+
+
+动漫片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    dongman_001    mpp_dataclick_ipad_zongyi    1
+
+
+纪录片片库list
+    点播播放页－返回
+    公共－清除数据
+    #公共－点击页面文本    纪录片
+    click a point       450     80
+    sleep    1
+    公共－校验结果    ${list}    jilupian_001    mpp_list_ipad_jilupian    1
+
+
+纪录片片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "美食")]
+    sleep    2
+    公共－校验结果    ${list}    jilupian_002    mpp_list_ipad_jilupian    1
+
+
+纪录片片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    jilupian_001    mpp_dataclick_ipad_zongyi    1
+
+
+少儿片库list
+    点播播放页－返回
+    公共－清除数据
+    #公共－点击页面文本    少儿
+    click a point       370     80
+    sleep    2
+    公共－校验结果    ${list}    shaoer_001    mpp_list_ipad_shaoer    1
+
+
+少儿片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "0-3岁")]
+    sleep    2
+    公共－校验结果    ${list}    shaoer_002    mpp_list_ipad_shaoer    1
+
+
+
+少儿片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    shaoer_001    mpp_dataclick_ipad_zongyi    1
+
+
+新闻片库list
+    点播播放页－返回
+    公共－清除数据
+    #公共－点击页面文本    新闻
+    click a point       550     80
+    sleep    1
+    公共－校验结果    ${list}    xinwen_001    mpp_list_ipad_xinwen    1
+
+
+新闻片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "社会")]
+    sleep    2
+    公共－校验结果    ${list}    xinwen_002    mpp_list_ipad_xinwen    1
+
+
+新闻片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    xinwen_001    mpp_dataclick_ipad_zongyi    1
+
+
+原创片库list
+    点播播放页－返回
+    公共－清除数据
+    click a point       1018     80
+    sleep    1
+    公共－校验结果    ${list}    yuanchuang_001    mpp_list_ipad_yuanchuang    1
+
+
+原创片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "吐槽")]
+    sleep    2
+    公共－校验结果    ${list}    yuanchuang_002    mpp_list_ipad_yuanchuang    1
+
+
+原创片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    yuanchuang_001    mpp_dataclick_ipad_zongyi    1
+
+
+游戏片库list
+    点播播放页－返回
+    公共－清除数据
+    click a point       720     80
+    sleep    2
+    公共－校验结果    ${list}    youxi_001    mpp_list_ipad_youxi    1
+
+
+游戏片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "电竞网游")]
+    sleep    2
+    公共－校验结果    ${list}    youxi_002    mpp_list_ipad_youxi    1
+
+
+游戏片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    game_001    mpp_dataclick_ipad_zongyi    1
+
+
+体育片库list
+    点播播放页－返回
+    公共－清除数据
+    click a point       800     80
+    sleep    2
+    公共－校验结果    ${list}    tiyu_001    mpp_list_ipad_tiyu    1
+
+
+体育片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "极限")]
+    sleep    2
+    公共－校验结果    ${list}    tiyu_002    mpp_list_ipad_tiyu    1
+
+
+体育片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    tiyu_001    mpp_dataclick_ipad_zongyi    1
+
+
+教育片库list
+    点播播放页－返回
+    公共－清除数据
+    click a point       880     80
+    sleep    2
+    公共－校验结果    ${list}    jiaoyu_001    mpp_list_ipad_jiaoyu   1
+
+
+教育片库筛选list
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "幼儿")]
+    sleep    2
+    公共－校验结果    ${list}    jiaoyu_002    mpp_list_ipad_jiaoyu    1
+
+
+教育片库标签选择data-click
+    公共－清除数据
+    片库－播放第一个
+    sleep    2
+    公共－校验结果    ${data-click}    education_001    mpp_dataclick_ipad_zongyi    1
+
+
+

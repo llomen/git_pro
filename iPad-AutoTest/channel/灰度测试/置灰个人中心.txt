@@ -1,0 +1,156 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+个人中心
+    首页－我的
+    图片对比
+
+VIP会员页面
+    sleep  3
+    click a point  91   228
+    图片对比
+
+开通会员页面
+    click a point  787  182
+    图片对比
+
+
+开通会员页面下滑
+    swipe    100    600    100   300
+    图片对比
+
+关闭开通会员页面
+    click a point   300   50
+    图片对比
+
+关闭开通会员确认页面
+    click element  残忍拒绝
+    图片对比
+
+关闭VIP会员页面
+    click a point   200   90
+    图片对比
+
+积分中心
+    click a point    400    228
+    图片对比
+
+积分中心页面下滑
+    swipe    900    600    900   300
+    图片对比
+    click a point   200   90
+
+播放记录页面
+    click a point  78   304
+    图片对比
+    click a point    604    38
+
+离线中心页面
+    click a point  78   554
+    图片对比
+    click a point    604    38
+
+我的看单页面
+    click a point  78   624
+    图片对比
+    click a point    604    38
+
+消息中心页面
+    sleep  5
+    swipe    100    600    100   200
+    sleep  5
+    click a point  78   499
+    图片对比
+    click a point    604    38
+
+帮助反馈页面
+    click a point  78   585
+    图片对比
+    click a point    604    38
+
+个人中心下滑
+    sleep  3
+    swipe    100    600    100   200
+    图片对比
+
+设置页面
+    click a point  78   671
+    图片对比
+
+设置-修改密码页面
+    click a point  78   671
+    sleep  5
+    click element  name=修改密码
+    图片对比
+    click a point  622  23
+
+设置-绑定号码页面
+    sleep  5
+    click element  name=绑定号码
+    图片对比
+    click a point  622  23
+
+设置-青少年模式页面
+    sleep  5
+    click element  name=青少年模式
+    图片对比
+    Click Element    name=back icon
+
+设置-账号注销页面
+    sleep  5
+    click element  name=账号注销
+    图片对比
+    click a point  622  23
+
+
+设置-个人信息保护政策页面
+    sleep  5
+    click element  name=个人信息保护政策
+    图片对比
+    click a point  622  23
+
+
+设置-其他法律文件页面
+    sleep  5
+    click element  name=其他法律文件
+    图片对比
+    click a point  622  23
+
+设置-隐私保护页面
+    sleep  5
+    click element  name=隐私保护
+    图片对比
+    click a point  622  23
+
+设置-常见问题页面
+    swipe  800    600    800   300
+    sleep  5
+    click element  name=常见问题
+    click a point  622  23
+
+设置-关于我们页面
+    sleep  5
+    click element  name=关于我们
+    图片对比
+    click a point  622  23
+
+
+
+
+
+
+

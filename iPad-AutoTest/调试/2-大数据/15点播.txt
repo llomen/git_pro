@@ -1,0 +1,168 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${table}          mpp_hb_5_ipad
+${pfc}            {'act':'pfc'}
+${pvs}            {'act':'pvs'}
+${table_click}    mpp_jiaohu_ipad_imy
+${table_pvs}      mpp_pvs_ipad
+
+*** Test Cases ***
+登陆初始化
+    首页－我的
+    判断是否登录-未登陆执行登陆
+    首页－频道
+
+点播播放页面pv
+    首页-进入点播页快乐大本营
+    公共－清除数据
+    click element    nsp=name=="Vlog第1期：张雨绮说情话" and type=="XCUIElementTypeStaticText"
+    sleep    4
+    公共－校验结果    ${pvs}    chwatch_001    ${table_pvs}    1
+
+#节目简介pfc
+#    公共－清除数据
+#    新版点播-节目简介
+#    sleep    2
+#    公共－校验结果    ${pfc}    pfc_01    ${table_click}    1
+#    新版点播-节目简介
+
+点赞pfc
+    公共－清除数据
+    新版点播-点赞
+    sleep    3
+    公共－校验结果    ${pfc}    pfc_02    ${table_click}    1
+
+点下载pfc
+    公共－清除数据
+    点播播放页－下载
+    sleep    3
+    公共－校验结果    ${pfc}    pfc_04    ${table_click}    1
+    click element    nsp=name=="vod close" and type=="XCUIElementTypeButton"
+
+点评论pfc
+    公共－清除数据
+    点播播放页－评论
+    sleep    2
+    公共－校验结果    ${pfc}    pfc_47    ${table_click}    1
+    点屏幕
+
+点全屏pfc
+    公共－清除数据
+    点屏幕
+    sleep    2
+    点播播放页－全屏
+    公共－校验结果    ${pfc}    pfc_09    ${table_click}    1
+
+点清晰度pfc
+    公共－清除数据
+    点屏幕
+    点清晰度
+    #click element    name=高清
+    公共－校验结果    ${pfc}    pfc_11    ${table_click}    1
+
+清晰度切换-极速pfc
+    公共－清除数据
+    点屏幕
+    点清晰度
+    delete data    ${platform}  #清除点击清晰度事件上报的数据
+    click element    name=极速
+    sleep  1
+    公共－校验结果    ${pfc}    pfc_35    ${table_click}    1
+
+清晰度切换-标清pfc
+    公共－清除数据
+    点屏幕
+    点清晰度
+    delete data    ${platform}
+    click element    name=标清
+    sleep  1
+    公共－校验结果    ${pfc}    pfc_36    ${table_click}    1
+
+清晰度切换-高清pfc
+    公共－清除数据
+    点屏幕
+    点清晰度
+    delete data    ${platform}
+    click element    name=高清
+    sleep  1
+    公共－校验结果    ${pfc}    pfc_37    ${table_click}    1
+
+清晰度切换-超清pfc
+    公共－清除数据
+    点屏幕
+    点清晰度
+    delete data    ${platform}
+    click element    name=超清
+    sleep  1
+    公共－校验结果    ${pfc}    pfc_38    ${table_click}    1
+
+清晰度切换-蓝光pfc
+    公共－清除数据
+    点屏幕
+    点清晰度
+    delete data    ${platform}
+    click element    name=蓝光
+    sleep  1
+    公共－校验结果    ${pfc}    pfc_39    ${table_click}    1
+
+清晰度切换-全景声pfc
+    点屏幕
+    点清晰度
+    #click element    name=全景声
+    #公共－校验结果    ${pfc}    pfc_50    ${table_click}    1
+
+点选集pfc
+    click a point    1188    1023
+    #公共－校验结果    ${pfc}    ipad_shikan_15    ${table_click}    1
+
+点倍速pfc
+    click a point    1118    1020
+
+倍速播切换
+    click a point    1118    1020
+    click a point    1118    1020
+
+全屏点画中画pfc
+    click a point    999    781
+    #公共－校验结果    ${pfc}    ipad_shikan_15    ${table_click}    1
+
+点下一集pfc
+    #点播播放页－全屏
+    click a point    112    781
+    sleep   4
+    #公共－清除数据
+    #公共－点击页面文本    icon next
+    #公共－校验结果    ${pfc}    ipad_shikan_15    ${table_click}    1
+
+点设置pfc
+    click a point    1049    30
+    #公共－校验结果    ${pfc}    ipad_shikan_15    ${table_click}    1
+
+取消全屏
+    点屏幕
+    #click element    nsp=name contains "player back icon" and type=="XCUIElementTypeButton"
+    tap    name=player back icon    5    5
+
+非全屏点画中画pfc
+    公共－清除数据
+    点屏幕
+    点播播放页－画中画
+    sleep    2
+    公共－校验结果    ${pfc}    pfc_71    ${table_click}    1

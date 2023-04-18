@@ -1,0 +1,245 @@
+*** Settings ***
+Documentation     前贴cdn、可播比8
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${cdn1}           {'s':'1','f':'0'}
+${cdn3}           {'s':'3','f':'0'}
+${cdn0}           {'type':'0','f':'0'}
+${cdn4}           {'type':'4','f':'0'}
+${cdn5}           {'type':'5','f':'0'}
+${cdn6}           {'type':'6','f':'0'}
+${cdn1-error}     {'s':'1','f':'-1'}
+${cdn3-error}     {'s':'3','f':'-1'}
+${adlost9}        {'lostid':'9'}
+
+*** Test Cases ***
+前贴-cdn1
+    初始退出登录
+    公共－清除数据
+    首页-进入点播页快乐大本营
+    #comment    tap    综合    224    316
+    #Comment    Click Element    name=1
+    #播放第一集
+    sleep    20
+    公共－校验结果    ${cdn1}    ipad_ad_001    mpp_cdncp_5_ipad    2
+
+
+
+
+前贴-cdn3
+    公共－校验结果    ${cdn3}    ipad_ad_003    mpp_cdncp_5_ipad    3
+
+
+
+
+
+前贴-可播比0
+    公共－校验结果    ${cdn0}    ipad_ad_000    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-可播比4
+    公共－校验结果    ${cdn4}    ipad_ad_004    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-可播比6
+    公共－校验结果    ${cdn6}    ipad_ad_006    mpp_cdncp_5_ipad    1
+
+
+
+
+前贴-cdn1-404
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－cdn配置    404
+    公共－清除数据
+    comment    tap    综合    290    316
+    播放第二集
+    Comment    Click Element    name=2
+    sleep    4
+    公共－校验结果    ${cdn1-error}    ipad_ad_007    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-cdn1-500
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－cdn配置    500
+    公共－清除数据
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    4
+    公共－校验结果    ${cdn1-error}    ipad_ad_008    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-cdn1-解析错误
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－cdn配置    parse_error
+    公共－清除数据
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    4
+    公共－校验结果    ${cdn1-error}    ipad_ad_009    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-cdn1-空
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－cdn配置    nul
+    公共－清除数据
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    3
+    公共－校验结果    ${cdn1-error}    ipad_ad_010    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-cdn1-超时
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－cdn配置    timeout
+    公共－清除数据
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    10
+    公共－校验结果    ${cdn1-error}    ipad_ad_011    mpp_cdncp_5_ipad    1
+
+
+
+
+
+广告超时adlost
+    公共－校验结果    ${adlost9}    adlost_011    mpp_adlost_ipad    0
+
+
+
+
+前贴-cdn3-404
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_404
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    20
+    公共－校验结果    {'f':'-1'}    ipad_ad_012    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-cdn3-500
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_500
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    15
+    公共－校验结果    {'f':'-1'}    ipad_ad_013    mpp_cdncp_5_ipad    1
+
+
+
+
+
+前贴-cdn3-timeout
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_timeout
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    20
+    公共－校验结果    {'f':'-1'}    ipad_ad_014    mpp_cdncp_5_ipad    1
+
+
+
+
+广告超时adlost3
+    公共－校验结果    ${adlost9}    adlost_011    mpp_adlost_ipad    0
+
+
+
+前贴-cdn3-空
+    点播播放页－返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_nul
+    comment    tap    综合    290    316
+    Comment    Click Element    name=2
+    播放第二集
+    sleep    15
+    公共－校验结果    {'f':'-1'}    ipad_ad_015    mpp_cdncp_5_ipad    1
+
+
+
+
+
+无前贴-可播比0
+    点播播放页－返回
+    公共－清除数据
+    comment    tap    综合    356    316
+    Comment    Click Element    name=3
+    播放第三集
+    sleep    20
+    公共－校验结果    ${cdn0}    ipad_ad_000    mpp_cdncp_5_ipad    1
+
+
+
+
+
+无前贴-可播比5
+    公共－校验结果    ${cdn5}    ipad_ad_005    mpp_cdncp_5_ipad    1
+
+
+
+
+
+无前贴-可播比6
+    公共－校验结果    ${cdn6}    ipad_ad_006    mpp_cdncp_5_ipad    1
+
+
+
+
+
+*** Keywords ***
+播放第三集
+    tap    下载    0    60
+
+播放第二集
+    tap    下载    -56    60
+
+播放第一集
+    tap    下载    -122    60

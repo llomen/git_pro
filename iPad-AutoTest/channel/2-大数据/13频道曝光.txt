@@ -1,0 +1,205 @@
+*** Settings ***
+Documentation     频道曝光
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${er}             {'act':'er'}
+${drm}            {'act':'drm'}
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${pmm}            {'act':'pmm'}
+${show}           {'act':'show'}
+
+*** Test Cases ***
+大闪图show
+    公共－清除数据
+    公共－校验结果    {'act':'show','flag':'14374'}    index_shantu    mpp_show_ipad    1
+
+猜你再追show
+    公共－校验结果    {'act':'show','flag':'16987'}    index_watch    mpp_show_ipad    1
+
+预约模块show
+    公共－清除数据
+    公共-屏幕上滑
+    sleep    3
+    公共－校验结果    {'act':'show','flag':'16989'}    index_yuyue    mpp_show_ipad    1
+
+猜你喜欢show
+    sleep     3
+    公共－校验结果    {'act':'show','flag':'16986'}    index_feed_1    mpp_show_ipad    2
+
+
+综艺闪图show
+    sleep    2
+    公共－清除数据
+    公共－点击页面文本    综艺
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'15805'}    zy_pic    mpp_show_ipad    1
+
+综艺热搜show
+    公共－校验结果    {'act':'show','flag':'16910'}    zy_hot    mpp_show_ipad    1
+
+综艺片库标签show
+    公共－校验结果    {'act':'show','flag':'7587'}    zy_flag    mpp_show_ipad    1
+
+王牌综艺show
+    公共－校验结果    {'act':'show','flag':'76'}    zy_top    mpp_show_ipad    2
+
+电视剧-口碑榜show
+    公共－清除数据
+    公共－点击页面文本    电视剧
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'17193'}    tv_koubei    mpp_show_ipad    1
+
+电视剧-闪图show
+    公共－校验结果    {'act':'show','flag':'7589'}    tv_shantu    mpp_show_ipad    1
+
+电视剧-片库show
+    公共－校验结果    {'act':'show','flag':'7590'}    tv_pianku    mpp_show_ipad    1
+
+电视剧-热播剧集show
+    公共－校验结果    {'act':'show','flag':'7615'}    tv_hot    mpp_show_ipad    2
+
+电影-片库show
+    公共－清除数据
+    公共－点击页面文本    电影
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7574'}    film_pianku    mpp_show_ipad    1
+
+电影-闪图show
+    公共－校验结果    {'act':'show','flag':'7555'}    film_shantu    mpp_show_ipad    1
+
+电影-模板show
+    公共－校验结果    {'act':'show','flag':'7599'}    film_template    mpp_show_ipad    1
+
+少儿-精选show
+    公共－清除数据
+    公共－点击页面文本    少儿
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7728'}    children_recom    mpp_show_ipad    1
+
+少儿-明星show
+    公共－校验结果    {'act':'show','flag':'7726'}    children_star    mpp_show_ipad    1
+
+少儿-闪图show
+    公共－校验结果    {'act':'show','flag':'7591'}    children_shantu    mpp_show_ipad    1
+
+动漫-闪图show
+    公共－清除数据
+    公共－点击页面文本    动漫
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7543'}    anime_shantu    mpp_show_ipad    1
+
+动漫-片库show
+    公共－校验结果    {'act':'show','flag':'7600'}    anime_pianku    mpp_show_ipad    1
+
+动漫-热播show
+    公共－校验结果    {'act':'show','flag':'7617'}    anime_hot    mpp_show_ipad    2
+
+70年-闪图show
+    公共－清除数据
+    公共－点击页面文本    70年
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'16413'}    70_shantu    mpp_show_ipad    1
+
+70年-页面show
+    公共－校验结果    {'act':'show','flag':'18642'}    70_page    mpp_show_ipad    1
+
+新闻-闪图show
+    公共－清除数据
+    公共－点击页面文本    新闻
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7818'}    news_shantu    mpp_show_ipad    1
+
+新闻-内容模块show
+    公共－校验结果    {'act':'show','flag':'21036'}    news_content    mpp_show_ipad    1
+
+音乐-闪图show
+    公共－清除数据
+    公共－点击页面文本    音乐
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7540'}    music_shantu    mpp_show_ipad    1
+
+音乐-专辑show
+    公共－校验结果    {'act':'show','flag':'7542'}    music_album    mpp_show_ipad    2
+
+游戏-页面show
+    公共－清除数据
+    公共－点击页面文本    游戏
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7526'}    game_page    mpp_show_ipad    1
+
+游戏-模块show
+    公共－校验结果    {'act':'show','flag':'1720'}    game_content    mpp_show_ipad    1
+
+原创-页面show
+    公共－清除数据
+    公共－点击页面文本    原创
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7820'}    original_page    mpp_show_ipad    1
+
+原创-热度值UPshow
+    公共－校验结果    {'act':'show','flag':'18978'}    original_up    mpp_show_ipad    1
+
+原创-内容show
+    公共－校验结果    {'act':'show','flag':'8236'}    original_content    mpp_show_ipad    1
+
+生活-页面show
+    公共－清除数据
+    公共－点击页面文本    生活
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7595'}    life_page    mpp_show_ipad    1
+
+生活-模块show
+    公共－校验结果    {'act':'show','flag':'1042'}    life_content    mpp_show_ipad    1
+
+纪录片-闪图show
+    公共－清除数据
+    公共－点击页面文本    纪录片
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'14470'}    record_shantu    mpp_show_ipad    1
+
+纪录片-推荐show
+    公共－校验结果    {'act':'show','flag':'1702'}    record_recom    mpp_show_ipad    1
+
+教育-闪图show
+    公共－清除数据
+    公共－点击页面文本    教育
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'7857'}    education_shantu    mpp_show_ipad    1
+
+教育-精选小图show
+    公共－校验结果    {'act':'show','flag':'6438'}    education_content    mpp_show_ipad    2
+
+趣玩-闪图show
+    公共－清除数据
+    公共－点击页面文本    趣玩
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'19020'}    fun_shantu    mpp_show_ipad    1
+
+趣玩-News-show
+    公共－校验结果    {'act':'show','flag':'19221'}    fun_news    mpp_show_ipad    1
+
+趣玩-访谈-show
+    公共－校验结果    {'act':'show','flag':'18990'}    fun_talk    mpp_show_ipad    1
+
+直播-电视台show
+    公共－清除数据
+    公共－点击页面文本    直播
+    sleep    2
+    公共－校验结果    {'act':'show','flag':'9476'}    live_tv    mpp_show_ipad    1
+
+直播-精彩回顾show
+    公共－校验结果    {'act':'show','flag':'9474'}    live_review    mpp_show_ipad    1
+
+

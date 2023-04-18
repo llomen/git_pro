@@ -1,0 +1,298 @@
+*** Settings ***
+Library           AppiumLibrary
+Library           ../auto.py
+Library           ../image_match.py
+Library           ../调试/color_compare/Diffimage.py
+
+Resource          ./我.txt
+Resource          ./首页.txt
+Resource          ./功能.txt
+
+*** Variables ***
+${package}        ImgoTV-ipad-AppStore.app_5.1.2.20171016.zip
+#ipad mini2  ${platform}       iPadiOS12.5.5Scale/2.00
+${platform}       iPadiOS14.4.1Scale/2.00
+${mail_account}    testitv@163.com
+${mail_password}    888888
+${mail_name}      shuang123
+
+
+${img_root_path}        /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/img/
+${hide_keoard}         ./img/hide_keyboard1.PNG
+${dst_path}           ./img/dst_imgage1.PNG
+
+
+*** Keywords ***
+公共－初始化环境
+    公共－清除数据
+    #ipad2 mini  Open Application    http://127.0.0.1:4723/wd/hub    platformName=iOS    deviceName=iPad    platformVersion=12.4.8       newCommandTimeout=600    udid=77b67553903be3fe74a1b4a361a075260f545dca   bundleId=com.imgo.tv.hd    AutomationName=XCUITest
+    Open Application    http://127.0.0.1:4723/wd/hub     platformName=iOS    deviceName=iPad    platformVersion=14.4.1      newCommandTimeout=600    udid=f4168aea0d6a99829d75f3ea681f430ad71df1ea   bundleId=com.imgo.tv.hd    AutomationName=XCUITest
+    #comment    Open Application    http://127.0.0.1:4723/wd/hub    platformName=IOS    deviceName=iPad Air    app=/Users/klyg/Desktop/ipad_auto/package/${package}    platformVersion=9.3    newCommandTimeout=500    autoAcceptAlerts=true    waitForAppScript=5000
+    sleep    10
+    #run keyword and ignore error    click element    close icon gray circle
+
+公共－关闭环境
+    Close All Applications
+
+公共-图像匹配坐标
+    [Arguments]     ${src_path}     ${dst_path}
+    ${x}   ${y}=    get_image_element_point    './img/hide_keyboard1.PNG'     './img/dst_image1.PNG'
+    [Return]    ${x}   ${y}
+
+初始退出登录
+    首页－我的
+    ${a}    Run Keyword And Return Status    page should contain element    登录/注册
+    run keyword if    ${a}==False    公共-退出登录
+    首页－频道
+
+公共-隐藏键盘
+    capture page screenshot     ${img_root_path}dst_image.PNG
+    sleep  10
+    ${x}   ${y}=  公共-图像匹配坐标      ${hide_keoard}       ${dst_path}
+    sleep  20
+    click a point    ${x}     ${y}
+
+
+公共-邮箱登录
+    [Arguments]    ${username}    ${password}
+    sleep    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="邮箱登录"]/following-sibling::XCUIElementTypeTextField[1]    ${username}
+    input password    xpath=//XCUIElementTypeStaticText[@name="邮箱登录"]/following-sibling::XCUIElementTypeSecureTextField[1]    ${password}
+    sleep  3
+    公共-隐藏键盘
+    我的－勾选隐私协议
+    sleep  2
+    click a point    528    436   #点击登录，常规元素定位方式无法点击
+    sleep  5
+
+公共-邮箱登录_xzx
+    [Arguments]    ${username}    ${password}
+    sleep    1
+    input text    xpath=//XCUIElementTypeStaticText[@name="邮箱登录"]/following-sibling::XCUIElementTypeTextField[1]    ${username}
+    input password    xpath=//XCUIElementTypeStaticText[@name="邮箱登录"]/following-sibling::XCUIElementTypeSecureTextField[1]    ${password}
+    sleep  5
+    click element     xpath=//XCUIElementTypeButton[@name="隐藏键盘"]
+    sleep  2
+    我的－勾选隐私协议
+    sleep  2
+    click a point    533    451
+    sleep  5
+
+公共-手机登录
+    [Arguments]    ${username}    ${password}
+    sleep    1
+    Comment    input text    name=login_userNameTextField    ${username}
+    Comment    input password    name=login_pwdTextField    ${password}
+    input text    xpath=//XCUIElementTypeStaticText[@name="账号登录"]/following-sibling::XCUIElementTypeTextField[1]    ${username}
+    input password    xpath=//XCUIElementTypeStaticText[@name="账号登录"]/following-sibling::XCUIElementTypeSecureTextField[1]    ${password}
+    click element    xpath=//XCUIElementTypeButton[@name="忘记密码"]/following-sibling::XCUIElementTypeButton[1]
+    Comment    tap    login_pwdTextField    100    135
+    SLEEP    3
+
+关闭绑定手机页面
+    ${bb}    Run Keyword And Return Status    page should contain element    绑定手机
+    Run keyword if    ${bb} == 1    登录－关闭
+
+邮箱登录
+    [Arguments]    ${account}    ${password}
+    登录-是否有历史页面
+    登录-点邮箱icon
+    公共－清除数据
+    公共-邮箱登录_xzx    ${account}    ${password}
+    关闭绑定手机页面
+
+直接登录
+    [Arguments]    ${account}    ${password}    ${username}
+    ${aa}=    Run Keyword And Return Status    Page Should Contain Text    ${username}
+    run keyword if    ${aa}    公共－xpath    //XCUIElementTypeButton[@name="使用其他账号登录"]/preceding-sibling::XCUIElementTypeButton[1]
+    ...    ELSE    邮箱登录    ${account}    ${password}
+
+公共－点击页面文本
+    [Arguments]    ${text}
+    sleep    1
+    Click Element    name=${text}
+    sleep    2
+
+点击文本
+    [Arguments]    ${text}
+    click element    nsp= name=="${text}" and type=="XCUIElementTypeStaticText"
+
+公共-校验
+    [Arguments]    ${res}    ${text}
+    ${passed} =    Evaluate    ${res}
+    ${error} =    Set Variable If    ${passed}    ${EMPTY}    ${text}
+    [Return]    ${passed}    ${error}
+
+公共－校验结果
+    [Arguments]    ${field}    ${test_point}    ${field_table}    ${act_count}=1
+    ${result}    Check Result    ${field}    ${platform}    ${test_point}    ${field_table}    ${act_count}
+    ${count}    ${error1}=    公共-校验    ${result['count'][0]}==1    条数错误：${result['count'][1]}\n
+    ${field}    ${error2}=    公共-校验    ${result['field'][0]} ==1    字段错误：${result['field'][1]}\n
+    ${errdata}    ${error3}=    公共-校验    ${result['errdata'][0]}==1    字段值错误：${result['errdata'][1]}\n
+    ${res}=    Evaluate    ${count}&${field}&${errdata}
+    ${error}=    Catenate    SEPARATOR=    ${error1}    ${error2}    ${error3}
+    should be true    ${res}    ${error}
+
+公共-校验无结果
+    [Arguments]    ${field}    ${test_point}    ${field_table}    ${act_count}=0
+    ${result}    Check Result    ${field}    ${platform}    ${test_point}    ${field_table}    ${act_count}
+    ${count}    ${error1}=    公共-校验    ${result['count'][0]}==1    条数错误：${result['count'][1]}\n
+    should be true    ${count}    ${error1}
+
+公共-校验数据
+    [Arguments]    ${field}    ${test_point}    ${field_table}    ${act_count}
+    sleep    1
+    run keyword if    ${act_count}==0    公共-校验无结果    ${field}    ${test_point}    ${field_table}
+    ...    ELSE    公共-校验结果    ${field}    ${test_point}    ${field_table}    ${act_count}
+
+公共－条数
+    [Arguments]    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+公共－字段
+    [Arguments]    ${result}
+    should be true    ${result['field'][0]}==1    ${result['field'][1]}
+
+公共－字段值
+    [Arguments]    ${result}
+    should be true    ${result['errdata'][0]}==1    ${result['errdata'][1]}
+
+公共－清除数据
+    sleep   3
+    delete data    ${platform}
+    sleep   5
+
+公共－xpath
+    [Arguments]    ${text}
+    sleep    1
+    click element    xpath=${text}
+    sleep    2
+
+公共-屏幕上滑
+    swipe    100    600    100   230
+    sleep   2
+
+
+公共-屏幕下滑
+    swipe    50    30   50   80
+    sleep   2
+
+公共－快进
+    sleep    1
+    swipe    0    300    500    300
+    swipe    0    300    500    300
+    swipe    0    300    500    300
+    swipe    0    300    500    300
+    swipe    0    300    500    300
+    swipe    0    300    500    300
+    swipe    0    300    500    300
+    swipe    0    300    500    300
+    sleep    10
+
+公共－屏幕左滑
+    swipe    730    64    480    64
+    sleep    1
+
+公共－屏幕右滑
+    swipe    730    64    980    64
+    sleep    1
+
+公共－删除cdn配置
+    delete cdn
+
+公共－cdn配置
+    [Arguments]    ${text}
+    Insert Cdn Config    ${text}
+
+公共－是非
+    [Arguments]    ${res}
+    should be true    ${res}==true    ${res}
+
+按坐标点击元素
+    [Arguments]    ${text}
+    &{size} =    get element size    ${text}
+    &{location} =    get element location    ${text}
+    ${x} =    evaluate    ${location.x}+${size.width}/2
+    ${y} =    evaluate    ${location.y}+${size.height}/2
+    click a point    ${x}    ${y}
+
+
+
+公共-通知框关闭
+    ${res}    元素是否存在    name=ok
+    Run keyword If    "${res}"=="${true}"    Click element    name=ok
+
+公共－支付页关闭
+    #Click element    xpath=//XCUIElementTypeOther[@name="开通会员"]/XCUIElementTypeImage[1]
+    click a point    350    10
+    sleep    3
+
+公共－播单支付页关闭
+    tap    开通会员    240    0
+    sleep    1
+
+公共－点击某点
+    [Arguments]    ${x}    ${y}
+    ${a}    Evaluate    int(${x})
+    ${b}    Evaluate    int(${x})
+    click a point    ${a}    ${b}
+
+未登录-关闭小窗
+    tap    mine back    301    334
+    sleep    1
+
+已登录-关闭小窗
+    tap    mine back    301    444
+    sleep    1
+
+公共-滑动页面
+    [Arguments]    ${start_locator}    ${end_locator}
+    sleep    3
+    scroll    name=${start_locator}    name=${end_locator}
+    sleep    1
+
+公共-退出登录
+    ${a}    Run Keyword And Return Status    Element Should Be Visible    设置
+    run keyword if    ${a}==False    公共-屏幕上滑
+    公共－点击页面文本    设置
+    comment    公共-滑动页面    退出登录    修改密码
+    swipe    933    666    933    166
+    公共－点击页面文本    退出登录
+
+
+
+公共-返回
+    sleep    2
+    Go Back
+
+生成随机字符
+    ${random}    get_random
+    [Return]    ${random}
+
+
+图片对比
+    sleep     5
+    Capture Page Screenshot     /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+    sleep     2
+    ${result}    ${data}    Diffimages    /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+    log    ${data}
+    #run keyword if   ${result}==False    执行失败    ${data}
+    Run Keyword And Continue On Failure   执行失败    ${data}
+    sleep     5
+
+
+执行失败
+    [Arguments]    ${text}
+    Capture Page Screenshot
+    Fail    ${text}
+
+公共-点击元素
+    [Arguments]    ${text}
+    click element     nsp= name=="${text}" and type=="XCUIElementTypeStaticText"
+    run keyword if  click element    nsp= name=="${text}" and type=="XCUIElementTypeStaticText"
+
+
+
+
+
+

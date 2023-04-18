@@ -1,0 +1,76 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${table}          mpp_hb_5_ipad
+
+*** Test Cases ***
+登陆初始化
+    首页－我的
+    判断是否登录-未登陆执行登陆
+    首页－频道
+
+点播15hb
+    首页-进入点播页快乐大本营
+    公共－清除数据
+    sleep    30
+    公共－校验结果    ${hb_15}    ipad_shikan_15    ${table}    1
+
+点播45hb
+    sleep    40
+    公共－校验结果    ${hb_45}    ipad_shikan_45    ${table}    1
+
+点播60hb
+    sleep    20
+    公共－校验结果    ${hb_60}    ipad_shikan_60    ${table}    1
+
+点播120hb
+    sleep    125
+    公共－校验结果    ${hb_120}    ipad_shikan_120    ${table}    1
+
+点播退出hb
+    公共－清除数据
+    点播播放页－返回
+    sleep    5
+    公共－校验结果    ${hb_out}    ipad_shikan_out    ${table}    1
+
+播单15hb
+    公共－清除数据
+    click element    nsp=name=="快乐大本营 2016" and type=="XCUIElementTypeStaticText"
+    sleep    2
+    swipe    100    600    100   300
+    #click element    nsp=name=="张艺兴新歌《honey》节目首秀" and type=="XCUIElementTypeStaticText"
+    click element    nsp=name=="唐嫣畅谈与罗晋恋爱私事" and type=="XCUIElementTypeStaticText"
+    sleep    35
+    公共－校验结果    ${hb_15}    ipad_bodan_15    ${table}    1
+
+播单45hb
+    sleep    35
+    公共－校验结果    ${hb_45}    ipad_bodan_45    ${table}    1
+
+播单60hb
+    sleep    30
+    公共－校验结果    ${hb_60}    ipad_bodan_60    ${table}    1
+
+播单退出hb
+    公共－清除数据
+    点播播放页－返回
+    sleep    1
+    公共－校验结果    ${hb_out}    ipad_bodan_out    ${table}    1
+
+

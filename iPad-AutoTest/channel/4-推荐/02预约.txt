@@ -1,0 +1,285 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+Resource          ../../对象库/功能.txt
+
+
+*** Variables ***
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${table_sdk}      mpp_hb_5_ipad_sdk
+${table}          mpp_hb_5_ipad
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${sp}             {'act':'sp'}
+${aplay}          {'act':'aplay'}
+${table_vv}       mpp_vv_5_ipad
+${table_pvs_dianbo}    mpp_pvs_ipad_dianbo
+${table_pvs}      mpp_pvs_ipad
+${table_show}     mpp_show_ipad
+${chwatchshow}    {'act':'chfwatchshow'}
+${chadminwatchshow}    {'act':'chadminfwatchshow'}
+${chwatchclick}    {'act':'chfwatchclick'}
+${chadminwatchclick}    {'act':'chadminfwatchclick'}
+${table_chwatchshow}    mpp_ip_chfwatchshow
+${table_chwatchclick}    mpp_ip_chfwatchclick
+${table_chwatchclick_jubao}    mpp_ip_chfwatchclick_jubao
+${table_buffer}    mpp_buffer_5_ipad
+${buffer}         {'act':'buffer'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${cdn2}           {'s':'2'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${ppv}            {'act':'ppv'}
+${pvv}            {'act':'pvv'}
+${pend}           {'act':'pend'}
+
+*** Test Cases ***
+预约show
+    公共－清除数据
+    公共-屏幕上滑
+    公共－校验结果    {'act':'show','flag':'8626'}    index_yuyue    mpp_show_ipad    1
+
+
+
+
+
+进入预览页pvs
+    公共－清除数据
+    进入预览页
+    公共－校验结果    ${pvs_field}    yuyue_01    ${table_pvs}    1
+
+
+
+
+预览页buffer
+    公共－校验结果    ${buffer}    yulan_01    ${table_buffer}    1
+
+
+
+
+
+预览页播放vv
+    公共－校验结果    ${aplay}    ipad_yuyue_01    ${table_vv}    1
+
+
+
+
+
+播放器ppv
+    公共－校验结果    ${ppv}    yuyue_01    mobile_ppv_ipad    1
+
+
+
+
+播放器pvv
+    公共－校验结果    ${pvv}    yuyue_01    mobile_pvv_ipad    1
+
+
+
+
+cdn1
+    公共－校验结果    ${cdn1}    ipad_yuyue_001    mpp_cdn_5_ipad    1
+
+
+
+
+
+cdn2
+    公共－校验结果    ${cdn2}    ipad_yuyue_002    mpp_cdn_5_ipad    1
+
+
+
+
+cdn3
+    公共－校验结果    ${cdn3}    ipad_yuyue_003    mpp_cdn_5_ipad    1
+
+
+
+
+定时卡顿
+    公共－校验结果    ${r1}    ipad_yulan_001    mpp_cdnq_5_ipad    1
+
+
+
+
+
+预览页15hb
+    sleep    60
+    公共－校验结果    ${hb_15}    yuyue_01    ${table}    1
+
+
+
+
+预览页45hb
+    公共－校验结果    ${hb_45}    yuyue_02    ${table}    1
+
+
+
+
+
+预览页60hb
+    公共－校验结果    ${hb_60}    yuyue_03    ${table}    1
+
+
+
+
+
+预览页播放完成停止hb
+    公共－校验结果    ${hb_out}    yuyue_05    ${table}    1
+
+
+
+
+
+播放器pend
+    公共－校验结果    ${pend}    yuyue_01    mobile_pend_ipad    1
+
+
+
+
+
+退出卡顿
+    sleep    2
+    公共－校验结果    ${r3}    ipad_yulan_003    mpp_cdnq_5_ipad    1
+
+
+
+
+
+预览页返回频道pvs
+    公共－清除数据
+    关闭预览页
+    公共－校验结果    ${pvs_field}    yuyue_02    ${table_pvs}    1
+
+
+
+
+预览页切换视频
+    进入预览页
+    公共－清除数据
+    切换预览视频
+
+切换视频pvs
+    sleep    3
+    公共－校验结果    ${pvs_field}    yuyue_03    ${table_pvs}    1
+
+
+
+
+
+切换视频停止hb
+    公共－校验结果    ${hb_out}    yuyue_05    ${table}    1
+
+
+
+
+
+切换视频播放器pend
+    公共－校验结果    ${pend}    yuyue_01    mobile_pend_ipad    1
+
+
+
+
+
+切换视频退出卡顿
+    sleep    2
+    公共－校验结果    ${r3}    ipad_yulan_003    mpp_cdnq_5_ipad    1
+
+
+
+
+
+切换视频buffer
+    公共－校验结果    ${buffer}    yulan_01    ${table_buffer}    1
+
+
+
+
+切换视频vv
+    公共－校验结果    ${aplay}    ipad_yuyue_02    ${table_vv}    1
+
+
+
+
+切换视频15hb
+    sleep    12
+    公共－校验结果    ${hb_15}    yuyue_01    ${table}    1
+
+
+
+
+点更多跳转点播页pvs
+    公共－清除数据
+    公共－点击页面文本    更多
+    sleep    3
+    公共－校验结果    ${pvs_field}    yuyue_04    ${table_pvs}    1
+
+
+
+
+进点播页不上报HB停止hb
+    公共－校验结果    ${hb_out}    yuyue_05    ${table}    0
+
+
+退出点播页pvs
+    公共－清除数据
+    点播播放页－返回
+    公共－校验结果    ${pvs_field}    yuyue_05    ${table_pvs}    1
+
+
+
+
+
+再次退出预览页pvs
+    公共－清除数据
+    关闭预览页
+    公共－校验结果    ${pvs_field}    yuyue_02    ${table_pvs}    1
+
+
+
+
+
+退出预览页停止hb
+    公共－校验结果    ${hb_out}    yuyue_05    ${table}    1
+
+
+
+
+
+退出预览页播放器pend
+    公共－校验结果    ${pend}    yuyue_01    mobile_pend_ipad    1
+
+
+
+
+退出预览页退出卡顿
+    sleep    2
+    公共－校验结果    ${r3}    ipad_yulan_003    mpp_cdnq_5_ipad    1
+
+
+
+
+
+*** Keywords ***
+进入预览页
+    公共－点击页面文本    悲伤逆流成河
+    sleep    3
+
+切换预览视频
+    公共－xpath    (//XCUIElementTypeStaticText[@name="海棠经雨胭脂透"])[2]
+
+关闭预览页
+    公共－点击页面文本    ×

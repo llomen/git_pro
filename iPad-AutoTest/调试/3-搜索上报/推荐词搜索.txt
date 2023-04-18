@@ -1,0 +1,124 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+
+*** Variables ***
+${cdn1}           {'s':'1'}
+${cdn2}           {'s':'2'}
+${cdn3}           {'s':'3'}
+${pvs_field}      {'act':'pvs'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${hot_field}      {'act':'recommended_hot'}
+${hotpv_field}    {'act':'hotpv'}
+${recommend_rel_field}    {'act':'recommend_rel'}
+${action_field}    {'act':'action'}
+
+*** Test Cases ***
+输入搜索词弹出关键词推荐页pvs
+    首页－搜索视频
+    公共－清除数据
+    搜索－输入搜索词    向往的生活
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_028    mpp_pvs_ipad    1
+
+
+
+
+
+点推荐词跳点播页pvs
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="向往的生活"]/preceding-sibling::XCUIElementTypeButton[1]
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_029    mpp_pvs_ipad    1
+
+
+
+
+
+推荐词点击search
+    公共－校验结果    ${search_field}    ipad_search_001    mpp_search_data_ipad    1
+
+
+
+
+
+推荐词点击click
+    公共－校验结果    ${click_field}    ipad_click_025    mpp_click_data_ipad    1
+
+
+
+
+返回推荐页pvs
+    公共－清除数据
+    sleep    3
+    点播播放页－返回
+    公共－校验结果    ${pvs_field}    search_030    mpp_pvs_ipad    1
+
+
+
+
+
+点推荐词跳结果页pvs
+    公共－清除数据
+    sleep    2
+    公共－xpath    //XCUIElementTypeStaticText[@name="向往的生活 第六季"]/preceding-sibling::XCUIElementTypeButton[1]
+    公共－校验结果    ${pvs_field}    search_031    mpp_pvs_ipad    1
+
+
+
+
+
+推荐词2点击search
+    公共－校验结果    ${search_field}    ipad_search_001    mpp_search_data_ipad    1
+
+
+
+
+
+推荐词2view
+    公共－校验结果    ${view_field}    ipad_view_001    mpp_view_data_ipad    1
+
+
+
+
+
+删除搜索文本返回pvs
+    公共－清除数据
+    搜索－删除搜索词
+    sleep   5
+    公共－校验结果    ${pvs_field}    search_034   mpp_pvs_ipad    1
+
+
+
+
+
+无关键词搜索pvs
+    搜索－点击搜索框
+    公共－清除数据
+    搜索－键盘搜索
+    公共－校验结果    ${pvs_field}    search_035    mpp_pvs_ipad    1
+
+
+
+
+结果页返回首页
+    公共－清除数据
+    公共－点击页面文本    取消
+    公共－校验结果    ${pvs_field}    search_032    mpp_pvs_ipad    1
+
+
+
+

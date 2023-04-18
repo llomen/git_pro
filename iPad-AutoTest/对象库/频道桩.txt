@@ -1,0 +1,7 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+频道桩－播单
+    Click Element    name=播单_hb_sdk
+    sleep    1

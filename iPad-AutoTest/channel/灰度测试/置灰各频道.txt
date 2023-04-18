@@ -1,0 +1,136 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+综艺频道置灰
+    click element    nsp=label=="综艺" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+综艺频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+电视剧频道置灰
+    click element    nsp=label=="电视剧" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+电视剧频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+电影频道置灰
+    click element    nsp=label=="电影" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+电影频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+少儿频道置灰
+    click element    nsp=label=="少儿" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+少儿频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+动漫频道置灰
+    click element    nsp=label=="动漫" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+动漫频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+大芒频道置灰
+    click element    nsp=label=="大芒" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+大芒频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+新闻频道置灰
+    click element    nsp=label=="新闻" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+新闻频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+音乐频道置灰
+    click element    nsp=label=="音乐" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+音乐频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+游戏频道置灰
+    click element    nsp=label=="游戏" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+游戏频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+生活频道置灰
+    click element    nsp=label=="生活" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+生活频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+教育频道置灰
+    click element    nsp=label=="教育" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+教育频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+投教频道置灰
+    click element    nsp=label=="投教" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+投教频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+纪录片频道置灰
+    click element    nsp=label=="纪录片" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+纪录片频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+时尚频道置灰
+    click element    nsp=label=="时尚" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+时尚频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比
+
+直播频道置灰
+    click element    nsp=label=="直播" and type=="XCUIElementTypeStaticText"
+    图片对比
+
+直播频道下滑页置灰
+    swipe by percent    50    600    50    200
+    图片对比

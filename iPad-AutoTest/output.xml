@@ -1,0 +1,2981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.9.4 on darwin)" generated="20221130 17:17:11.897" rpa="false">
+<suite id="s1" name="灰度测试" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/channel/灰度测试">
+<suite id="s1-s1" name="Test" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/channel/灰度测试/test.txt">
+<kw name="公共－初始化环境" library="公共" type="setup">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:17:16.118" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:17:13.117" endtime="20221130 17:17:16.118"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20221130 17:17:16.118" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20221130 17:17:16.118" endtime="20221130 17:17:16.134"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:17:21.135" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:17:16.134" endtime="20221130 17:17:21.135"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:17:13.117" endtime="20221130 17:17:21.135"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=iPad</arg>
+<arg>platformVersion=14.4.1</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>udid=f4168aea0d6a99829d75f3ea681f430ad71df1ea</arg>
+<arg>bundleId=com.imgo.tv.hd</arg>
+<arg>AutomationName=XCUITest</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:17:21.135" endtime="20221130 17:17:30.797"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20221130 17:17:40.797" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221130 17:17:30.797" endtime="20221130 17:17:40.798"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:17:13.117" endtime="20221130 17:17:40.798"></status>
+</kw>
+<test id="s1-s1-t1" name="个人中心">
+<kw name="首页－我的" library="首页">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:17:45.799" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:17:40.799" endtime="20221130 17:17:45.799"></status>
+</kw>
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20221130 17:17:46.800" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221130 17:17:45.800" endtime="20221130 17:17:46.801"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:17:46.802" level="INFO">Clicking element 'xpath=//XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20221130 17:17:46.801" endtime="20221130 17:17:48.730"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:17:50.731" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:17:48.730" endtime="20221130 17:17:50.732"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:17:45.800" endtime="20221130 17:17:50.732"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:17:53.733" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:17:50.732" endtime="20221130 17:17:53.733"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:17:40.799" endtime="20221130 17:17:53.733"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:17:40.798" endtime="20221130 17:17:53.733" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="负二屏">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:17:53.734" endtime="20221130 17:17:55.543"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:00.544" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:17:55.543" endtime="20221130 17:18:00.544"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:18:00.808" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:00.544" endtime="20221130 17:18:00.808"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:18:02.809" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:00.808" endtime="20221130 17:18:02.809"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:18:03.407" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]}</msg>
+<msg timestamp="20221130 17:18:03.407" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:18:03.407" level="INFO">${data} = [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [22...</msg>
+<status status="PASS" starttime="20221130 17:18:02.810" endtime="20221130 17:18:03.407"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:03.408" level="INFO">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="PASS" starttime="20221130 17:18:03.407" endtime="20221130 17:18:03.408"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:18:03.615" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:03.408" endtime="20221130 17:18:03.615"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:03.616" level="FAIL">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="FAIL" starttime="20221130 17:18:03.615" endtime="20221130 17:18:03.616"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:03.408" endtime="20221130 17:18:03.616"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:03.408" endtime="20221130 17:18:03.616"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:08.617" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:03.616" endtime="20221130 17:18:08.617"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:17:55.543" endtime="20221130 17:18:08.617"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:17:53.733" endtime="20221130 17:18:08.617" critical="yes">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</status>
+</test>
+<test id="s1-s1-t3" name="负三屏">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:18:08.618" endtime="20221130 17:18:10.412"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:15.414" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:10.413" endtime="20221130 17:18:15.414"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:18:15.610" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:15.414" endtime="20221130 17:18:15.610"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:18:17.611" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:15.610" endtime="20221130 17:18:17.612"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:18:18.132" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]}</msg>
+<msg timestamp="20221130 17:18:18.134" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:18:18.134" level="INFO">${data} = [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [22...</msg>
+<status status="PASS" starttime="20221130 17:18:17.612" endtime="20221130 17:18:18.134"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:18.135" level="INFO">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="PASS" starttime="20221130 17:18:18.134" endtime="20221130 17:18:18.135"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:18:18.327" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:18.135" endtime="20221130 17:18:18.327"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:18.327" level="FAIL">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="FAIL" starttime="20221130 17:18:18.327" endtime="20221130 17:18:18.328"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:18.135" endtime="20221130 17:18:18.328"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:18.135" endtime="20221130 17:18:18.328"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:23.329" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:18.328" endtime="20221130 17:18:23.329"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:10.412" endtime="20221130 17:18:23.329"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:08.618" endtime="20221130 17:18:23.329" critical="yes">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</status>
+</test>
+<test id="s1-s1-t4" name="负四屏">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:18:23.330" endtime="20221130 17:18:25.118"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:30.120" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:25.118" endtime="20221130 17:18:30.137"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:18:30.351" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:30.138" endtime="20221130 17:18:30.352"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:18:32.354" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:30.352" endtime="20221130 17:18:32.354"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:18:32.908" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]}</msg>
+<msg timestamp="20221130 17:18:32.908" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:18:32.908" level="INFO">${data} = [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [22...</msg>
+<status status="PASS" starttime="20221130 17:18:32.354" endtime="20221130 17:18:32.909"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:32.909" level="INFO">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="PASS" starttime="20221130 17:18:32.909" endtime="20221130 17:18:32.909"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:18:33.115" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:32.910" endtime="20221130 17:18:33.116"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:33.116" level="FAIL">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="FAIL" starttime="20221130 17:18:33.116" endtime="20221130 17:18:33.116"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:32.909" endtime="20221130 17:18:33.117"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:32.909" endtime="20221130 17:18:33.117"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:38.117" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:33.117" endtime="20221130 17:18:38.118"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:25.118" endtime="20221130 17:18:38.118"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:23.330" endtime="20221130 17:18:38.118" critical="yes">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</status>
+</test>
+<test id="s1-s1-t5" name="负五屏">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:18:38.119" endtime="20221130 17:18:39.897"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:44.898" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:39.897" endtime="20221130 17:18:44.898"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:18:45.098" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:44.898" endtime="20221130 17:18:45.099"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:18:47.100" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:45.099" endtime="20221130 17:18:47.100"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:18:47.692" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]}</msg>
+<msg timestamp="20221130 17:18:47.692" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:18:47.693" level="INFO">${data} = [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [22...</msg>
+<status status="PASS" starttime="20221130 17:18:47.100" endtime="20221130 17:18:47.693"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:47.693" level="INFO">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="PASS" starttime="20221130 17:18:47.693" endtime="20221130 17:18:47.693"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:18:47.898" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:47.694" endtime="20221130 17:18:47.898"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:18:47.898" level="FAIL">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="FAIL" starttime="20221130 17:18:47.898" endtime="20221130 17:18:47.898"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:47.693" endtime="20221130 17:18:47.899"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:47.693" endtime="20221130 17:18:47.899"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:52.901" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:47.899" endtime="20221130 17:18:52.901"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:39.897" endtime="20221130 17:18:52.901"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:38.118" endtime="20221130 17:18:52.901" critical="yes">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</status>
+</test>
+<test id="s1-s1-t6" name="负六屏">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:18:52.902" endtime="20221130 17:18:54.705"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:18:59.706" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:54.705" endtime="20221130 17:18:59.706"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:18:59.896" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:18:59.707" endtime="20221130 17:18:59.896"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:19:01.897" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:18:59.896" endtime="20221130 17:19:01.898"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:19:02.459" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]}</msg>
+<msg timestamp="20221130 17:19:02.459" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:19:02.459" level="INFO">${data} = [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [22...</msg>
+<status status="PASS" starttime="20221130 17:19:01.898" endtime="20221130 17:19:02.459"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:19:02.460" level="INFO">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="PASS" starttime="20221130 17:19:02.460" endtime="20221130 17:19:02.460"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:19:02.653" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:19:02.461" endtime="20221130 17:19:02.653"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:19:02.654" level="FAIL">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="FAIL" starttime="20221130 17:19:02.653" endtime="20221130 17:19:02.654"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:02.460" endtime="20221130 17:19:02.654"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:02.460" endtime="20221130 17:19:02.654"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:19:07.656" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:02.654" endtime="20221130 17:19:07.656"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:54.705" endtime="20221130 17:19:07.656"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:18:52.902" endtime="20221130 17:19:07.656" critical="yes">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</status>
+</test>
+<test id="s1-s1-t7" name="负七屏">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:19:07.659" endtime="20221130 17:19:09.463"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:19:14.464" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:09.463" endtime="20221130 17:19:14.464"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:19:14.665" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:19:14.465" endtime="20221130 17:19:14.665"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:19:16.666" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:14.666" endtime="20221130 17:19:16.667"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:19:17.216" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]}</msg>
+<msg timestamp="20221130 17:19:17.216" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:19:17.216" level="INFO">${data} = [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [22...</msg>
+<status status="PASS" starttime="20221130 17:19:16.667" endtime="20221130 17:19:17.216"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:19:17.217" level="INFO">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="PASS" starttime="20221130 17:19:17.217" endtime="20221130 17:19:17.217"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:19:17.431" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:19:17.218" endtime="20221130 17:19:17.431"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:19:17.431" level="FAIL">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="FAIL" starttime="20221130 17:19:17.431" endtime="20221130 17:19:17.431"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:17.217" endtime="20221130 17:19:17.431"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:17.217" endtime="20221130 17:19:17.431"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:19:22.433" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:17.432" endtime="20221130 17:19:22.433"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:09.463" endtime="20221130 17:19:22.434"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:07.659" endtime="20221130 17:19:22.434" critical="yes">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</status>
+</test>
+<kw name="公共－关闭环境" library="公共" type="teardown">
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20221130 17:19:22.435" endtime="20221130 17:19:23.562"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:19:22.435" endtime="20221130 17:19:23.562"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:17:11.921" endtime="20221130 17:19:23.562"></status>
+</suite>
+<suite id="s1-s2" name="置灰个人中心" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/channel/灰度测试/置灰个人中心.txt">
+<kw name="公共－初始化环境" library="公共" type="setup">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:19:26.585" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:23.584" endtime="20221130 17:19:26.585"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20221130 17:19:26.586" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20221130 17:19:26.585" endtime="20221130 17:19:26.595"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:19:31.597" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:26.595" endtime="20221130 17:19:31.597"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:19:23.584" endtime="20221130 17:19:31.597"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=iPad</arg>
+<arg>platformVersion=14.4.1</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>udid=f4168aea0d6a99829d75f3ea681f430ad71df1ea</arg>
+<arg>bundleId=com.imgo.tv.hd</arg>
+<arg>AutomationName=XCUITest</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:19:31.597" endtime="20221130 17:19:40.118"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20221130 17:19:50.119" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:40.118" endtime="20221130 17:19:50.119"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:19:23.583" endtime="20221130 17:19:50.119"></status>
+</kw>
+<test id="s1-s2-t1" name="个人中心">
+<kw name="首页－我的" library="首页">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:19:55.121" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:50.120" endtime="20221130 17:19:55.121"></status>
+</kw>
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[5]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20221130 17:19:56.122" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221130 17:19:55.122" endtime="20221130 17:19:56.122"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:19:56.124" level="INFO">Clicking element 'xpath=//XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[5]'.</msg>
+<status status="PASS" starttime="20221130 17:19:56.123" endtime="20221130 17:19:58.280"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:20:00.280" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:19:58.280" endtime="20221130 17:20:00.281"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:19:55.121" endtime="20221130 17:20:00.281"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:20:03.283" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:00.281" endtime="20221130 17:20:03.283"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:19:50.120" endtime="20221130 17:20:03.284"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:20:08.286" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:03.284" endtime="20221130 17:20:08.286"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:20:08.487" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:08.286" endtime="20221130 17:20:08.487"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:20:10.488" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:08.488" endtime="20221130 17:20:10.488"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:20:11.062" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2105, 233, 4, 6], [2115, 245, 5, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]}</msg>
+<msg timestamp="20221130 17:20:11.062" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:20:11.062" level="INFO">${data} = [[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [22...</msg>
+<status status="PASS" starttime="20221130 17:20:10.488" endtime="20221130 17:20:11.062"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:11.063" level="INFO">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2105, 233, 4, 6], [2115, 245, 5, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="PASS" starttime="20221130 17:20:11.063" endtime="20221130 17:20:11.063"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:20:11.232" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:11.064" endtime="20221130 17:20:11.232"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:11.233" level="FAIL">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2105, 233, 4, 6], [2115, 245, 5, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</msg>
+<status status="FAIL" starttime="20221130 17:20:11.232" endtime="20221130 17:20:11.233"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:11.063" endtime="20221130 17:20:11.233"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:11.063" endtime="20221130 17:20:11.233"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:20:16.235" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:11.233" endtime="20221130 17:20:16.235"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:03.284" endtime="20221130 17:20:16.235"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:50.119" endtime="20221130 17:20:16.235" critical="yes">[[2190, 25, 32, 12], [2057, 281, 80, 4], [1961, 281, 80, 4], [313, 509, 128, 2], [2201, 38, 17, 13], [2184, 51, 15, 12], [2225, 31, 9, 17], [261, 929, 8, 18], [135, 365, 18, 8], [2225, 47, 8, 18], [2201, 61, 10, 13], [131, 937, 12, 10], [681, 505, 20, 6], [2207, 53, 10, 10], [131, 1275, 12, 8], [585, 509, 48, 2], [233, 349, 8, 10], [2214, 28, 11, 6], [1497, 1641, 16, 4], [105, 509, 32, 2], [745, 507, 6, 8], [169, 507, 6, 8], [147, 507, 6, 8], [117, 337, 4, 12], [2153, 331, 6, 8], [1939, 331, 6, 8], [249, 305, 2, 24], [2105, 251, 6, 8], [1987, 251, 6, 8], [2202, 25, 21, 2], [117, 277, 4, 10], [2184, 31, 4, 9], [1929, 1639, 16, 2], [1881, 1639, 16, 2], [119, 1433, 2, 16], [265, 795, 4, 8], [937, 509, 16, 2], [905, 509, 16, 2], [185, 509, 16, 2], [2184, 41, 4, 8], [117, 1267, 4, 6], [2163, 293, 6, 4], [1929, 293, 6, 4], [1977, 245, 6, 4], [2105, 233, 4, 6], [2115, 245, 5, 4], [2215, 67, 3, 6], [2219, 55, 6, 3], [149, 949, 4, 4], [265, 653, 4, 4], [2191, 69, 4, 4], [2184, 25, 4, 4], [2201, 54, 5, 3], [153, 1269, 2, 4], [201, 791, 2, 4], [201, 647, 2, 4]]</status>
+</test>
+<test id="s1-s2-t2" name="VIP会员页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:20:19.239" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:16.236" endtime="20221130 17:20:19.239"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>91</arg>
+<arg>228</arg>
+</arguments>
+<msg timestamp="20221130 17:20:19.240" level="INFO">Clicking on a point (91,228).</msg>
+<status status="PASS" starttime="20221130 17:20:19.239" endtime="20221130 17:20:21.047"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:20:26.049" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:21.048" endtime="20221130 17:20:26.049"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:20:26.282" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:26.049" endtime="20221130 17:20:26.282"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:20:28.284" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:26.282" endtime="20221130 17:20:28.284"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:20:28.866" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]}</msg>
+<msg timestamp="20221130 17:20:28.866" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:20:28.866" level="INFO">${data} = [[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211,...</msg>
+<status status="PASS" starttime="20221130 17:20:28.284" endtime="20221130 17:20:28.866"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:28.867" level="INFO">[[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:20:28.866" endtime="20221130 17:20:28.867"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:20:29.107" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:28.867" endtime="20221130 17:20:29.107"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:29.108" level="FAIL">[[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:20:29.107" endtime="20221130 17:20:29.108"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:28.867" endtime="20221130 17:20:29.108"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:28.867" endtime="20221130 17:20:29.108"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:20:34.108" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:29.108" endtime="20221130 17:20:34.109"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:21.048" endtime="20221130 17:20:34.109"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:16.235" endtime="20221130 17:20:34.109" critical="yes">[[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]</status>
+</test>
+<test id="s1-s2-t3" name="开通会员页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>787</arg>
+<arg>182</arg>
+</arguments>
+<msg timestamp="20221130 17:20:34.111" level="INFO">Clicking on a point (787,182).</msg>
+<status status="PASS" starttime="20221130 17:20:34.110" endtime="20221130 17:20:34.516"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:20:39.517" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:34.516" endtime="20221130 17:20:39.517"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:20:39.759" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:39.517" endtime="20221130 17:20:39.759"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:20:41.760" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:39.759" endtime="20221130 17:20:41.760"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:20:42.341" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]}</msg>
+<msg timestamp="20221130 17:20:42.342" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:20:42.342" level="INFO">${data} = [[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211,...</msg>
+<status status="PASS" starttime="20221130 17:20:41.760" endtime="20221130 17:20:42.342"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:42.342" level="INFO">[[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:20:42.342" endtime="20221130 17:20:42.342"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:20:42.582" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:42.343" endtime="20221130 17:20:42.582"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:42.583" level="FAIL">[[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:20:42.582" endtime="20221130 17:20:42.583"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:42.342" endtime="20221130 17:20:42.583"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:42.342" endtime="20221130 17:20:42.583"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:20:47.584" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:42.583" endtime="20221130 17:20:47.584"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:34.516" endtime="20221130 17:20:47.584"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:34.109" endtime="20221130 17:20:47.584" critical="yes">[[185, 457, 192, 4], [2195, 25, 22, 12], [2203, 38, 13, 18], [2219, 49, 14, 16], [2188, 52, 13, 11], [2225, 39, 9, 11], [2225, 31, 9, 8], [617, 457, 16, 4], [2190, 25, 5, 11], [2184, 31, 4, 9], [2211, 39, 7, 5], [2184, 53, 3, 10], [2214, 30, 10, 3], [115, 469, 6, 4], [2201, 65, 6, 4], [2211, 57, 6, 4], [2184, 41, 4, 6], [2226, 25, 5, 4], [2191, 69, 4, 4], [2202, 54, 5, 3], [2215, 25, 4, 3], [2184, 25, 3, 4], [2213, 71, 4, 2]]</status>
+</test>
+<test id="s1-s2-t4" name="开通会员页面下滑">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>300</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:20:47.586" endtime="20221130 17:20:50.545"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:20:55.547" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:50.546" endtime="20221130 17:20:55.547"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:20:55.789" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:55.547" endtime="20221130 17:20:55.789"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:20:57.790" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:55.790" endtime="20221130 17:20:57.790"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:20:58.387" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:20:58.388" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:20:58.388" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:20:57.790" endtime="20221130 17:20:58.388"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:58.388" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:20:58.388" endtime="20221130 17:20:58.388"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:20:58.636" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:20:58.389" endtime="20221130 17:20:58.636"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:20:58.637" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:20:58.636" endtime="20221130 17:20:58.637"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:58.388" endtime="20221130 17:20:58.637"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:58.388" endtime="20221130 17:20:58.637"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:03.639" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:20:58.638" endtime="20221130 17:21:03.639"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:50.545" endtime="20221130 17:21:03.640"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:20:47.585" endtime="20221130 17:21:03.640" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t5" name="关闭开通会员页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>300</arg>
+<arg>50</arg>
+</arguments>
+<msg timestamp="20221130 17:21:03.642" level="INFO">Clicking on a point (300,50).</msg>
+<status status="PASS" starttime="20221130 17:21:03.641" endtime="20221130 17:21:04.369"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:09.370" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:04.370" endtime="20221130 17:21:09.370"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:21:09.595" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:09.370" endtime="20221130 17:21:09.595"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:21:11.596" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:09.596" endtime="20221130 17:21:11.596"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:21:12.170" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:21:12.170" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:21:12.170" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:11.596" endtime="20221130 17:21:12.170"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:12.171" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:12.171" endtime="20221130 17:21:12.171"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:21:12.412" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-11.png"&gt;&lt;img src="appium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:12.171" endtime="20221130 17:21:12.412"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:12.412" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:21:12.412" endtime="20221130 17:21:12.412"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:12.171" endtime="20221130 17:21:12.412"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:12.171" endtime="20221130 17:21:12.412"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:17.413" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:12.412" endtime="20221130 17:21:17.413"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:04.369" endtime="20221130 17:21:17.413"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:03.640" endtime="20221130 17:21:17.414" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t6" name="关闭开通会员确认页面">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>残忍拒绝</arg>
+</arguments>
+<msg timestamp="20221130 17:21:17.416" level="INFO">Clicking element '残忍拒绝'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:21:18.079" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-12.png"&gt;&lt;img src="appium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:17.886" endtime="20221130 17:21:18.079"></status>
+</kw>
+<msg timestamp="20221130 17:21:18.086" level="FAIL">ValueError: Element locator '残忍拒绝' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:21:17.415" endtime="20221130 17:21:18.086"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:17.414" endtime="20221130 17:21:18.086" critical="yes">ValueError: Element locator '残忍拒绝' did not match any elements.</status>
+</test>
+<test id="s1-s2-t7" name="关闭VIP会员页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>200</arg>
+<arg>90</arg>
+</arguments>
+<msg timestamp="20221130 17:21:18.088" level="INFO">Clicking on a point (200,90).</msg>
+<status status="PASS" starttime="20221130 17:21:18.087" endtime="20221130 17:21:18.415"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:23.416" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:18.416" endtime="20221130 17:21:23.417"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:21:23.658" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:23.417" endtime="20221130 17:21:23.658"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:21:25.660" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:23.658" endtime="20221130 17:21:25.660"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:21:26.240" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:21:26.240" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:21:26.240" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:25.660" endtime="20221130 17:21:26.240"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:26.240" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:26.240" endtime="20221130 17:21:26.241"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:21:26.482" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-13.png"&gt;&lt;img src="appium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:26.241" endtime="20221130 17:21:26.482"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:26.482" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:21:26.482" endtime="20221130 17:21:26.482"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:26.241" endtime="20221130 17:21:26.483"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:26.241" endtime="20221130 17:21:26.483"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:31.483" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:26.483" endtime="20221130 17:21:31.484"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:18.416" endtime="20221130 17:21:31.484"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:18.086" endtime="20221130 17:21:31.484" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t8" name="积分中心">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>400</arg>
+<arg>228</arg>
+</arguments>
+<msg timestamp="20221130 17:21:31.486" level="INFO">Clicking on a point (400,228).</msg>
+<status status="PASS" starttime="20221130 17:21:31.485" endtime="20221130 17:21:31.858"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:36.859" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:31.858" endtime="20221130 17:21:36.859"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:21:37.092" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:36.859" endtime="20221130 17:21:37.092"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:21:39.092" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:37.092" endtime="20221130 17:21:39.092"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:21:39.669" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:21:39.669" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:21:39.670" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:39.093" endtime="20221130 17:21:39.670"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:39.670" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:39.670" endtime="20221130 17:21:39.670"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:21:39.910" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-14.png"&gt;&lt;img src="appium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:39.671" endtime="20221130 17:21:39.910"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:39.910" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:21:39.910" endtime="20221130 17:21:39.911"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:39.670" endtime="20221130 17:21:39.911"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:39.670" endtime="20221130 17:21:39.911"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:44.911" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:39.911" endtime="20221130 17:21:44.911"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:31.858" endtime="20221130 17:21:44.912"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:31.484" endtime="20221130 17:21:44.912" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t9" name="积分中心页面下滑">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>900</arg>
+<arg>600</arg>
+<arg>900</arg>
+<arg>300</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:21:44.913" endtime="20221130 17:21:46.376"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:51.378" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:46.376" endtime="20221130 17:21:51.378"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:21:51.621" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:51.378" endtime="20221130 17:21:51.621"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:21:53.623" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:51.622" endtime="20221130 17:21:53.623"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:21:54.198" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:21:54.198" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:21:54.198" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:53.623" endtime="20221130 17:21:54.198"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:54.199" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:21:54.199" endtime="20221130 17:21:54.199"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:21:54.453" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-15.png"&gt;&lt;img src="appium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:21:54.199" endtime="20221130 17:21:54.453"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:21:54.453" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:21:54.453" endtime="20221130 17:21:54.453"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:54.199" endtime="20221130 17:21:54.454"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:54.199" endtime="20221130 17:21:54.454"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:21:59.456" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:21:54.454" endtime="20221130 17:21:59.456"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:46.376" endtime="20221130 17:21:59.457"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>200</arg>
+<arg>90</arg>
+</arguments>
+<msg timestamp="20221130 17:21:59.458" level="INFO">Clicking on a point (200,90).</msg>
+<status status="PASS" starttime="20221130 17:21:59.457" endtime="20221130 17:21:59.865"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:44.912" endtime="20221130 17:21:59.865" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t10" name="播放记录页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>78</arg>
+<arg>304</arg>
+</arguments>
+<msg timestamp="20221130 17:21:59.867" level="INFO">Clicking on a point (78,304).</msg>
+<status status="PASS" starttime="20221130 17:21:59.866" endtime="20221130 17:22:00.379"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:05.380" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:00.380" endtime="20221130 17:22:05.381"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:22:05.634" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:22:05.381" endtime="20221130 17:22:05.634"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:22:07.635" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:05.634" endtime="20221130 17:22:07.635"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:22:08.219" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:22:08.219" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:22:08.219" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:22:07.635" endtime="20221130 17:22:08.221"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:22:08.222" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:22:08.221" endtime="20221130 17:22:08.222"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:22:08.468" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-16.png"&gt;&lt;img src="appium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:22:08.222" endtime="20221130 17:22:08.468"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:22:08.469" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:22:08.468" endtime="20221130 17:22:08.469"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:08.222" endtime="20221130 17:22:08.469"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:08.222" endtime="20221130 17:22:08.469"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:13.471" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:08.469" endtime="20221130 17:22:13.471"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:00.379" endtime="20221130 17:22:13.472"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20221130 17:22:13.473" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20221130 17:22:13.472" endtime="20221130 17:22:14.372"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:21:59.865" endtime="20221130 17:22:14.372" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t11" name="离线中心页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>78</arg>
+<arg>554</arg>
+</arguments>
+<msg timestamp="20221130 17:22:14.374" level="INFO">Clicking on a point (78,554).</msg>
+<status status="PASS" starttime="20221130 17:22:14.373" endtime="20221130 17:22:14.725"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:19.726" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:14.725" endtime="20221130 17:22:19.726"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:22:19.966" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:22:19.726" endtime="20221130 17:22:19.966"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:22:21.967" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:19.967" endtime="20221130 17:22:21.967"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:22:22.558" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:22:22.558" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:22:22.558" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:22:21.968" endtime="20221130 17:22:22.559"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:22:22.559" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:22:22.559" endtime="20221130 17:22:22.559"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:22:22.804" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-17.png"&gt;&lt;img src="appium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:22:22.560" endtime="20221130 17:22:22.804"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:22:22.804" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:22:22.804" endtime="20221130 17:22:22.804"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:22.559" endtime="20221130 17:22:22.804"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:22.559" endtime="20221130 17:22:22.805"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:27.805" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:22.805" endtime="20221130 17:22:27.806"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:14.725" endtime="20221130 17:22:27.806"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20221130 17:22:27.807" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20221130 17:22:27.806" endtime="20221130 17:22:28.371"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:14.372" endtime="20221130 17:22:28.371" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t12" name="我的看单页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>78</arg>
+<arg>624</arg>
+</arguments>
+<msg timestamp="20221130 17:22:28.373" level="INFO">Clicking on a point (78,624).</msg>
+<status status="PASS" starttime="20221130 17:22:28.372" endtime="20221130 17:22:28.716"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:33.718" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:28.716" endtime="20221130 17:22:33.718"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:22:33.960" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:22:33.718" endtime="20221130 17:22:33.960"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:22:35.960" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:33.960" endtime="20221130 17:22:35.961"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:22:36.545" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:22:36.546" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:22:36.546" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:22:35.961" endtime="20221130 17:22:36.546"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:22:36.546" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:22:36.546" endtime="20221130 17:22:36.546"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:22:36.800" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-18.png"&gt;&lt;img src="appium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:22:36.547" endtime="20221130 17:22:36.801"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:22:36.801" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:22:36.801" endtime="20221130 17:22:36.801"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:36.546" endtime="20221130 17:22:36.801"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:36.546" endtime="20221130 17:22:36.801"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:41.803" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:36.802" endtime="20221130 17:22:41.803"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:28.716" endtime="20221130 17:22:41.803"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20221130 17:22:41.804" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20221130 17:22:41.803" endtime="20221130 17:22:42.372"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:28.371" endtime="20221130 17:22:42.372" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t13" name="消息中心页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:47.374" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:42.373" endtime="20221130 17:22:47.374"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:22:47.374" endtime="20221130 17:22:48.671"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:53.672" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:48.671" endtime="20221130 17:22:53.672"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>78</arg>
+<arg>499</arg>
+</arguments>
+<msg timestamp="20221130 17:22:53.673" level="INFO">Clicking on a point (78,499).</msg>
+<status status="PASS" starttime="20221130 17:22:53.672" endtime="20221130 17:22:54.365"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:22:59.366" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:54.366" endtime="20221130 17:22:59.367"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:22:59.613" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:22:59.367" endtime="20221130 17:22:59.613"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:23:01.613" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:22:59.613" endtime="20221130 17:23:01.614"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:23:02.195" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:23:02.196" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:23:02.196" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:01.614" endtime="20221130 17:23:02.196"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:02.196" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:02.196" endtime="20221130 17:23:02.196"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:23:02.426" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-19.png"&gt;&lt;img src="appium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:02.197" endtime="20221130 17:23:02.426"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:02.426" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:23:02.426" endtime="20221130 17:23:02.426"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:02.196" endtime="20221130 17:23:02.426"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:02.196" endtime="20221130 17:23:02.426"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:07.429" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:02.427" endtime="20221130 17:23:07.429"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:54.365" endtime="20221130 17:23:07.429"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20221130 17:23:07.430" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20221130 17:23:07.429" endtime="20221130 17:23:07.859"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:22:42.372" endtime="20221130 17:23:07.859" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t14" name="帮助反馈页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>78</arg>
+<arg>585</arg>
+</arguments>
+<msg timestamp="20221130 17:23:07.861" level="INFO">Clicking on a point (78,585).</msg>
+<status status="PASS" starttime="20221130 17:23:07.860" endtime="20221130 17:23:08.371"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:13.372" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:08.371" endtime="20221130 17:23:13.372"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:23:13.612" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:13.372" endtime="20221130 17:23:13.612"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:23:15.614" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:13.612" endtime="20221130 17:23:15.614"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:23:16.198" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:23:16.199" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:23:16.199" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:15.614" endtime="20221130 17:23:16.199"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:16.199" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:16.199" endtime="20221130 17:23:16.199"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:23:16.442" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-20.png"&gt;&lt;img src="appium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:16.200" endtime="20221130 17:23:16.442"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:16.442" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:23:16.442" endtime="20221130 17:23:16.442"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:16.200" endtime="20221130 17:23:16.442"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:16.199" endtime="20221130 17:23:16.442"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:21.443" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:16.443" endtime="20221130 17:23:21.443"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:08.371" endtime="20221130 17:23:21.443"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>604</arg>
+<arg>38</arg>
+</arguments>
+<msg timestamp="20221130 17:23:21.445" level="INFO">Clicking on a point (604,38).</msg>
+<status status="PASS" starttime="20221130 17:23:21.444" endtime="20221130 17:23:21.858"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:07.859" endtime="20221130 17:23:21.859" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t15" name="个人中心下滑">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:23:24.861" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:21.860" endtime="20221130 17:23:24.861"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:23:24.862" endtime="20221130 17:23:26.374"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:31.376" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:26.375" endtime="20221130 17:23:31.376"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:23:31.606" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:31.376" endtime="20221130 17:23:31.606"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:23:33.609" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:31.607" endtime="20221130 17:23:33.609"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:23:34.153" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:23:34.154" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:23:34.154" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:33.609" endtime="20221130 17:23:34.154"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:34.154" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:34.154" endtime="20221130 17:23:34.154"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:23:34.389" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-21.png"&gt;&lt;img src="appium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:34.155" endtime="20221130 17:23:34.389"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:34.390" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:23:34.390" endtime="20221130 17:23:34.390"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:34.155" endtime="20221130 17:23:34.390"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:34.154" endtime="20221130 17:23:34.390"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:39.391" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:34.391" endtime="20221130 17:23:39.391"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:26.374" endtime="20221130 17:23:39.392"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:21.859" endtime="20221130 17:23:39.392" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t16" name="设置页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>78</arg>
+<arg>671</arg>
+</arguments>
+<msg timestamp="20221130 17:23:39.394" level="INFO">Clicking on a point (78,671).</msg>
+<status status="PASS" starttime="20221130 17:23:39.393" endtime="20221130 17:23:39.858"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:44.859" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:39.859" endtime="20221130 17:23:44.859"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:23:45.105" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:44.860" endtime="20221130 17:23:45.105"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:23:47.106" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:45.105" endtime="20221130 17:23:47.106"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:23:47.686" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]}</msg>
+<msg timestamp="20221130 17:23:47.686" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:23:47.686" level="INFO">${data} = [[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:47.106" endtime="20221130 17:23:47.686"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:47.686" level="INFO">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="PASS" starttime="20221130 17:23:47.686" endtime="20221130 17:23:47.688"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:23:47.936" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-22.png"&gt;&lt;img src="appium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:47.689" endtime="20221130 17:23:47.936"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:23:47.937" level="FAIL">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</msg>
+<status status="FAIL" starttime="20221130 17:23:47.936" endtime="20221130 17:23:47.937"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:47.689" endtime="20221130 17:23:47.937"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:47.689" endtime="20221130 17:23:47.937"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:52.938" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:47.937" endtime="20221130 17:23:52.938"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:39.859" endtime="20221130 17:23:52.938"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:39.392" endtime="20221130 17:23:52.938" critical="yes">[[2204, 32, 7, 3], [2190, 33, 4, 3], [2204, 41, 3, 3], [2219, 31, 4, 2]]</status>
+</test>
+<test id="s1-s2-t17" name="设置-修改密码页面">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>78</arg>
+<arg>671</arg>
+</arguments>
+<msg timestamp="20221130 17:23:52.940" level="INFO">Clicking on a point (78,671).</msg>
+<status status="PASS" starttime="20221130 17:23:52.939" endtime="20221130 17:23:53.317"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:23:58.319" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:53.317" endtime="20221130 17:23:58.320"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=修改密码</arg>
+</arguments>
+<msg timestamp="20221130 17:23:58.321" level="INFO">Clicking element 'name=修改密码'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:23:59.005" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-23.png"&gt;&lt;img src="appium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:23:58.815" endtime="20221130 17:23:59.005"></status>
+</kw>
+<msg timestamp="20221130 17:23:59.008" level="FAIL">ValueError: Element locator 'name=修改密码' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:23:58.320" endtime="20221130 17:23:59.008"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:52.938" endtime="20221130 17:23:59.008" critical="yes">ValueError: Element locator 'name=修改密码' did not match any elements.</status>
+</test>
+<test id="s1-s2-t18" name="设置-绑定号码页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:04.010" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:23:59.009" endtime="20221130 17:24:04.010"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=绑定号码</arg>
+</arguments>
+<msg timestamp="20221130 17:24:04.011" level="INFO">Clicking element 'name=绑定号码'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:24:04.665" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-24.png"&gt;&lt;img src="appium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:24:04.476" endtime="20221130 17:24:04.665"></status>
+</kw>
+<msg timestamp="20221130 17:24:04.665" level="FAIL">ValueError: Element locator 'name=绑定号码' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:24:04.010" endtime="20221130 17:24:04.665"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:23:59.008" endtime="20221130 17:24:04.666" critical="yes">ValueError: Element locator 'name=绑定号码' did not match any elements.</status>
+</test>
+<test id="s1-s2-t19" name="设置-青少年模式页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:09.667" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:04.667" endtime="20221130 17:24:09.668"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=青少年模式</arg>
+</arguments>
+<msg timestamp="20221130 17:24:09.669" level="INFO">Clicking element 'name=青少年模式'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:24:10.365" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-25.png"&gt;&lt;img src="appium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:24:10.174" endtime="20221130 17:24:10.365"></status>
+</kw>
+<msg timestamp="20221130 17:24:10.366" level="FAIL">ValueError: Element locator 'name=青少年模式' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:24:09.668" endtime="20221130 17:24:10.366"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:24:04.666" endtime="20221130 17:24:10.366" critical="yes">ValueError: Element locator 'name=青少年模式' did not match any elements.</status>
+</test>
+<test id="s1-s2-t20" name="设置-账号注销页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:15.369" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:10.367" endtime="20221130 17:24:15.369"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=账号注销</arg>
+</arguments>
+<msg timestamp="20221130 17:24:15.370" level="INFO">Clicking element 'name=账号注销'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:24:16.079" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-26.png"&gt;&lt;img src="appium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:24:15.886" endtime="20221130 17:24:16.079"></status>
+</kw>
+<msg timestamp="20221130 17:24:16.081" level="FAIL">ValueError: Element locator 'name=账号注销' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:24:15.369" endtime="20221130 17:24:16.082"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:24:10.366" endtime="20221130 17:24:16.082" critical="yes">ValueError: Element locator 'name=账号注销' did not match any elements.</status>
+</test>
+<test id="s1-s2-t21" name="设置-个人信息保护政策页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:21.084" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:16.084" endtime="20221130 17:24:21.084"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=个人信息保护政策</arg>
+</arguments>
+<msg timestamp="20221130 17:24:21.086" level="INFO">Clicking element 'name=个人信息保护政策'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:24:21.782" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-27.png"&gt;&lt;img src="appium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:24:21.591" endtime="20221130 17:24:21.782"></status>
+</kw>
+<msg timestamp="20221130 17:24:21.783" level="FAIL">ValueError: Element locator 'name=个人信息保护政策' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:24:21.085" endtime="20221130 17:24:21.783"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:24:16.082" endtime="20221130 17:24:21.783" critical="yes">ValueError: Element locator 'name=个人信息保护政策' did not match any elements.</status>
+</test>
+<test id="s1-s2-t22" name="设置-其他法律文件页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:26.786" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:21.785" endtime="20221130 17:24:26.786"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=其他法律文件</arg>
+</arguments>
+<msg timestamp="20221130 17:24:26.787" level="INFO">Clicking element 'name=其他法律文件'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:24:27.482" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-28.png"&gt;&lt;img src="appium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:24:27.293" endtime="20221130 17:24:27.482"></status>
+</kw>
+<msg timestamp="20221130 17:24:27.482" level="FAIL">ValueError: Element locator 'name=其他法律文件' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:24:26.786" endtime="20221130 17:24:27.482"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:24:21.783" endtime="20221130 17:24:27.482" critical="yes">ValueError: Element locator 'name=其他法律文件' did not match any elements.</status>
+</test>
+<test id="s1-s2-t23" name="设置-隐私保护页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:32.484" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:27.483" endtime="20221130 17:24:32.484"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=隐私保护</arg>
+</arguments>
+<msg timestamp="20221130 17:24:32.485" level="INFO">Clicking element 'name=隐私保护'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:24:33.168" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-29.png"&gt;&lt;img src="appium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:24:32.976" endtime="20221130 17:24:33.168"></status>
+</kw>
+<msg timestamp="20221130 17:24:33.168" level="FAIL">ValueError: Element locator 'name=隐私保护' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:24:32.484" endtime="20221130 17:24:33.168"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:24:27.482" endtime="20221130 17:24:33.168" critical="yes">ValueError: Element locator 'name=隐私保护' did not match any elements.</status>
+</test>
+<test id="s1-s2-t24" name="设置-常见问题页面">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>800</arg>
+<arg>600</arg>
+<arg>800</arg>
+<arg>300</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:24:33.170" endtime="20221130 17:24:34.420"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:39.422" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:34.420" endtime="20221130 17:24:39.422"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=常见问题</arg>
+</arguments>
+<msg timestamp="20221130 17:24:39.423" level="INFO">Clicking element 'name=常见问题'.</msg>
+<status status="PASS" starttime="20221130 17:24:39.422" endtime="20221130 17:24:42.387"></status>
+</kw>
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>622</arg>
+<arg>23</arg>
+</arguments>
+<msg timestamp="20221130 17:24:42.388" level="INFO">Clicking on a point (622,23).</msg>
+<status status="PASS" starttime="20221130 17:24:42.387" endtime="20221130 17:24:42.731"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:24:33.169" endtime="20221130 17:24:42.732" critical="yes"></status>
+</test>
+<test id="s1-s2-t25" name="设置-关于我们页面">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:47.734" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:42.733" endtime="20221130 17:24:47.734"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=关于我们</arg>
+</arguments>
+<msg timestamp="20221130 17:24:47.737" level="INFO">Clicking element 'name=关于我们'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:24:48.394" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-30.png"&gt;&lt;img src="appium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:24:48.256" endtime="20221130 17:24:48.394"></status>
+</kw>
+<msg timestamp="20221130 17:24:48.396" level="FAIL">ValueError: Element locator 'name=关于我们' did not match any elements.</msg>
+<status status="FAIL" starttime="20221130 17:24:47.734" endtime="20221130 17:24:48.396"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:24:42.732" endtime="20221130 17:24:48.396" critical="yes">ValueError: Element locator 'name=关于我们' did not match any elements.</status>
+</test>
+<kw name="公共－关闭环境" library="公共" type="teardown">
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20221130 17:24:48.399" endtime="20221130 17:24:49.439"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:24:48.399" endtime="20221130 17:24:49.439"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:19:23.565" endtime="20221130 17:24:49.439"></status>
+</suite>
+<suite id="s1-s3" name="置灰会员" source="/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/channel/灰度测试/置灰会员.txt">
+<kw name="公共－初始化环境" library="公共" type="setup">
+<kw name="公共－清除数据" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:24:52.466" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:49.464" endtime="20221130 17:24:52.467"></status>
+</kw>
+<kw name="Delete Data" library="auto">
+<doc>删除临时表的数据</doc>
+<arguments>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20221130 17:24:52.467" level="INFO">delete_data...</msg>
+<status status="PASS" starttime="20221130 17:24:52.467" endtime="20221130 17:24:52.477"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:24:57.478" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:24:52.477" endtime="20221130 17:24:57.478"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:24:49.464" endtime="20221130 17:24:57.478"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=iOS</arg>
+<arg>deviceName=iPad</arg>
+<arg>platformVersion=14.4.1</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>udid=f4168aea0d6a99829d75f3ea681f430ad71df1ea</arg>
+<arg>bundleId=com.imgo.tv.hd</arg>
+<arg>AutomationName=XCUITest</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:24:57.479" endtime="20221130 17:25:06.304"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20221130 17:25:16.306" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:06.304" endtime="20221130 17:25:16.306"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:24:49.464" endtime="20221130 17:25:16.307"></status>
+</kw>
+<test id="s1-s3-t1" name="会员首页">
+<kw name="首页－会员" library="首页">
+<kw name="公共－xpath" library="公共">
+<arguments>
+<arg>//XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[3]</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20221130 17:25:17.309" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221130 17:25:16.308" endtime="20221130 17:25:17.310"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:25:17.312" level="INFO">Clicking element 'xpath=//XCUIElementTypeTabBar[@name="标签栏"]/XCUIElementTypeButton[3]'.</msg>
+<status status="PASS" starttime="20221130 17:25:17.311" endtime="20221130 17:25:19.340"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:25:21.342" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:19.340" endtime="20221130 17:25:21.342"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:25:16.308" endtime="20221130 17:25:21.342"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20221130 17:25:24.343" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:21.342" endtime="20221130 17:25:24.343"></status>
+</kw>
+<status status="PASS" starttime="20221130 17:25:16.308" endtime="20221130 17:25:24.343"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:25:29.345" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:24.343" endtime="20221130 17:25:29.345"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:25:29.793" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:25:29.345" endtime="20221130 17:25:29.794"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:25:31.794" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:29.794" endtime="20221130 17:25:31.794"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:25:32.475" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[0, 0, 2274, 1718]]}</msg>
+<msg timestamp="20221130 17:25:32.475" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:25:32.475" level="INFO">${data} = [[0, 0, 2274, 1718]]</msg>
+<status status="PASS" starttime="20221130 17:25:31.794" endtime="20221130 17:25:32.475"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:25:32.476" level="INFO">[[0, 0, 2274, 1718]]</msg>
+<status status="PASS" starttime="20221130 17:25:32.475" endtime="20221130 17:25:32.476"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:25:32.900" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-31.png"&gt;&lt;img src="appium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:25:32.476" endtime="20221130 17:25:32.901"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:25:32.901" level="FAIL">[[0, 0, 2274, 1718]]</msg>
+<status status="FAIL" starttime="20221130 17:25:32.901" endtime="20221130 17:25:32.901"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:32.476" endtime="20221130 17:25:32.902"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:32.476" endtime="20221130 17:25:32.902"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:25:37.904" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:32.903" endtime="20221130 17:25:37.905"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:24.343" endtime="20221130 17:25:37.905"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:16.307" endtime="20221130 17:25:37.905" critical="yes">[[0, 0, 2274, 1718]]</status>
+</test>
+<test id="s1-s3-t2" name="会员当季热播">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:25:37.906" endtime="20221130 17:25:40.988"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:25:45.989" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:40.988" endtime="20221130 17:25:45.989"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:25:46.488" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:25:45.989" endtime="20221130 17:25:46.489"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:25:48.490" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:46.489" endtime="20221130 17:25:48.490"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:25:49.247" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[0, 0, 2274, 1718]]}</msg>
+<msg timestamp="20221130 17:25:49.247" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:25:49.247" level="INFO">${data} = [[0, 0, 2274, 1718]]</msg>
+<status status="PASS" starttime="20221130 17:25:48.490" endtime="20221130 17:25:49.247"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:25:49.248" level="INFO">[[0, 0, 2274, 1718]]</msg>
+<status status="PASS" starttime="20221130 17:25:49.247" endtime="20221130 17:25:49.248"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>执行失败</arg>
+<arg>${data}</arg>
+</arguments>
+<kw name="执行失败" library="公共">
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20221130 17:25:49.722" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-32.png"&gt;&lt;img src="appium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:25:49.248" endtime="20221130 17:25:49.722"></status>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20221130 17:25:49.722" level="FAIL">[[0, 0, 2274, 1718]]</msg>
+<status status="FAIL" starttime="20221130 17:25:49.722" endtime="20221130 17:25:49.722"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:49.248" endtime="20221130 17:25:49.722"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:49.248" endtime="20221130 17:25:49.722"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:25:54.724" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:49.723" endtime="20221130 17:25:54.724"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:40.988" endtime="20221130 17:25:54.724"></status>
+</kw>
+<status status="FAIL" starttime="20221130 17:25:37.905" endtime="20221130 17:25:54.724" critical="yes">[[0, 0, 2274, 1718]]</status>
+</test>
+<test id="s1-s3-t3" name="会员大芒短视频">
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>100</arg>
+<arg>600</arg>
+<arg>100</arg>
+<arg>300</arg>
+</arguments>
+<status status="PASS" starttime="20221130 17:25:54.725" endtime="20221130 17:25:57.638"></status>
+</kw>
+<kw name="图片对比" library="公共">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20221130 17:26:02.639" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221130 17:25:57.639" endtime="20221130 17:26:02.639"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<msg timestamp="20221130 17:26:03.147" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png"&gt;&lt;img src="%E8%B0%83%E8%AF%95/2-%E5%A4%A7%E6%95%B0%E6%8D%AE/test.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221130 17:26:02.639" endtime="20221130 17:26:03.147"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20221130 17:26:05.148" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221130 17:26:03.147" endtime="20221130 17:26:05.148"></status>
+</kw>
+<kw name="Diffimages" library="Diffimage">
+<arguments>
+<arg>/Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+<var>${data}</var>
+</assign>
+<msg timestamp="20221130 17:26:05.883" level="INFO">diffimages
+path: /Users/xiaozixi/Desktop/自动化测试/iPad-AutoTest/调试/2-大数据/test.png
+{'message': 'done', 'success': True, 'code': 200, 'bboxs': [[0, 0, 2274, 1718]]}</msg>
+<msg timestamp="20221130 17:26:05.883" level="INFO">${result} = False</msg>
+<msg timestamp="20221130 17:26:05.883" level="INFO">${data} = [[0, 0, 2274, 1718]]</msg>
+<status status="PASS" starttime="20221130 17:26:05.148" endtime="20221130 17:26:05.883"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20221130 17:26:05.884" level="INFO">[[0, 0, 2274, 1718]]</msg>
+<status status="PASS" starttime="20221130 17:26:05.884" endtime="20221130 17:26:05.884"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>

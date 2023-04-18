@@ -1,0 +1,147 @@
+*** Settings ***
+Documentation     搜索入口
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Test Cases ***
+
+登陆初始化
+    账户-登录初始化
+    首页－频道
+
+搜索结果节目合集跳转
+    首页－搜索视频
+    搜索－输入搜索词    快乐大本营
+    搜索－键盘搜索
+    搜索－点播放
+    sleep   5
+    验证-页面存在元素    nsp=name=="独播" and type=="XCUIElementTypeStaticText"
+    点播播放页－返回
+
+搜索结果页缓存按钮
+    首页－搜索视频
+    搜索－输入搜索词    楚乔传
+    搜索－点击下载
+    click element    xpath=//XCUIElementTypeStaticText[@name="1"]/preceding-sibling::XCUIElementTypeButton
+    click element    nsp=name=="正在缓存" and type=="XCUIElementTypeButton"
+    验证-页面存在元素    nsp=name=="楚乔传 第1集1" and type=="XCUIElementTypeStaticText"
+    click element    xpath=//XCUIElementTypeStaticText[@name="楚乔传 第1集1"]/following-sibling::XCUIElementTypeButton
+    click element    name=删除
+    click element    nsp=name=="vod close" and type=="XCUIElementTypeButton"
+
+搜索结果-查看更多
+    sleep    2
+    click a point    820    511
+    sleep    2
+    验证-页面存在元素    nsp=name=="选集" and type=="XCUIElementTypeStaticText"
+    click a point    820    511
+    #click element    nsp=name=="search result cell download ic" and type=="XCUIElementTypeButton"
+
+搜索结果精彩看点跳转
+    #click element    nsp=name=="朱正廷有两副面孔" and type=="XCUIElementTypeStaticText"
+    sleep    3
+    click a point    82    656
+    sleep   3
+    验证-页面存在元素    nsp=name=="独播" and type=="XCUIElementTypeStaticText"
+    点播播放页－返回
+
+搜索结果页分页加载
+    公共-屏幕上滑
+    公共-屏幕上滑
+    公共-屏幕上滑
+
+搜索结果页-取消搜索
+    搜索－取消
+
+
+搜索结果明星跳转
+    首页－搜索视频
+    搜索－输入搜索词    何炅
+    搜索－键盘搜索
+    验证-页面存在元素    nsp=name=="何炅" and type=="XCUIElementTypeStaticText"
+
+搜索结果相关明星-返回
+    搜索结果－点击关闭按钮
+
+搜索结果-作品跳转
+    #首页－搜索视频
+    搜索－输入搜索词    杨幂
+    搜索－键盘搜索
+    click element    nsp=name=="谈判官" and type=="XCUIElementTypeStaticText"
+    sleep  3
+    验证-页面存在元素    nsp=name=="谈判官" and type=="XCUIElementTypeStaticText"
+    点播播放页－返回
+
+搜索结果-更多作品
+    #click element    nsp=name=="更多作品" and type=="XCUIElementTypeButton"
+    click a point    549    604
+    click a point    44    66
+    搜索结果－点击关闭按钮
+
+明星作品页点击电视剧类型
+    #首页－搜索视频
+    click element   nsp=name=="close" and type=="XCUIElementTypeButton"
+    搜索－输入搜索词    杨幂
+    搜索－键盘搜索
+    #click element    nsp=name=="电视剧" and type=="XCUIElementTypeStaticText"
+    click a point    180    131
+    sleep  3
+    验证-页面存在元素    nsp=name=="2016电视剧年度总结：杨幂稳坐收视女王 郑爽新剧无人看" and type=="XCUIElementTypeStaticText"
+
+搜索结果-电视剧-跳转播放页面
+    #click element    xpath=//XCUIElementTypeImage[@name="image_placeholder_icon"]/preceding-sibling::XCUIElementTypeImage
+    click a point    268    361
+    sleep  3
+    验证-页面存在元素    nsp=name=="2016电视剧年度总结：杨幂稳坐收视女王 郑爽新剧无人看" and type=="XCUIElementTypeStaticText"
+    点播播放页－返回
+
+搜索结果明星-相关结果
+    验证-页面存在元素    nsp=name=="相关搜索" and type=="XCUIElementTypeStaticText"
+
+搜索结果明星-热门搜索
+    验证-页面存在元素    nsp=name=="热门搜索" and type=="XCUIElementTypeStaticText"
+
+搜索结果明星-视频结果
+    验证-页面存在元素    nsp=name=="管惕跟丁小岱求婚公示答案是..." and type=="XCUIElementTypeStaticText"
+    搜索结果－点击关闭按钮
+    搜索－取消
+
+全网搜索结果
+    首页－搜索视频
+    搜索－输入搜索词    琅琊榜
+    搜索－键盘搜索
+    验证-页面存在元素    nsp=name=="琅琊榜" and type=="XCUIElementTypeStaticText"
+
+全网搜索结果-相关搜索
+    验证-页面存在元素    nsp=name=="相关搜索" and type=="XCUIElementTypeStaticText"
+
+全网搜索-音乐
+    click element    nsp=name=="音乐" and type=="XCUIElementTypeStaticText"
+    验证-页面存在元素    nsp=name=="琵琶弹奏《红颜旧》（电视剧《琅琊榜》插曲）" and type=="XCUIElementTypeStaticText"
+    搜索结果－点击关闭按钮
+
+搜索结果-动漫
+    #首页－搜索视频
+    搜索－输入搜索词    大鱼海棠
+    搜索－键盘搜索
+    验证-页面存在元素    nsp=name=="大鱼海棠" and type=="XCUIElementTypeStaticText"
+
+搜索结果-动漫精彩看点
+    验证-页面存在元素    nsp=name=="椿成年礼化成海豚到人间巡礼" and type=="XCUIElementTypeStaticText"
+    搜索结果－点击关闭按钮
+
+电视剧选集列表页点击
+    #首页－搜索视频
+    搜索－输入搜索词    初恋那件小事
+    搜索－键盘搜索
+    click a point    282    371
+    sleep  3
+    验证-页面存在元素    nsp=name=="初恋那件小事" and type=="XCUIElementTypeStaticText"

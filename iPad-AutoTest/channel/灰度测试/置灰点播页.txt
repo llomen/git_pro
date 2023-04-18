@@ -1,0 +1,44 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+
+点播页
+    首页－搜索视频
+    搜索－输入搜索词    女儿们的恋爱
+    搜索－键盘搜索
+    sleep  3
+    click element  xpath = //XCUIElementTypeStaticText[@name="女儿们的恋爱"]
+    sleep  3
+    搜索－点播放
+    sleep   3
+    图片对比
+
+点播页往期正片
+    swipe    100    600    100   400
+    图片对比
+
+点播页花絮片段
+    swipe    100    600    100   400
+    图片对比
+
+点播页精华cut打包看
+    swipe    100    600    100   400
+    图片对比
+
+点播页相关明星作品
+    swipe    100    600    100   300
+    图片对比

@@ -1,0 +1,193 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+Resource          ../../对象库/功能.txt
+
+
+*** Variables ***
+${xc}             {'act':'xc'}
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${table_sdk}      mpp_hb_5_ipad_sdk
+${table}          mpp_hb_5_ipad
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${sp}             {'act':'sp'}
+${aplay}          {'act':'aplay'}
+${table_vv}       mpp_vv_5_ipad
+${table_pvs_dianbo}    mpp_pvs_ipad_dianbo
+${table_pvs}      mpp_pvs_ipad
+${table_show}     mpp_show_ipad
+${chwatchshow}    {'act':'chfwatchshow'}
+${chadminwatchshow}    {'act':'chadminfwatchshow'}
+${chwatchclick}    {'act':'chfwatchclick'}
+${chadminwatchclick}    {'act':'chadminfwatchclick'}
+${table_chwatchshow}    mpp_ip_chfwatchshow
+${table_chwatchclick}    mpp_ip_chfwatchclick
+${table_chwatchclick_jubao}    mpp_ip_chfwatchclick_jubao
+
+*** Test Cases ***
+应用启动xc
+    comment    前提：1/绑定Host；2/未登录；3/不勾选设置开关小窗
+    公共－校验结果   ${xc}    xc_01    mpp_jiaohu_ipad    1
+
+
+
+
+大闪图show
+    公共－校验结果   {'act':'show','flag':'7595'}    index_dashantu    mpp_show_ipad    1
+
+
+
+
+
+猜你在追show
+    公共－校验结果   {'act':'show','flag':'8582'}    index_watch    ${table_show}    1
+
+
+
+
+
+猜你在追chwatchshow
+    公共－校验结果   ${chwatchshow}    chfwatchshow_ipad    ${table_chwatchshow}    1
+
+
+
+
+击猜你在追点视频chwatchclick
+    上滑
+    公共－清除数据
+    sleep    3
+    公共－点击页面文本    快乐大本营 2016
+    公共－校验结果   ${chwatchclick}    chfwatchclick_ipad    ${table_chwatchclick}    1
+
+
+
+
+
+猜你在追进入点播页pvs
+    公共－校验结果   ${pvs_field}    chwatch_001    ${table_pvs}    1
+
+
+
+
+
+猜你在追进入点播页vv
+    sleep    15
+    公共－校验结果   ${aplay}    ipad_watch_01    ${table_vv}    1
+
+
+
+
+
+点播页返回pvs
+    公共－清除数据
+    点播播放页－返回
+    公共－校验结果   ${pvs_field}    chwatch_002    ${table_pvs}    1
+
+
+
+
+
+猜你在追点举报chwatchclick
+    公共－清除数据
+    公共－xpath    (//XCUIElementTypeButton[@name="small point"])[1]
+    公共－点击页面文本    不想追了
+    公共－校验结果   ${chwatchclick}    chfwatchclick_ipad_jubao    ${table_chwatchclick_jubao}    1
+
+
+
+
+
+猜你在追管理pvs
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="猜你在追"]/preceding-sibling::XCUIElementTypeButton[1]
+    公共－校验结果   ${pvs_field}    chwatch_003    ${table_pvs}    1
+
+
+
+
+
+猜你在追管理chadminfwatchshow
+    公共－校验结果   ${chadminwatchshow}    chadminfwatchshow_ipad    ${table_chwatchshow}    1
+
+
+
+
+
+猜你在追管理点视频chadminwatchclick
+    公共－清除数据
+    公共－点击页面文本    七十二层奇楼
+    sleep    3
+    公共－校验结果   ${chadminwatchclick}    chadminfwatchclick_ipad    ${table_chwatchclick}    1
+
+
+
+
+
+猜你在追管理进入点播页pvs
+    公共－校验结果   ${pvs_field}    chwatch_004    ${table_pvs}    1
+
+
+
+
+
+猜你在追管理进入点播页vv
+    sleep    15
+    公共－校验结果   ${aplay}    ipad_watch_02    ${table_vv}    1
+
+
+
+
+
+点播页返回猜你在追管理pvs
+    公共－清除数据
+    点播播放页－返回
+    公共－校验结果   ${pvs_field}    chwatch_005    ${table_pvs}    1
+
+
+
+
+
+猜你在追管理点举报chwatchclick
+    公共－清除数据
+    公共－xpath    (//XCUIElementTypeButton[@name="small point"])[1]
+    公共－点击页面文本    不想追了
+    公共－校验结果   ${chadminwatchclick}    chadminfwatchclick_ipad_jubao    ${table_chwatchclick_jubao}    1
+
+
+
+
+
+上滑chadminfwatchshow
+    公共－清除数据
+    公共-屏幕上滑
+    公共－校验结果   ${chadminwatchshow}    chadminfwatchshow_ipad    ${table_chwatchshow}    1
+
+
+
+
+
+猜你在追管理返回频道pvs
+    公共－清除数据
+    公共－点击页面文本    back icon
+    公共－校验结果   ${pvs_field}    chwatch_006    ${table_pvs}    1
+
+
+
+
+
+*** Keywords ***
+上滑
+    swipe    200    500    200    350

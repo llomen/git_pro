@@ -1,0 +1,124 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${table}          mpp_hb_5_ipad
+${pfc}            {'act':'pfc'}
+${cv}             {'logtype':'cv'}
+${pvs}            {'act':'pvs'}
+${comment}        {'act':'comment'}
+${stay}           {'logtype':'stay'}
+${table_stay}     mpp_stay_iphone
+${table_click}    mpp_jiaohu_ipad_imy
+${table_pvs}      mpp_pvs_ipad
+${table_cv}       mpp_cv_ipad
+
+*** Test Cases ***
+登陆初始化
+    首页－我的
+    判断是否登录-未登陆执行登陆
+
+
+点评论pfc
+    首页－频道
+    首页-进入点播页快乐大本营
+    sleep    3
+    公共－清除数据
+    点播播放页－评论
+    sleep    1
+    公共－校验结果    ${pfc}    pfc_47    ${table_click}    1
+
+评论页cv
+    sleep    1
+    #公共－校验结果    ${cv}    c_comment    ${table_cv}    1    #cv更新
+
+点全部评论进入详情页-click
+    公共－清除数据
+    sleep    2
+    #click element    nsp=label=="查看全部140条回复" and type=="XCUIElementTypeStaticText"
+    #click element    xpath=//XCUIElementTypeStaticText[@name="查看全部140条回复"]/parent::XCUIElementTypeCell
+    click a point  1000  150
+    sleep  3
+    #公共－校验结果    ${comment}    comment    ${table_click}    1
+
+评论详情页-cv
+    sleep   1
+    #公共－校验结果    ${cv}    c_commentdetail    ${table_cv}    1
+
+评论详情页点赞-click
+    #  点赞的定位有问题需要调整
+    公共－清除数据
+    click element    xpath=//XCUIElementTypeStaticText[@name="丁丁85BKK"]/following-sibling::XCUIElementTypeButton[2]
+    sleep    2
+    公共－校验结果    ${comment}    comment_detail_like    ${table_click}    1
+
+评论详情页-取消点赞-click
+
+    公共－清除数据
+    click element    xpath=//XCUIElementTypeStaticText[@name="丁丁85BKK"]/following-sibling::XCUIElementTypeButton[2]
+    sleep   2
+    公共－校验结果    ${comment}    comment_detail_like    ${table_click}    1
+
+评论详情页-回复评论-click
+    公共－清除数据
+    click element    nsp=label=="丁丁85BKK" and type=="XCUIElementTypeStaticText"
+    sleep    1
+    公共－校验结果    ${comment}    comment_detail_like    ${table_click}    1
+    sleep    1
+    点播评论-发布页取消发布
+    sleep    1
+
+关闭评论详情页面-stay
+    公共－清除数据
+    click element    nsp=name=="vod close" and type=="XCUIElementTypeButton"    #关闭详情页面界面
+    sleep    1
+    公共－校验结果    ${stay}    stay_32    ${table_stay}    1
+
+评论浮层点评论框-click
+    sleep    2
+    click element    nsp=name=="和大家聊聊吧" and type=="XCUIElementTypeButton"
+    # 公共－校验结果    ${pfc}    pfc_47    ${table_click}    1    #无任何上报事件
+
+评论列表页-发布评论-click
+    ${content}     生成随机字符
+    log to console    ${content}
+    input value    xpath=//XCUIElementTypeStaticText[@name="我来说两句..."]/parent::XCUIElementTypeTextView    ${content}
+    公共－清除数据
+    click element    name=Send
+    sleep   2
+    公共－校验结果    ${comment}    comment_send    ${table_click}    1
+    click a point    400    800
+
+点播下方评论-点赞-click
+    sleep    2
+    click element    xpath=//XCUIElementTypeStaticText[@name="刚刚"]/following-sibling::XCUIElementTypeButton[1]
+    #公共－校验结果    ${cv}    ipad_shikan_15    ${table_cv}    1    #无上报
+
+点播下方评论-取消点赞-click
+    click element    xpath=//XCUIElementTypeStaticText[@name="刚刚"]/following-sibling::XCUIElementTypeButton[1]
+    #公共－校验结果    ${cv}    ipad_shikan_15    ${table_cv}    1    #无上报
+
+点播下方评论-点回复-click
+    click element    xpath=//XCUIElementTypeStaticText[@name="刚刚"]/following-sibling::XCUIElementTypeButton[2]
+    #点播评论-发布页取消发布
+    #公共－校验结果    ${cv}    ipad_shikan_15    ${table_cv}    1    #无上报
+
+点播下方评论-点发表评论-click
+    click element    nsp=name=="发表评论" and type=="XCUIElementTypeButton"
+    点播评论-发布页取消发布
+    #公共－校验结果    ${cv}    ipad_shikan_15    ${table_cv}    1    #无上报

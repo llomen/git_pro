@@ -1,0 +1,237 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${pmm}            {'act':'pmm'}
+${show}           {'act':'show'}
+
+*** Test Cases ***
+精选pmm
+    sleep  5
+    公共－校验结果    ${pmm}    pindao_01    mpp_livepmm_ipad    1
+
+初始化退出账户
+    首页－我的
+    我的－判断是否登录
+
+精选pvs
+    公共－清除数据
+    首页－频道
+    sleep    5
+    公共－校验结果    ${pvs_field}    jingxuan_001    mpp_pvs_ipad    1
+
+点击切换频道
+    公共－清除数据
+    #click element    nsp=label=="综艺" and type=="XCUIElementTypeStaticText"
+    click a point       217     33
+    sleep    5
+
+综艺pvs
+    公共－校验结果    ${pvs_field}    zongyi_001    mpp_pvs_ipad    1
+
+综艺pmm
+    公共－校验结果    ${pmm}    pindao_02    mpp_livepmm_ipad    1
+
+电视剧pvs
+    公共－清除数据
+    #click element    nsp=label=="电视剧" and type=="XCUIElementTypeStaticText"
+    click a point       279     33
+    sleep    5
+    公共－校验结果    ${pvs_field}    dianshiju_001    mpp_pvs_ipad    1
+
+电影pvs
+    公共－清除数据
+    #click element    nsp=label=="电影" and type=="XCUIElementTypeStaticText"
+    click a point       356     33
+    sleep    5
+    公共－校验结果    ${pvs_field}    dianying_001    mpp_pvs_ipad    1
+
+少儿pvs
+    公共－清除数据
+    #click element    nsp=label=="少儿" and type=="XCUIElementTypeStaticText"
+    click a point       418     33
+    sleep    5
+    公共－校验结果    ${pvs_field}    shaoer001    mpp_pvs_ipad    1
+
+动漫pvs
+    公共－清除数据
+    #click element    nsp=label=="动漫" and type=="XCUIElementTypeStaticText"
+    click a point       459    33
+    sleep    5
+    公共－校验结果    ${pvs_field}    dongman001    mpp_pvs_ipad    1
+
+大芒pvs
+    公共－清除数据
+    #click element    nsp=label=="大芒" and type=="XCUIElementTypeStaticText"
+    click a point       504     33
+    sleep    5
+    公共－校验结果    ${pvs_field}    damang001    mpp_pvs_ipad    1
+
+新闻pvs
+    公共－清除数据
+    #click element    nsp=label=="新闻" and type=="XCUIElementTypeStaticText"
+    click a point       445     33
+    sleep    5
+    公共－校验结果    ${pvs_field}    xinwen001    mpp_pvs_ipad    1
+
+音乐pvs
+    公共－清除数据
+    #click element    nsp=label=="音乐" and type=="XCUIElementTypeStaticText"
+    click a point       539      33
+    sleep    5
+    公共－校验结果    ${pvs_field}    yinyue001    mpp_pvs_ipad    1
+
+游戏pvs
+    公共－清除数据
+    #click element    chain=
+    #click element    nsp=label=="游戏" and type=="XCUIElementTypeStaticText"
+    click a point       539      33
+    sleep    5
+    公共－校验结果    ${pvs_field}    youxi001    mpp_pvs_ipad    1
+
+娱乐pvs
+    公共－清除数据
+    #click element    nsp=label=="娱乐" and type=="XCUIElementTypeStaticText"
+    click a point       539      33
+    sleep    5
+    公共－校验结果    ${pvs_field}    yule001    mpp_pvs_ipad    1
+
+生活pvs
+    公共－清除数据
+    #click element    nsp=label=="生活" and type=="XCUIElementTypeStaticText"
+    click a point       539      33
+    sleep    5
+    公共－校验结果    ${pvs_field}    shenghuo001    mpp_pvs_ipad    1
+
+教育pvs
+    公共－清除数据
+    #click element    nsp=label=="教育" and type=="XCUIElementTypeStaticText"
+    click a point       539      33
+    sleep    5
+    公共－校验结果    ${pvs_field}    jiaoyu01    mpp_pvs_ipad    1
+
+投教pvs
+    公共－清除数据
+    #click element    nsp=label=="投教" and type=="XCUIElementTypeStaticText"
+    click a point       601     33
+    sleep    5
+    公共－校验结果    ${pvs_field}    toujiao01    mpp_pvs_ipad    1
+
+纪录片pvs
+    公共－清除数据
+    #click element    nsp=label=="纪录片" and type=="XCUIElementTypeStaticText"
+    click a point       663     33
+    sleep    2
+    公共－校验结果    ${pvs_field}    jilupian01    mpp_pvs_ipad    1
+
+时尚pvs
+    公共－清除数据
+    #click element    nsp=label=="时尚" and type=="XCUIElementTypeStaticText"
+    #click a point       725     33
+    click a point       750     33    #后面多了个筛选按钮
+    sleep    5
+    公共－校验结果    ${pvs_field}    shishang01    mpp_pvs_ipad    1
+
+
+直播pvs
+    公共－清除数据
+    #公共－点击页面文本    直播
+    click a point       787     33
+    sleep    5
+    公共－校验结果    ${pvs_field}    zhibo01    mpp_pvs_ipad    1
+
+电视直播pvs
+    公共－清除数据
+    公共－点击页面文本    湖南经视
+    sleep    5
+    公共－校验结果    ${pvs_field}    zhibo_004    mpp_pvs_ipad    1
+
+电视直播返回pvs
+    公共－清除数据
+    click a point  200  200
+    click element    nsp=name=="full screen back" and type=="XCUIElementTypeButton"
+    sleep    5
+    公共－校验结果    ${pvs_field}    zhibo_005    mpp_pvs_ipad    1
+
+会员pvs
+    公共－清除数据
+    首页－会员
+    sleep    5
+    公共－校验结果    ${pvs_field}    huiyuan_001    mpp_pvs_ipad    1
+
+#会员登录弹窗pvs
+#    公共－清除数据
+#    公共－xpath    //XCUIElementTypeStaticText[@name="点击登录"]/following-sibling::XCUIElementTypeButton[1]
+#    #公共－点击页面文本    点击登录
+#    #tap    缓存    0    50
+#    sleep    2
+#    公共－校验结果    ${pvs_field}    huiyuan_003    mpp_pvs_ipad    1
+
+#会员登录弹窗返回pvs
+#    公共－清除数据
+#    Click Element    name=cancel login
+#    sleep    2
+#    公共－校验结果    ${pvs_field}    huiyuan_004    mpp_pvs_ipad    1
+#
+#开通会员弹窗pvs
+#    公共－清除数据
+#    公共－点击页面文本    开通VIP会员
+#    sleep    2
+#    公共－校验结果    ${pvs_field}    huiyuan_005    mpp_pvs_ipad    1
+#
+#开通会员弹窗返回pvs
+#    公共－清除数据
+#    公共－支付页关闭
+#    sleep    2
+#    公共－校验结果    ${pvs_field}    huiyuan_006    mpp_pvs_ipad    1
+
+vip切换电视剧tab页pvs
+    公共－清除数据
+    click a point   312      33
+    sleep    2
+    公共－校验结果    ${pvs_field}    huiyuan_007    mpp_pvs_ipad    1
+
+vip切换电影tab页pvs
+    公共－清除数据
+    click a point   389      33
+    sleep    2
+    公共－校验结果    ${pvs_field}    huiyuan_008    mpp_pvs_ipad    1
+
+vip切换动漫tab页pvs
+    公共－清除数据
+    #公共－点击页面文本    动漫
+    click a point   451      33
+    sleep    2
+    公共－校验结果    ${pvs_field}    huiyuan_009    mpp_pvs_ipad    1
+
+vip切换少儿tab页pvs
+    公共－清除数据
+    #公共－点击页面文本    少儿
+    click a point   531      33
+    sleep    2
+    公共－校验结果    ${pvs_field}    huiyuan_010    mpp_pvs_ipad    1
+
+vip切换综艺tab页pvs
+    公共－清除数据
+    #公共－点击页面文本    综艺
+    click a point   250     33
+    sleep    2
+    公共－校验结果    ${pvs_field}    huiyuan_011    mpp_pvs_ipad    1
+
+vip切换精选tab页pvs
+    公共－清除数据
+    click a point   183      33
+    sleep    3
+    公共－校验结果    ${pvs_field}    huiyuan_012    mpp_pvs_ipad    1

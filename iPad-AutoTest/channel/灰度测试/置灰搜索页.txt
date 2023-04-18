@@ -1,0 +1,26 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+
+*** Variables ***
+
+
+*** Test Cases ***
+搜索页
+    公共－清除数据
+    首页－搜索视频
+    图片对比
+
+搜索框
+    搜索－输入搜索词    女儿们的恋爱
+    搜索－键盘搜索
+    click element  xpath = //XCUIElementTypeStaticText[@name="女儿们的恋爱"]

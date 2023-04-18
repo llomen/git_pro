@@ -1,0 +1,172 @@
+*** Settings ***
+Documentation     我的
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+Library           Screenshot
+
+*** Variables ***
+${mail_account}    testitv@163.com
+${mail_password}    111111
+
+*** Test Cases ***
+我的-邮箱登录
+    首页－我的
+    我的－判断是否登录
+    我的－点击登录
+    登录-是否有历史页面
+    登录-点邮箱icon
+    公共-邮箱登录_xzx    ${mail_account}    ${mail_password}
+    sleep    3
+    #登录－关闭
+    #验证-页面不存在元素    xpath=//XCUIElementTypeStaticText[@name="登录/注册"]/preceding-sibling::XCUIElementTypeButton[1]
+    验证-页面存在元素    nsp=name=="testitv888" and type=="XCUIElementTypeStaticText"
+
+我的-判断是否开启青少年模式
+    首页－我的
+    我的-进入青少年界面
+    ${result}=    Run Keyword And Return Status    Page Should Contain Text    关闭青少年模式
+    Run keyword if    ${result}==True    log    已开启青少年模式
+    ...    ELSE    log    未开启青少年模式
+
+我的-开启青少年
+    ${result}=    Run Keyword And Return Status    Page Should Contain Text    关闭青少年模式
+    Run keyword if    ${result}==True    log    已开启青少年模式
+    ...    ELSE    我的-设置青少年模式密码
+    sleep    2
+    验证-页面存在元素值    关闭青少年模式
+
+我的-关闭青少年
+    ${result}=    Run Keyword And Return Status    Page Should Contain Text    关闭青少年模式
+    Run keyword if    ${result}==True    我的-关闭青少年模式
+    ...    ELSE    log    青少年模式已经关闭
+    验证-页面不存在元素值    关闭青少年模式
+
+我的-账户注销协议
+    首页－我的
+    我的－设置
+    #click element    xpath=//XCUIElementTypeStaticText[@name="账号注销"]
+    click element    nsp=name=="账号注销" and type=="XCUIElementTypeStaticText"
+    sleep    2
+    验证-页面存在元素    nsp=name=="为保证你的账号安全，请阅读账户注销的影响" and type=="XCUIElementTypeStaticText"
+
+我的-非wifi网络下播放提醒
+    首页－我的
+    我的－设置
+    #click element    xpath=//XCUIElementTypeSwitch[@name="非wifi网络下播放提醒"]
+    click element    nsp=name=="非wifi网络下播放提醒" and type=="XCUIElementTypeSwitch"
+    #校验-获取元素属性值校验-value    xpath=//XCUIElementTypeSwitch[@name="非wifi网络下播放提醒"]    0
+
+我的-非wifi网络下离线缓存
+    #首页－我的
+    #我的－设置
+    #click element    xpath=//XCUIElementTypeSwitch[@name="非wifi网络下离线缓存"]
+    click element    nsp=name=="非wifi网络下离线缓存" and type=="XCUIElementTypeSwitch"
+    #校验-获取元素属性值校验-value    xpath=//XCUIElementTypeSwitch[@name="非wifi网络下离线缓存"]    1
+
+我的-自动跳过片头片尾
+    #首页－我的
+    #我的－设置
+    #click element    xpath=//XCUIElementTypeSwitch[@name="自动跳过片头片尾"]
+    click element    nsp=name=="自动跳过片头片尾" and type=="XCUIElementTypeSwitch"
+    #校验-获取元素属性值校验-value    xpath=//XCUIElementTypeSwitch[@name="自动跳过片头片尾"]    1
+
+我的-同步芒果TV电视端播放记录
+    #click element    xpath=//XCUIElementTypeSwitch[@name="同步芒果TV电视端播放记录"]
+    click element    nsp=name=="同步芒果TV电视端播放记录" and type=="XCUIElementTypeSwitch"
+    #校验-获取元素属性值校验-value    xpath=//XCUIElementTypeSwitch[@name="同步芒果TV电视端播放记录"]    1
+
+我的-隐私政策
+    首页－我的
+    我的－设置
+    #click element    xpath=//XCUIElementTypeStaticText[@name="隐私政策"]
+    click element    nsp=name=="隐私政策" and type=="XCUIElementTypeStaticText"
+    #验证-页面不存在元素    xpath=//XCUIElementTypeStaticText[@name="隐私政策"]
+    click a point    828    38
+
+我的-隐私设置
+    首页－我的
+    我的－设置
+    #click element    xpath=//XCUIElementTypeStaticText[@name="隐私设置"]
+    click element    nsp=name=="隐私设置" and type=="XCUIElementTypeStaticText"
+    sleep    2
+    #验证-页面不存在元素    xpath=//XCUIElementTypeStaticText[@name="隐私设置"]
+    click a point    828    38
+
+我的-保护措施
+    首页－我的
+    我的－设置
+    click element    nsp=name=="保护措施" and type=="XCUIElementTypeStaticText"
+    #click element    xpath=//XCUIElementTypeStaticText[@name="保护措施"]
+    #验证-页面不存在元素    xpath=//XCUIElementTypeStaticText[@name="保护措施"]
+    click a point    828    38
+
+我的-保护指南
+    首页－我的
+    我的－设置
+    #click element    xpath=//XCUIElementTypeStaticText[@name="保护指南"]
+    click element    nsp=name=="保护指南" and type=="XCUIElementTypeStaticText"
+    #验证-页面不存在元素    xpath=//XCUIElementTypeStaticText[@name="保护指南"]
+    click a point    828    38
+
+我的-常见问题
+    首页－我的
+    我的－设置
+    #click element    xpath=//XCUIElementTypeStaticText[@name="常见问题"]
+    click element    nsp=name=="常见问题" and type=="XCUIElementTypeStaticText"
+    sleep    3
+    按坐标点击元素    name=其他问题
+    按坐标点击元素    name=确定
+    click element    name=返回
+    #验证-页面存在元素    xpath=//XCUIElementTypeStaticText[@name="常见问题"]
+    #click a point    828    38
+
+我的-清除缓存
+    首页－我的
+    我的－设置
+    click element    xpath=//XCUIElementTypeStaticText[@name="清除缓存"]
+    click element    name=确定
+
+我的-关于我们
+    首页－我的
+    我的－设置
+    设置-上滑
+    click element    xpath=//XCUIElementTypeStaticText[@name="关于我们"]
+    sleep    2
+    验证-页面存在元素    xpath=//XCUIElementTypeStaticText[@name="官方微信：hunantvcom"]
+    click a point    828    38
+
+我的-离线中心
+    首页－我的
+    click element    xpath=//XCUIElementTypeStaticText[@name="离线中心"]/parent::XCUIElementTypeCell
+    sleep    2
+    #click element    nsp=name=="离线中心" and type=="XCUIElementTypeStaticText"
+    #Capture Page Screenshot
+    click a point    604    38
+
+我的-我的看单
+    首页－我的
+    #click element    xpath=//XCUIElementTypeStaticText[@name="我的看单"]
+    click element    nsp=name=="我的看单" and type=="XCUIElementTypeStaticText"
+    click a point    604    38
+
+我的-消息中心
+    首页－我的
+    #click element    xpath=//XCUIElementTypeStaticText[@name="我的看单"]
+    click element    nsp=name=="消息中心" and type=="XCUIElementTypeStaticText"
+    sleep    3
+    click a point    604    38
+
+我的-我的积分
+    首页－我的
+    #click element    xpath=//XCUIElementTypeStaticText[@name="我的积分"]
+    click element    nsp=name=="我的积分" and type=="XCUIElementTypeStaticText"
+    sleep    3
+    click a point    604    38

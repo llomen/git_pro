@@ -1,0 +1,84 @@
+*** Settings ***
+Documentation     推荐搜索点击search按钮搜索6
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${pvs_field}      {'act':'pvs'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${hot_field}      {'act':'recommend_hot'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+热门搜索search
+    公共－清除数据
+    首页－搜索视频
+    公共－点击页面文本    1
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_search_006    mpp_search_data_ipad    1
+
+
+
+
+热门搜索view
+    公共－校验结果    ${view_field}    ipad_view_006    mpp_view_data_ipad    1
+
+
+
+
+
+历史搜索search
+    搜索－取消
+    首页－搜索视频
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeButton[@name="千金归来"]
+    sleep    2
+    公共－校验结果    ${search_field}    ipad_search_007    mpp_search_data_ipad    1
+
+
+
+
+
+历史搜索view
+    公共－校验结果    ${view_field}    ipad_view_007    mpp_view_data_ipad    1
+
+
+
+
+
+热门推荐click
+    搜索－取消
+    公共－清除数据
+    首页－搜索视频
+    Click Element    name=我家那闺女
+    sleep    5
+    公共－校验结果    ${click_field}    ipad_click_006    mpp_click_data_ipad    1
+
+
+
+
+
+热门推荐search
+    公共－校验结果    ${search_field}    ipad_search_013    mpp_search_data_ipad    1
+
+
+
+
+热门推荐action
+    公共－校验结果    ${action}    shouye_remen    mpp_action_ipad    1
+
+
+
+

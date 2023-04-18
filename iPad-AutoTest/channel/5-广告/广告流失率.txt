@@ -1,0 +1,168 @@
+*** Settings ***
+Documentation     广告流失率
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+
+*** Variables ***
+${adlost1}        {'lostid':'1'}
+${adlost2}        {'lostid':'2'}
+${adlost3}        {'lostid':'3'}
+${adlost4}        {'lostid':'4'}
+${adlost5}        {'lostid':'5'}
+${adlost6}        {'lostid':'6'}
+${adlost9}        {'lostid':'9'}
+${cdn0}           {'type':'0','f':'0'}
+${cdn1}           {'s':'1','f':'0'}
+${cdn3}           {'s':'3','f':'0'}
+${cdn6}           {'type':'6','f':'0'}
+
+*** Test Cases ***
+广告返回无离线任务adlost
+    首页－少儿频道
+    sleep    1
+    公共－清除数据
+    Click Element    name=青云志异常
+    sleep    3
+    公共－清除数据
+    广告播放页－返回
+    Comment    点播播放页－返回
+    sleep    3
+    公共－校验结果    ${adlost1}    adlost_001    mpp_adlost_ipad    1
+
+
+
+
+广告返回有离线任务adlost
+    Click Element    name=青云志异常
+    sleep    2
+    点播播放页－下载
+    tap    高清    0    200
+    sleep    3
+    下载－关闭
+    公共－清除数据
+    点播播放页－返回
+    sleep    5
+    公共－校验结果    ${adlost2}    adlost_002    mpp_adlost_ipad    1
+
+
+
+
+广告中点击剧集列表adlost
+    Click Element    name=青云志异常
+    sleep    3
+    公共－清除数据
+    公共－点击页面文本    55集全 | 更多
+    Click Element    name=50
+    sleep    3
+    公共－校验结果    ${adlost3}    adlost_003    mpp_adlost_ipad    1
+
+
+
+
+广告中点击周边列表adlost
+    Click Element    name=10
+    sleep    3
+    公共－清除数据
+    短片更多-关闭
+    tap    花絮片段    10    120
+    sleep    3
+    公共－校验结果    ${adlost3}    adlost_004    mpp_adlost_ipad    1
+
+
+
+
+广告中点击看了还会看adlost
+    Click Element    name=11
+    sleep    10
+    Comment    点播－评论滑动
+    公共－清除数据
+    tap    看了还会看    0    100
+    sleep    5
+    公共－校验结果    ${adlost3}    adlost_005    mpp_adlost_ipad    1
+
+
+
+
+跳过广告adlost
+    点播播放页－返回
+    Click Element    name=青云志异常
+    sleep    3
+    公共－点击页面文本    55集全 | 更多
+    公共－清除数据
+    Click Element    name=55
+    sleep    3
+    短片更多-关闭
+    tap    立即跳过    20    10
+    Comment    Click Element    name=立即跳过
+    sleep    5
+    公共－校验结果    ${adlost9}    adlost_009    mpp_adlost_ipad    1
+
+
+
+
+跳过广告前贴-cdn1
+    公共－校验结果    ${cdn1}    ipad_ad_001    mpp_cdncp_5_ipad    2
+
+
+
+跳过广告前贴-cdn3
+    公共－校验结果    ${cdn3}    ipad_ad_003    mpp_cdncp_5_ipad    6
+
+
+
+
+跳过广告前贴-可播比0
+    公共－校验结果    ${cdn0}    ipad_ad_000    mpp_cdncp_5_ipad    1
+
+
+
+
+跳过广告前贴-可播比6
+    公共－校验结果    ${cdn6}    ipad_ad_006    mpp_cdncp_5_ipad    1
+
+
+
+
+广告中点击播单列表adlost
+    点播播放页－返回
+    首页－搜索视频
+    搜索－点击搜索框
+    搜索－输入搜索词    张柏芝惊喜空降宋小宝
+    搜索－键盘搜索
+    sleep    2
+    tap    综合    20    80
+    sleep    2
+    公共－清除数据
+    Click Element    name=宋小宝风衣加身帅哭了！
+    sleep    3
+    公共－校验结果    ${adlost3}    adlost_006    mpp_adlost_ipad    1
+
+
+
+
+广告中点击播单看了还会看adlost
+    公共－清除数据
+    tap    看了还会看    0    100
+    sleep    3
+    公共－校验结果    ${adlost3}    adlost_007    mpp_adlost_ipad    1
+
+
+
+广告中进入落地页adlost
+    点播播放页－返回
+    tap    综合    0    100
+    sleep    2
+    公共－清除数据
+    Click Element    name=了解详情
+    sleep    3
+    公共－校验结果    ${adlost5}    adlost_008    mpp_adlost_ipad    1
+
+

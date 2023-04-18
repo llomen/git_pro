@@ -1,0 +1,140 @@
+*** Settings ***
+Documentation     频道页pvs11+21
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/功能.txt
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${support}        {'act':'support'}
+${DoLogin}        {'act':'DoLogin','mf':'Apple'}
+${Logout}         {'act':'Logout','mf':'Apple'}
+${VerifyImgGet}    {'act':'VerifyImgGet','mf':'Apple'}
+${Logout}         {'act':'Logout','mf':'Apple'}
+${mail_account}    testitv@163.com
+${mail_password}    888888
+${imy}            {'act':'imy'}
+${table_imy}      mpp_jiaohu_ipad_imy
+
+*** Test Cases ***
+邮箱登录成功跳手机验证pvs
+    首页－我的
+    我的－判断是否登录
+    我的－点击登录
+    登录-是否有历史页面
+    登录-点邮箱icon
+    公共－清除数据
+    公共-邮箱登录_xzx    ${mail_account}    ${mail_password}
+    sleep    1
+    公共－校验结果    ${pvs_field}    login_007    mpp_pvs_ipad    1
+
+#关闭手机验证pvs
+#    公共－清除数据
+#    登录－关闭
+#    sleep    3
+#    公共－校验结果    ${pvs_field}    login_008    mpp_pvs_ipad    1
+
+非会员手机账号登录
+    首页－我的
+    我的－判断是否登录
+    我的－点击登录
+    登录-是否有历史页面
+    sleep    2
+    登录-账号登陆    17764592306    Qq969838847.
+
+点头像跳修改资料pvs
+    公共－清除数据
+    sleep    3
+    公共－清除数据
+    我的-点头像
+    sleep    2
+    公共－校验结果    ${pvs_field}    login_009    mpp_pvs_ipad    1
+
+关闭修改资料页面pvs
+    公共－清除数据
+    公共－清除数据
+    我的-关闭头像
+    公共－校验结果    ${pvs_field}    login_010    mpp_pvs_ipad    1
+
+非会员点VIP会员pvs
+    公共－清除数据
+    click a point       91    228
+    sleep    3
+    公共－校验结果    ${pvs_field}    vip_001    mpp_pvs_ipad    1
+
+非会员点VIP会员imy
+    公共－校验结果    ${imy}    imy_05    ${table_imy}    1
+
+VIP-连续包月-支付
+    delete data    web_wj
+    支付-确认支付
+    sleep    6
+    comment    该上报点platform不一样 web_wj
+    #${result}    Check Result    {'act':'order'}    web_wj    vip_bug    mpp_order_data_ipad    1    #服务端报500待更新
+    #should be true    ${result['count'][0]}==1    ${result['count'][1]}
+    #should be true    ${result['field'][0]}==1    ${result['field'][1]}
+    #should be true    ${result['errdata'][0]}==1    ${result['errdata'][1]}
+
+VIP会员关闭pvs
+    公共－清除数据
+    sleep    3
+    #公共－支付页关闭
+    click a point    462    38
+    sleep    5
+    公共－校验结果    ${pvs_field}    vip_002    mpp_pvs_ipad    1
+
+意见反馈
+    公共-屏幕上滑
+    设置－意见反馈
+    公共－清除数据
+    按坐标点击元素    name=其他问题
+    按坐标点击元素    name=确定
+
+意见反馈返回pvs
+    公共－清除数据
+    我的-关闭右侧窗口
+    sleep    2
+    公共－校验结果    ${pvs_field}    support02    mpp_pvs_ipad    1
+
+修改密码pvs
+    我的－设置
+    公共－清除数据
+    Click Element    name=修改密码
+    sleep    3
+    公共－校验结果    ${pvs_field}    changepasswd_001    mpp_pvs_ipad    1
+
+修改密码返回pvs
+    公共－清除数据
+    我的-二级页面返回
+    公共－校验结果    ${pvs_field}    changepasswd_002    mpp_pvs_ipad    1
+
+绑定号码pvs
+    公共－清除数据
+    Click Element    name=绑定号码
+    sleep    3
+    公共－校验结果    ${pvs_field}    changepasswd_001    mpp_pvs_ipad    1
+
+绑定号码返回pvs
+    公共－清除数据
+    我的-二级页面返回
+    sleep    2
+    公共－校验结果    ${pvs_field}    changepasswd_002    mpp_pvs_ipad    1
+
+退出登录Logout
+    首页－我的
+    我的－设置
+    我的-设置菜单上滑
+    公共－清除数据
+    Click Element    name=退出登录
+    sleep    3
+    公共－校验结果    ${Logout}    shouji_002    mpp_interactive_ipad    1
+
+退出登录返回我的pvs
+    公共－校验结果    ${pvs_field}    login_011    mpp_pvs_ipad    1

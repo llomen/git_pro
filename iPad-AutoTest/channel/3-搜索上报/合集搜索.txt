@@ -1,0 +1,104 @@
+*** Settings ***
+Documentation     合集搜索点击搜索按钮搜索10
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${pvs_field}      {'act':'pvs','mf':'Apple'}
+${pvs_field_sdk}    {'act':'pvs','mf':'Apple manufacturer'}
+${search_field}    {'act':'search'}
+${view_field}     {'act':'view'}
+${click_field}    {'act':'click'}
+${relatepv_field}    {'act':'relatepv'}
+${interestpv_field}    {'act':'interestpv'}
+${recommend_field}    {'act':'recommended'}
+${recommend_rel_field}    {'act':'recommend_rel'}
+${pv_start}       {'act':'pv','type':'start'}
+${pv_first}       {'act':'pv','type':'first'}
+${pv_success}     {'act':'pv','type':'success'}
+${ad_start}       {'act':'pv','type':'start'}
+${ad_needplay}    {'act':'ad','type':'need-play'}
+${ad_complete}    {'act':'ad','type':'complete'}
+${cdn_start}      {'act':'cdn','type':'start'}
+${cdn_success}    {'act':'cdn','type':'success'}
+${router_start}    {'act':'router','type':'start'}
+${router_success}    {'act':'router','type':'success'}
+
+*** Test Cases ***
+搜索首页pvs
+    公共－清除数据
+    首页－搜索视频
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_001    mpp_pvs_ipad    1
+
+
+
+
+
+搜索页返回pvs
+    公共－清除数据
+    公共－点击页面文本    取消
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_033    mpp_pvs_ipad    1
+
+
+
+
+
+搜索中pvs
+    首页－搜索视频
+    公共－清除数据
+    搜索－输入搜索词    兰陵王妃
+    sleep    2
+    公共－校验结果    ${pvs_field}    search_008    mpp_pvs_ipad    1
+
+
+
+
+
+搜索按钮搜索search
+    公共－清除数据
+    搜索－键盘搜索
+    sleep    5
+    公共－校验结果    ${search_field}    ipad_search_001    mpp_search_data_ipad    1
+
+
+
+
+
+有结果pvs
+    公共－校验结果    ${pvs_field}    search_002    mpp_pvs_ipad    1
+
+
+
+
+
+结果view
+    公共－校验结果    ${view_field}    ipad_view_001    mpp_view_data_ipad    1
+
+
+
+
+结果click
+    公共－清除数据
+    sleep    5
+    搜索－点播放
+    公共－校验结果    ${click_field}    ipad_click_001    mpp_click_data_ipad    1
+
+
+
+
+
+点播播放pvs
+    公共－校验结果    ${pvs_field}    search_003    mpp_pvs_ipad    1
+
+
+
+

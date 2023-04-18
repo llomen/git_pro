@@ -1,0 +1,86 @@
+*** Settings ***
+Documentation     pv-fpa、sp、看了还会看
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+
+*** Variables ***
+${pvs}            {'act':'pvs','mf':'Apple'}
+${pvs_sdk}        {'act':'pvs','mf':'Apple manufacturer'}
+${relatepv}       {'act':'relatepv'}
+${cp}             {'act':'cp1'}
+${change}         {'act':'change'}
+${sp}             {'act':'sp'}
+${recommended}    {'act':'recommended'}
+
+*** Test Cases ***
+进入播放页面
+    首页－搜索视频
+    搜索－输入搜索词    初恋那件小事
+    搜索－键盘搜索
+    公共－清除数据
+    搜索－点播放
+    sleep    3
+
+播放页可播比cp1
+    公共－校验结果    ${cp}    ipad_001    mpp_cp_ipad    1
+
+进入播放页pvs
+    公共－校验结果    ${pvs}    dianbo_003    mpp_pvs_ipad    1
+
+进入播放页sp
+    公共－校验结果    ${sp}    ipad_dianbo_001    mpp_sp_ipad    1
+
+正片列表pvs
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="正片"]/following-sibling::XCUIElementTypeButton[1]
+    sleep    2
+    公共－校验结果    ${pvs}    dianbo_zhengpian    mpp_pvs_ipad    1
+
+更多短片pvs
+    短片更多-关闭
+    公共－清除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="花絮片段"]/following-sibling::XCUIElementTypeButton[1]
+    sleep    2
+    公共－校验结果    ${pvs}    dianbo_duanpian    mpp_pvs_ipad    1
+
+切换正片sp
+    公共－清除数据
+    短片更多-关闭
+    点屏幕
+    点播播放页－全屏
+    点屏幕
+    click a point   120 800     #nsp=label contains "next" and type=="XCUIElementTypeButton"
+    sleep    2
+    公共－校验结果    ${sp}    ipad_zhengpian_001    mpp_sp_ipad    1
+
+切换正片pvs
+    公共－校验结果    ${pvs}    dianbo_004    mpp_pvs_ipad    1
+    sleep    5
+    点屏幕
+    点播播放页－取消全屏
+
+短片sp
+    公共－清除数据
+    公共－点击页面文本    赖冠霖分享甜蜜故事
+    sleep    4
+    公共－校验结果    ${sp}    ipad_duanpian_001    mpp_sp_ipad    1
+
+切换短片pvs
+    公共－校验结果    ${pvs}    dianbo_004    mpp_pvs_ipad    1
+
+看了还会看sp
+    公共－xpath    (//XCUIElementTypeStaticText[@name="2"])[1]
+    公共－清除数据
+    click element    name=时光与你都很甜
+    sleep    3
+    公共－校验结果    ${sp}    ipad_tuijian_001    mpp_sp_ipad    1
+
+点看了还会看pvs
+    公共－校验结果    ${pvs}    dianbo_004    mpp_pvs_ipad    1

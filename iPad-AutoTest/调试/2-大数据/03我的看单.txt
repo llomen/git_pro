@@ -1,0 +1,163 @@
+*** Settings ***
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../../对象库/公共.txt
+Resource          ../../对象库/首页.txt
+Resource          ../../对象库/直播.txt
+Resource          ../../对象库/搜索.txt
+Resource          ../../对象库/点播.txt
+Resource          ../../对象库/我.txt
+Resource          ../../对象库/支付.txt
+Resource          ../../对象库/频道桩.txt
+Resource          ../../对象库/功能.txt
+Resource          ../../对象库/看单.txt
+
+*** Variables ***
+${show}           {'flag':'111'}
+${btclick}        {'act':'btclick'}
+${aplay}          {'act':'aplay'}
+${show}           {'logtype':'show'}
+${btclick}        {'act':'btclick'}
+${imy}            {'act':'imy'}
+${aplay}          {'act':'aplay'}
+${pvs}            {'act':'pvs'}
+${hb_15}          {'act':'hb','ht':'3','mf':'Apple'}
+${hb_45}          {'act':'hb','ht':'4','mf':'Apple'}
+${hb_60}          {'act':'hb','ht':'5','mf':'Apple'}
+${hb_120}         {'act':'hb','ht':'6','mf':'Apple'}
+${hb_out}         {'act':'hb','ht':'2','mf':'Apple'}
+${imy}            {'act':'imy'}
+${table_imy}      mpp_jiaohu_ipad_imy
+${hb_table}       mpp_hb_5_ipad
+${table_pvs}      mpp_pvs_ipad
+${table_imy}      mpp_jiaohu_ipad_imy
+${table_aplay}    mpp_vv_5_ipad
+${table_show}     mpp_show_5_iphone_sdk
+
+*** Test Cases ***
+登陆初始化
+    账户-登录初始化
+
+点播页-进入点播页
+    首页-进入点播页快乐大本营
+    sleep    2
+    swipe    100    600    100   300
+    click element    nsp=name=="第13期下：青丰CP迎最终抉择" and type=="XCUIElementTypeStaticText"
+
+点播页-合集加入看单btclick
+    公共－清除数据
+    新版点播-加入看单
+    sleep    3
+    公共－校验结果    ${btclick}    btclick_01    mpp_jiaohu_ipad_qita    1
+
+点播页-取消加入看单btclick
+    公共－清除数据
+    sleep    2
+    新版点播-加入看单
+    sleep    2
+    公共－校验结果    ${btclick}    btclick_02    mpp_jiaohu_ipad_qita    1
+
+点播页-取消后再加入看单btclick
+    公共－清除数据
+    sleep    2
+    新版点播-加入看单
+    sleep    2
+    公共－校验结果    ${btclick}    btclick_01    mpp_jiaohu_ipad_qita    1
+    #click element    nsp=name=="Vlog第1期：张雨绮说情话" and type=="XCUIElementTypeStaticText"
+
+
+点播页-返回
+    点播播放页－返回
+
+点播页-单视频加入看单btclick
+    #首页－搜索视频
+    搜索－输入搜索词    罗昊给周扬青拍照，每一张都是原图直出
+    搜索－键盘搜索
+    #click element  xpath=(//XCUIElementTypeStaticText[@name="罗昊给周扬青拍照，每一张都是原图直出"])[2]
+    click a point  150  200
+    公共－清除数据
+    新版点播-加入看单
+    sleep    3
+    公共－校验结果    ${btclick}    btclick_01    mpp_jiaohu_ipad_qita    1
+
+返回首页
+    点播播放页－返回
+    搜索－取消
+
+我的看单show
+    公共－清除数据
+    sleep    2
+    首页－我的
+    #公共－校验结果    ${show}    show_kandan    ${table_show}    1    #后端报500
+
+点我的看单视频my-click
+    公共－清除数据
+    click element    xpath=//XCUIElementTypeStaticText[@name="我的看单"]/following-sibling::XCUIElementTypeButton
+    sleep    2
+    公共－校验结果    ${imy}    imy_22    ${table_imy}    1
+
+我的看单pvs
+    公共－校验结果    ${pvs}    kandan    ${table_pvs}    1
+
+视频Tab-pv
+    公共－清除数据
+    click element    xpath=//XCUIElementTypeStaticText[@name="视频"]/parent::XCUIElementTypeCell
+    sleep    2
+    公共－校验结果    ${pvs}    kandan_video    ${table_pvs}    1
+
+看单视频点播页面-pvs
+    公共－清除数据
+    click element    xpath=//XCUIElementTypeStaticText[@name="罗昊给周扬青拍照"]/parent::XCUIElementTypeOther
+    sleep    3
+    公共－校验结果    ${pvs}    kandan_video_player    ${table_pvs}    1
+
+进入看单视频vv
+    sleep    2
+    公共－校验结果    ${aplay}    kandan_player    ${table_aplay}    1    #待表结构更新
+
+看单视频15s-hb
+    sleep    15
+    公共－校验结果    ${hb_15}    ipad_shiping_bodan_15    ${hb_table}    1
+
+看单视频退出-hb
+    公共－清除数据
+    点播播放页－返回
+    sleep    1
+    公共－校验结果    ${hb_out}    ipad_shiping_bodan_out    ${hb_table}    1
+
+返回我的看单-pvs
+    公共－校验结果    ${pvs}    kandan_player_back    ${table_pvs}    1
+
+删除视频Tab全部视频
+    看单-删除视频
+
+点击节目Tab
+    click element    xpath=//XCUIElementTypeStaticText[@name="节目"]/parent::XCUIElementTypeCell
+
+看单进入节目视频播放页-pvs
+    公共－清除数据
+    click element    xpath=//XCUIElementTypeStaticText[@name="女儿们的恋爱 第四季"]/parent::XCUIElementTypeOther
+    sleep    3
+    公共－校验结果    ${pvs}    kandan_jiemu_player    ${table_pvs}    1
+
+节目视频15s-hb
+    sleep    20
+    公共－校验结果    ${hb_15}    ipad_jiemu_15    ${hb_table}    1
+
+节目视频播放页返回我的看单-pvs
+    公共－清除数据
+    click a point  200   200
+    点播播放页－返回
+    sleep    3
+    公共－校验结果    ${pvs}    kandan_jiemu_back    ${table_pvs}    1
+
+节目视频退出-hb
+    公共－校验结果    ${hb_out}    ipad_jiemu_out    ${hb_table}    1
+
+删除节目Tab全部视频
+    看单-删除视频
+
+我的看单返回我的-pvs
+    公共－清除数据
+    click element    nsp=name=="cancel phoneBind" and type=="XCUIElementTypeButton"
+    公共－校验结果    ${pvs}    kandan_back_imy    ${table_pvs}    1
