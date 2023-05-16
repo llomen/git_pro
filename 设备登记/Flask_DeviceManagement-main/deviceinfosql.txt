@@ -1,0 +1,11 @@
+# 创建图书数据库
+create database device_manager charset=utf8;
+use device_manager;
+CREATE TABLE devices(id int UNSIGNED PRIMARY KEY AUTO_INCREMENT ,device VARCHAR(30) not NULL ,brrowser VARCHAR(30) NOT NULL ,bpub_date DATE NOT NULL);
+
+# 插入图书数据
+insert into devices(device, brrowser, bpub_date) VALUES
+('iphone xr','xzx','1980-5-1');
+
+
+
