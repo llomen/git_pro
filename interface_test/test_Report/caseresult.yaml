@@ -1,0 +1,14 @@
+1.0:
+  code: 1
+  result: 接口请求失败，返回状态码：404
+2.0:
+  code: 1
+  result: 接口请求失败，返回状态码：404
+3.0:
+  code: 1
+  result: 接口请求失败，返回状态码：404
+4.0:
+  code: 0
+  result:
+    code: 2001
+    msg: src null

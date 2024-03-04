@@ -1,0 +1,24 @@
+[2024-03-04 15:59:32.712150] INFO: interface_case_run: 当前模块 生成数据驱动所用数据
+[2024-03-04 15:59:32.713478] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 15:59:32.713579] INFO: interface_case_run: 全部kwargs参数信息 , {}
+[2024-03-04 15:59:32.713715] INFO: interface_case_run: 当前模块 解析测试用例文件
+[2024-03-04 15:59:32.713813] INFO: interface_case_run: 全部args参数参数信息 , ('/Users/xiaozixi/Desktop/work_project/git_pro/jiekou-python3/test_case_data/case.xls',)
+[2024-03-04 15:59:32.713894] INFO: interface_case_run: 全部kwargs参数信息 , {}
+[2024-03-04 15:59:32.741326] INFO: interface_case_run: 测试用例开始执行
+[2024-03-04 15:59:32.741543] INFO: interface_case_run: {'key': 'aaaa', 'info': {'password': '1222'}}
+[2024-03-04 15:59:32.741653] INFO: interface_case_run: 输入参数：url:/openapi/api,key:aaaa,参数:code=40001,请求方式：POST
+[2024-03-04 15:59:32.741740] INFO: interface_case_run: 输入参数：url:/openapi/api,key:aaaa,参数:code=40001,请求方式：None
+[2024-03-04 15:59:32.871573] INFO: interface_case_run: 返回结果:{'code': 0, 'result': {'code': 40007, 'text': '您的请求内容为空。'}}
+[2024-03-04 15:59:32.871748] INFO: interface_case_run: 当前模块 断言测试结果
+[2024-03-04 15:59:32.871845] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 15:59:32.871931] INFO: interface_case_run: 全部kwargs参数信息 , {'asserassert': 'code=40001'}
+[2024-03-04 15:59:32.872039] INFO: interface_case_run: 测试用例执行完毕
+[2024-03-04 15:59:32.872174] INFO: interface_case_run: 测试用例开始执行
+[2024-03-04 15:59:32.872326] INFO: interface_case_run: {'key': 'dfeb1cc8125943d29764a2f2f5c33739', 'info': {'password': '1222'}}
+[2024-03-04 15:59:32.872425] INFO: interface_case_run: 输入参数：url:/openapi/api,key:dfeb1cc8125943d29764a2f2f5c33739,参数:code=40002,请求方式：POST
+[2024-03-04 15:59:32.872504] INFO: interface_case_run: 输入参数：url:/openapi/api,key:dfeb1cc8125943d29764a2f2f5c33739,参数:code=40002,请求方式：None
+[2024-03-04 15:59:32.967349] INFO: interface_case_run: 返回结果:{'code': 0, 'result': {'code': 40007, 'text': '您的请求内容为空。'}}
+[2024-03-04 15:59:32.967565] INFO: interface_case_run: 当前模块 断言测试结果
+[2024-03-04 15:59:32.967662] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 15:59:32.967751] INFO: interface_case_run: 全部kwargs参数信息 , {'asserassert': 'code=40002'}
+[2024-03-04 15:59:32.967860] INFO: interface_case_run: 测试用例执行完毕

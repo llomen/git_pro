@@ -1,0 +1,42 @@
+[2024-03-04 16:56:12.889343] INFO: interface_case_run: 当前模块 生成数据驱动所用数据
+[2024-03-04 16:56:12.889710] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 16:56:12.889805] INFO: interface_case_run: 全部kwargs参数信息 , {}
+[2024-03-04 16:56:12.889934] INFO: interface_case_run: 当前模块 解析测试用例文件
+[2024-03-04 16:56:12.890023] INFO: interface_case_run: 全部args参数参数信息 , ('/Users/xiaozixi/Desktop/work_project/git_pro/jiekou-python3/test_case_data/case.xls',)
+[2024-03-04 16:56:12.890101] INFO: interface_case_run: 全部kwargs参数信息 , {}
+[2024-03-04 16:56:12.930456] INFO: interface_case_run: 测试用例开始执行
+[2024-03-04 16:56:12.930688] INFO: interface_case_run: {'key': 'aaaa', 'info': {'password': '1222'}}
+[2024-03-04 16:56:12.930812] INFO: interface_case_run: 输入参数：url:/openapi/api,key:aaaa,参数:code=40001,请求方式：POST
+[2024-03-04 16:56:12.930955] INFO: interface_case_run: 输入参数：url:/openapi/api,key:aaaa,参数:code=40001,请求方式：None
+[2024-03-04 16:56:12.944529] INFO: interface_case_run: 返回结果:{'code': 1, 'result': '接口请求失败，返回状态码：404'}
+[2024-03-04 16:56:12.944700] INFO: interface_case_run: 当前模块 断言测试结果
+[2024-03-04 16:56:12.944795] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 16:56:12.944877] INFO: interface_case_run: 全部kwargs参数信息 , {'asserassert': 'code=40001'}
+[2024-03-04 16:56:12.944983] INFO: interface_case_run: 测试用例执行完毕
+[2024-03-04 16:56:12.945119] INFO: interface_case_run: 测试用例开始执行
+[2024-03-04 16:56:12.945253] INFO: interface_case_run: {'key': 'dfeb1cc8125943d29764a2f2f5c33739', 'info': {'password': '1222'}}
+[2024-03-04 16:56:12.945350] INFO: interface_case_run: 输入参数：url:/openapi/api,key:dfeb1cc8125943d29764a2f2f5c33739,参数:code=40002,请求方式：POST
+[2024-03-04 16:56:12.945428] INFO: interface_case_run: 输入参数：url:/openapi/api,key:dfeb1cc8125943d29764a2f2f5c33739,参数:code=40002,请求方式：None
+[2024-03-04 16:56:12.951146] INFO: interface_case_run: 返回结果:{'code': 1, 'result': '接口请求失败，返回状态码：404'}
+[2024-03-04 16:56:12.951307] INFO: interface_case_run: 当前模块 断言测试结果
+[2024-03-04 16:56:12.951399] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 16:56:12.951482] INFO: interface_case_run: 全部kwargs参数信息 , {'asserassert': 'code=40002'}
+[2024-03-04 16:56:12.951587] INFO: interface_case_run: 测试用例执行完毕
+[2024-03-04 16:56:12.951714] INFO: interface_case_run: 测试用例开始执行
+[2024-03-04 16:56:12.951842] INFO: interface_case_run: {'key': '', 'info': {}}
+[2024-03-04 16:56:12.951948] INFO: interface_case_run: 输入参数：url:/v9/video/info?_support=10001001&ageMode=0&allowedRC=1&appVersion=7.1.0&change=4&clipId=516474&dataType=0&device=iPad&dname=%E2%80%9C10.5%E2%80%9D%E7%9A%84%20iPad&height=1668&keepPlay=1&localPlayVideoId=&localVideoWatchTime=&mac=d05bc22a1ef64cbbcc8a60ea2a0c460914064344&osType=ios&osVersion=14.4.1&plId=&seqId=5008e90f5435b53183f5741061bbe026&source=1&ticket=4F51A221BE3438F6869B5911C386609C&uid=93f2f55fbadd40f582aca34d3619df3b&videoId=&width=2224,key:,参数:code=200,请求方式：GET
+[2024-03-04 16:56:12.952037] INFO: interface_case_run: 输入参数：url:/v9/video/info?_support=10001001&ageMode=0&allowedRC=1&appVersion=7.1.0&change=4&clipId=516474&dataType=0&device=iPad&dname=%E2%80%9C10.5%E2%80%9D%E7%9A%84%20iPad&height=1668&keepPlay=1&localPlayVideoId=&localVideoWatchTime=&mac=d05bc22a1ef64cbbcc8a60ea2a0c460914064344&osType=ios&osVersion=14.4.1&plId=&seqId=5008e90f5435b53183f5741061bbe026&source=1&ticket=4F51A221BE3438F6869B5911C386609C&uid=93f2f55fbadd40f582aca34d3619df3b&videoId=&width=2224,key:,参数:code=200,请求方式：None
+[2024-03-04 16:56:12.957679] INFO: interface_case_run: 返回结果:{'code': 1, 'result': '接口请求失败，返回状态码：404'}
+[2024-03-04 16:56:12.957811] INFO: interface_case_run: 当前模块 断言测试结果
+[2024-03-04 16:56:12.957918] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 16:56:12.958001] INFO: interface_case_run: 全部kwargs参数信息 , {'asserassert': 'code=200'}
+[2024-03-04 16:56:12.958098] INFO: interface_case_run: 测试用例执行完毕
+[2024-03-04 16:56:12.958218] INFO: interface_case_run: 测试用例开始执行
+[2024-03-04 16:56:12.958408] INFO: interface_case_run: {'key': '', 'info': {'platform': 'all', 'ab_rage': 'all', 'msg_type': 77001, 'src': 'qask', 'dids': ['b6dfd8cf5c9fa8fd3711ec7530bc25583f8346ea', 'f9cffe26e15b7b3f91bab670dfa1d223ec3af690', '59ce40467f3c9f9a2737ba7b0d0dca2012555bf9'], 'data_json': {'id': 42, 'title': '这是一个快qqqq标题', 'tips': '引导提示', 'jumpUrl': 'https://www.baidu.com'}}}
+[2024-03-04 16:56:12.958528] INFO: interface_case_run: 输入参数：url:/gopush/dids,key:,参数:code=200,请求方式：POST
+[2024-03-04 16:56:12.958609] INFO: interface_case_run: 输入参数：url:/gopush/dids,key:,参数:code=200,请求方式：None
+[2024-03-04 16:56:12.964320] INFO: interface_case_run: 返回结果:{'code': 0, 'result': {'code': 2001, 'msg': 'src null'}}
+[2024-03-04 16:56:12.964501] INFO: interface_case_run: 当前模块 断言测试结果
+[2024-03-04 16:56:12.964612] INFO: interface_case_run: 全部args参数参数信息 , ()
+[2024-03-04 16:56:12.964697] INFO: interface_case_run: 全部kwargs参数信息 , {'asserassert': 'code=200'}
+[2024-03-04 16:56:12.964798] INFO: interface_case_run: 测试用例执行完毕
